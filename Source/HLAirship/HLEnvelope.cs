@@ -3,6 +3,7 @@
 // Every Envelope is controlled by the Compressor.  These envelopes provide lift.
 
 // Update Log
+// 2016-06-XX: (by Kerbas-ad-astra) Updating for KSP 1.1, basing off of the last MIT-licensed version (i.e. ignoring HL 5 by JewelShisen), switching to GPL to prevent EEE, changing names to prevent collision w/ HL5.
 // 2014-12-23: (by Khatharr) KSP 0.9 dropped support for Part.uid, so I changed it to Part.flightID. Needs more testing, but it's working at first glance.
 // 2012-11-09: Each envelope now calculates its location relative to the center of mass, for use by the Compressor
 
@@ -23,7 +24,7 @@ public enum AnimationState : int
 
 }
 
-public class HLEnvelopePartModule : PartModule
+public class HeLiEnvelopePartModule : PartModule
 {
     // Private variables cannot be changed by the part.cfg file
     #region KSPFields
@@ -153,9 +154,9 @@ public class HLEnvelopePartModule : PartModule
     // private bool willReset3 = false;
     private bool willReset4 = false;
 
-    private List<HLEnvelopePartModule> Envelopes = new List<HLEnvelopePartModule>();
+    private List<HeLiEnvelopePartModule> Envelopes = new List<HeLiEnvelopePartModule>();
     private Part leadEnvelope;
-    private HLEnvelopePartModule envelope;
+    private HeLiEnvelopePartModule envelope;
 
     // Debug
     // private int activeVessel = 0;
@@ -194,7 +195,7 @@ public class HLEnvelopePartModule : PartModule
     [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy ++")]
     public void BuoyancyPP_Event()
     {
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             toggleAutoPitch = false;
         }
@@ -204,7 +205,7 @@ public class HLEnvelopePartModule : PartModule
     [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy +")]
     public void BuoyancyP_Event()
     {
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             toggleAutoPitch = false;
         }
@@ -214,7 +215,7 @@ public class HLEnvelopePartModule : PartModule
     [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy -")]
     public void BuoyancyN_Event()
     {
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             toggleAutoPitch = false;
         }
@@ -224,7 +225,7 @@ public class HLEnvelopePartModule : PartModule
     [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy --")]
     public void BuoyancyNN_Event()
     {
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             toggleAutoPitch = false;
         }
@@ -234,7 +235,7 @@ public class HLEnvelopePartModule : PartModule
     [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy Max")]
     public void BuoyancyM_Event()
     {
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             toggleAutoPitch = false;
         }
@@ -244,7 +245,7 @@ public class HLEnvelopePartModule : PartModule
     [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy Min")]
     public void BuoyancyZ_Event()
     {
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             toggleAutoPitch = false;
         }
@@ -254,7 +255,7 @@ public class HLEnvelopePartModule : PartModule
     [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Clear Adjustments")]
     public void BuoyancyC_Event()
     {
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             toggleAutoPitch = false;
         }
@@ -564,7 +565,7 @@ public class HLEnvelopePartModule : PartModule
         heading = (Vector3d)this.vessel.transform.up;
 
         // Up, relative to the center of the nearest celestial body
-        Vector3d up = (this.vessel.rigidbody.position - this.vessel.mainBody.position).normalized;
+		Vector3d up = (this.vessel.GetComponent<Rigidbody>().position - this.vessel.mainBody.position).normalized;
 
         // Finds all parts within the vessel (specifically mass)
         try { findParts(); }
@@ -620,12 +621,12 @@ public class HLEnvelopePartModule : PartModule
             if (part.isAttached)
             {
                 // Skip if not an envelope
-                if (part.Modules.OfType<HLEnvelopePartModule>().FirstOrDefault() == null)
+                if (part.Modules.OfType<HeLiEnvelopePartModule>().FirstOrDefault() == null)
                 {
                     // Debug.Log("Did not find an envelope on " + part.name);
                     continue;
                 }
-                envelope = part.Modules.OfType<HLEnvelopePartModule>().FirstOrDefault();
+                envelope = part.Modules.OfType<HeLiEnvelopePartModule>().FirstOrDefault();
 
                 // Envelopes have to be active to work.
                 if (part.State != PartStates.ACTIVE)
@@ -685,7 +686,7 @@ public class HLEnvelopePartModule : PartModule
         // Hey, a method for finding mass!
         totalMass = vessel.GetTotalMass();
 
-        totalGravityForce = (float)(totalMass * FlightGlobals.getGeeForceAtPosition(part.rigidbody.worldCenterOfMass).magnitude);
+		totalGravityForce = (float)(totalMass * FlightGlobals.getGeeForceAtPosition(part.GetComponent<Rigidbody>().worldCenterOfMass).magnitude);
     }
 
     public void setBuoyancy()
@@ -693,13 +694,13 @@ public class HLEnvelopePartModule : PartModule
         float sumPitch = 0;
 
         // Find out the sum of all the pitches
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             sumPitch += envelope.targetPitchBuoyancy;
         }
 
         // The lead envelope sets the buoyancy for every envelope, including itself
-        foreach (HLEnvelopePartModule envelope in Envelopes)
+        foreach (HeLiEnvelopePartModule envelope in Envelopes)
         {
             envelope.targetBuoyantVessel = this.targetBuoyantVessel;
 
@@ -725,7 +726,7 @@ public class HLEnvelopePartModule : PartModule
         }
     }
 
-    public float autoPitchControl(Vector3 position, HLEnvelopePartModule envelope)
+    public float autoPitchControl(Vector3 position, HeLiEnvelopePartModule envelope)
     {
         Vector3 stabilizeVector = Vector3.one;
         Vector3 pitchVector = Vector3.one;
@@ -875,18 +876,19 @@ public class HLEnvelopePartModule : PartModule
                 stabilizeVector = vessel.transform.up;
                 break;
         }
-        try { eDistanceFromCoM = DistanceFromCoM(rigidbody.position, vessel.findWorldCenterOfMass(), vessel.mainBody.position, stabilizeVector); }
+		try { eDistanceFromCoM = DistanceFromCoM(vessel.GetComponent<Rigidbody>().position, vessel.findWorldCenterOfMass(), vessel.mainBody.position, stabilizeVector); }
         catch (Exception ex) { print("eDistanceFromCoM Exception!"); print(ex.Message); }
 
         float pressure = (float)FlightGlobals.getStaticPressure();
+		float temperature = (float)FlightGlobals.getExternalTemperature ();
 
         // Compute the buoyant force
 
         // KSP provides the density based on local atmospheric pressure.
-        atmosDensity = (float)FlightGlobals.getAtmDensity(pressure);
+		atmosDensity = (float)FlightGlobals.getAtmDensity(pressure,temperature);
         // The maximum buoyancy of the envelope is equal to the weight of the displaced air
         // Force (Newtons) = - Gravitational Acceleration (meters per second squared) * Density (kilograms / meter cubed) * Volume (meters cubed)
-        maxBuoyancy = -FlightGlobals.getGeeForceAtPosition(part.rigidbody.worldCenterOfMass) * atmosDensity * envelopeVolume;
+		maxBuoyancy = -FlightGlobals.getGeeForceAtPosition(part.GetComponent<Rigidbody>().worldCenterOfMass) * atmosDensity * envelopeVolume;
         // As force in KSP is measured in kilonewtons, we divide by 1000
         maxBuoyancy /= 1000;
         // Then we apply the "volume scale", for gameplay purposes if needed.
@@ -921,12 +923,12 @@ public class HLEnvelopePartModule : PartModule
         }
 
         // New method is to add force based on render bounds.
-        this.part.Rigidbody.AddForceAtPosition(buoyantForce, part.rigidbody.worldCenterOfMass, ForceMode.Force);
+		this.part.Rigidbody.AddForceAtPosition(buoyantForce, part.GetComponent<Rigidbody>().worldCenterOfMass, ForceMode.Force);
 
     }
 
     // Changes envelope buoyancy targets
-    public void updateTargetSpecificVolumeFraction(float fraction, HLEnvelopePartModule envelope)
+    public void updateTargetSpecificVolumeFraction(float fraction, HeLiEnvelopePartModule envelope)
     {
         // Difference between specific volume and target specific volume
         float delta = fraction - specificVolumeFractionEnvelope;
@@ -1236,7 +1238,7 @@ public class HLEnvelopePartModule : PartModule
             }
             GUILayout.EndHorizontal();
 
-            foreach (HLEnvelopePartModule envelope in Envelopes)
+            foreach (HeLiEnvelopePartModule envelope in Envelopes)
             {
                 envelope.targetBuoyancyN = targetBuoyancyN;
                 envelope.targetBuoyancyP = targetBuoyancyP;
@@ -1358,7 +1360,7 @@ public class HLEnvelopePartModule : PartModule
             initGUI();
             RenderingManager.AddToPostDrawQueue(3, new Callback(drawGUI)); //start the GUI
 
-            foreach (HLEnvelopePartModule envelope in Envelopes)
+            foreach (HeLiEnvelopePartModule envelope in Envelopes)
                 envelope.activeGUI = true;
         }
 
@@ -1372,7 +1374,7 @@ public class HLEnvelopePartModule : PartModule
         if (activeGUI)
         {
             RenderingManager.RemoveFromPostDrawQueue(3, new Callback(drawGUI)); //close the GUI
-            foreach (HLEnvelopePartModule envelope in Envelopes)
+            foreach (HeLiEnvelopePartModule envelope in Envelopes)
                 envelope.activeGUI = false;
         }
         Debug.Log("HLA: leaving removeGUI()");
