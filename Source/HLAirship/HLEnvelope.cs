@@ -120,7 +120,6 @@ public class HeLiEnvelopePartModule : PartModule
 
     // GUI
     public IButton button;
-    public bool state1 = true;
     private Rect windowPos;
     private int airshipWindowID;
     public bool activeGUI = false;
@@ -265,24 +264,17 @@ public class HeLiEnvelopePartModule : PartModule
     [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Toggle GUI")]
     public void guiToggle_Event()
     {
-        Debug.Log("HLA: Sending guiToggle signal");
+        Debug.Log("HeLiA: Sending guiToggle signal");
         part.SendEvent("guiToggle");
+		button.TexturePath = guiOn ? "HeliumLifterAirships/Icons/HLOnIcon" : "HeliumLifterAirships/Icons/HLOffIcon";
     }
 
     [KSPEvent(guiActive = false, guiActiveUnfocused = true, unfocusedRange = 2000)]
     public void guiToggle()
     {
-        Debug.Log("HLA: Executing guiToggle method");
-        if (part == leadEnvelope && guiOn)
-        {
-            guiOn = false;
-            removeGUI();
-        }
-        else if (part == leadEnvelope)
-        {
-            guiOn = true;
-            addGUI();
-        }
+        Debug.Log("HeLiA: Executing guiToggle method");
+		guiOn = !guiOn;
+
     }
 
     #endregion
@@ -345,15 +337,14 @@ public class HeLiEnvelopePartModule : PartModule
         /// Called in the Part\'s Awake method.  
         /// The model may not be built by this point. 
 
-        button = ToolbarManager.Instance.add("HooliganLabs", "HooliganLabsGUI");
-        button.TexturePath = "HooliganLabs/Icons/HLOffIcon";
-        button.ToolTip = "HooliganLabs";
+        button = ToolbarManager.Instance.add("HeLiAirships", "HeliumLifterGUI");
+		button.TexturePath = "HeliumLifterAirships/Icons/HLOffIcon";
+        button.ToolTip = "Helium Lifter Airships";
         //button.OnClick += (e) => guiToggle_Event();// guiToggle_Event() guiToggle()
         button.OnClick += (e) =>
         {
             guiToggle_Event();
-            button.TexturePath = state1 ? "HooliganLabs/Icons/HLOffIcon" : "HooliganLabs/Icons/HLOnIcon";
-            state1 = !state1;
+			button.TexturePath = guiOn ? "HeliumLifterAirships/Icons/HLOnIcon" : "HeliumLifterAirships/Icons/HLOffIcon";
         };
 
         // Set starting animation state
@@ -385,13 +376,6 @@ public class HeLiEnvelopePartModule : PartModule
 
         // Sets one envelope to run the GUI and control logic
         determineLeadEnvelope();
-
-        if (this.part == leadEnvelope && guiOn)
-        {
-            addGUI();
-            // Events["guiToggle_Event"].active = true;
-        }
-        else if (!guiOn) removeGUI();
 
         // if (this.part != leadEnvelope) Events["guiToggle_Event"].active = false;
 
@@ -520,18 +504,6 @@ public class HeLiEnvelopePartModule : PartModule
     public void OnDestroy()
     {
         button.Destroy();
-        if (this.part == leadEnvelope)
-        {
-            removeGUI();
-        }
-    }
-
-    public void onDisconnect()
-    {
-        if (this.part == leadEnvelope)
-        {
-            removeGUI();
-        }
     }
 
     public override void OnFixedUpdate()
@@ -657,7 +629,7 @@ public class HeLiEnvelopePartModule : PartModule
             // If this is the lead envelope...
             if (leadEnvelope == envelope.part)
             {
-                Debug.Log("HLA: Adding GUI!");
+                Debug.Log("HeLiA: Adding GUI!");
                 envelope.isLeadEnvelope = true;
 
                 // Make sure all envelopes have the same logic
@@ -1332,52 +1304,24 @@ public class HeLiEnvelopePartModule : PartModule
         GUILayout.TextArea("Envelope volume: " + envelopeVolume + "\nInitial Gas Specific Volume: " + Mathf.RoundToInt(specificVolumeFractionEnvelope * 100) + "%");
     }
 
+	private void OnGUI() {
+		drawGUI ();
+	}
+
+
     //More GUI stuff
     private void drawGUI() {
-      Debug.Log("HLA: entering drawGUI()");
-      if(this.vessel != FlightGlobals.ActiveVessel) {return;}
+      Debug.Log("HeLiA: entering drawGUI()");
+		if((this.vessel != FlightGlobals.ActiveVessel) || (part != leadEnvelope) || !guiOn) {return;}
       airshipWindowID = (int)part.flightID;
+		windowWidth = 300;
+
+		if ((windowPos.x == 0) && (windowPos.y == 0))
+		{
+			windowPos = new Rect(Screen.width - windowWidth, Screen.height * 0.25f, 10, 10);
+		}
       windowPos = GUILayout.Window(airshipWindowID, windowPos, WindowGUI, "HooliganLabs", GUILayout.MinWidth(200));
-      Debug.Log("HLA: leaving drawGUI()");
-    }
-
-    protected void initGUI()
-    {
-        windowWidth = 300;
-
-        if ((windowPos.x == 0) && (windowPos.y == 0))
-        {
-            windowPos = new Rect(Screen.width - windowWidth, Screen.height * 0.25f, 10, 10);
-        }
-    }
-
-    private void addGUI()
-    {
-        Debug.Log("HLA: entering addGUI()");
-        //button.TexturePath = "HooliganLabs/Icons/HLOnIcon";
-        if (!activeGUI && guiOn)
-        {
-            initGUI();
-            RenderingManager.AddToPostDrawQueue(3, new Callback(drawGUI)); //start the GUI
-
-            foreach (HeLiEnvelopePartModule envelope in Envelopes)
-                envelope.activeGUI = true;
-        }
-
-        Debug.Log("HLA: leaving addGUI()");
-    }
-
-    protected void removeGUI()
-    {
-        Debug.Log("HLA: entering removeGUI()");
-        //button.TexturePath = "HooliganLabs/Icons/HLOffIcon";
-        if (activeGUI)
-        {
-            RenderingManager.RemoveFromPostDrawQueue(3, new Callback(drawGUI)); //close the GUI
-            foreach (HeLiEnvelopePartModule envelope in Envelopes)
-                envelope.activeGUI = false;
-        }
-        Debug.Log("HLA: leaving removeGUI()");
+      Debug.Log("HeLiA: leaving drawGUI()");
     }
 
 }
