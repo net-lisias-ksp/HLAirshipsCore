@@ -25,20 +25,21 @@ From there, just unzip the "HeliumLifterAirships" folder into your GameData dire
 
 * 2016 06 XX (1.0):
 	* Fixes to compile and run in 1.1.2.
-		* 
 	* Changed folder name, assembly name, and part names to avoid collisions with HooliganLabs 5.
 
 ##Roadmap
+
+I'm studying KAC and Landertron to figure out how to decouple HL from blizzy's toolbar and to excise the "lead envelope" stuff.  I figure that 
 
 When I've learned how to make parts with animations, I'll add a set of envelopes that more closely resemble NASA's Venus exploration concepts, such as HAVOC and VISE, but that won't be part of this mod.
 
 ##Credits
 
-Helium Lifter Airships is based on HooliganLabs Airships, release 3.0.1b, copyright 2014 HooliganLabs and Khatharr.
+Helium Lifter Airships is based on HooliganLabs Airships, release 3.0.1b, copyright 2014 HooliganLabs, JewelShisen, and Khatharr.
 
 Many thanks to TriggerAu for Kerbal Alarm Clock (which I used as a guide to make the GUI independent of blizzy's toolbar) and charfa for the Landertron overhaul (which I used as a guide to remove the "lead envelope" business).
 
-Finally, thanks are owed to JewelShisen, for giving me a reason to perform my own resurrection of HL Airships.
+Finally, thanks are owed to JewelShisen for giving me a reason to perform my own resurrection of HL Airships.
 
 ##License
 
