@@ -1,6 +1,6 @@
 #Helium Lifter Airships
 
-*A Free-as-in-Freedom airship mod for KSP 1.1.2.*
+*A Free-as-in-Freedom airship mod for KSP 1.1+*
 
 ##Features
 
@@ -23,7 +23,7 @@ From there, just unzip the "HeliumLifterAirships" folder into your GameData dire
 
 ##Version history and changelog
 
-* 2016 06 XX (1.0):
+* 2016 XX (1.0):
 	* Fixes to compile and run in 1.1.2.
 	* Changed folder name, assembly name, and part names to avoid collisions with HooliganLabs 5.
 
