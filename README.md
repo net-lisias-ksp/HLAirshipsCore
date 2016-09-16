@@ -23,15 +23,18 @@ From there, just unzip the "HeliumLifterAirships" folder into your GameData dire
 
 ##Version history and changelog
 
-* 2016 XX (1.0):
-	* Fixes to compile and run in 1.1.2.
+* 2016 May XX:
+	* Fixes to compile and run in KSP 1.1.2.
 	* Changed folder name, assembly name, and part names to avoid collisions with HooliganLabs 5.
+* 2016 Sep XX:
+	* Fixes to compile and run in KSP 1.2.
+	* Added part tags.
 
 ##Roadmap
 
-I'm studying KAC and Landertron to figure out how to decouple HL from blizzy's toolbar and to excise the "lead envelope" stuff.  I figure that 
+I'm studying KAC and Landertron to figure out how to make blizzy's toolbar optional and to excise the "lead envelope" stuff.  The partmodule info should also say how many tons it can lift at Kerbin's sea level (and maybe other altitudes and planets?)
 
-When I've learned how to make parts with animations, I'll add a set of envelopes that more closely resemble NASA's Venus exploration concepts, such as HAVOC and VISE, but that won't be part of this mod.
+When I've learned how to make parts with animations, I'll create a set of envelopes that more closely resemble NASA's Venus exploration concepts, such as HAVOC and VISE, but that won't be part of this mod.
 
 ##Credits
 

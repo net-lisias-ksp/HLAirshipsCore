@@ -736,8 +736,8 @@ public class HeLiEnvelopePartModule : PartModule
         // Slerp (yummy!) is a spherical rotation of a vector towards something
         stabilizeVector = Vector3.Slerp(stabilizeVector, pitchVector, Mathf.Abs(pitchAngle) / 90);
 
-        // Center of Mass
-        Vector3 theCoM = vessel.findWorldCenterOfMass();
+		// Center of Mass
+		Vector3 theCoM = vessel.CoM;
 
         // Removes vertical component from the vector we are stabilizing to and the envelope's position
         Vector3 correctVector = ProjectVectorOnPlane(FlightGlobals.getGeeForceAtPosition(theCoM).normalized, stabilizeVector);
@@ -848,7 +848,7 @@ public class HeLiEnvelopePartModule : PartModule
                 stabilizeVector = vessel.transform.up;
                 break;
         }
-		try { eDistanceFromCoM = DistanceFromCoM(vessel.GetComponent<Rigidbody>().position, vessel.findWorldCenterOfMass(), vessel.mainBody.position, stabilizeVector); }
+		try { eDistanceFromCoM = DistanceFromCoM(vessel.GetComponent<Rigidbody>().position, vessel.CoM, vessel.mainBody.position, stabilizeVector); }
         catch (Exception ex) { print("eDistanceFromCoM Exception!"); print(ex.Message); }
 
         float pressure = (float)FlightGlobals.getStaticPressure();
@@ -1250,7 +1250,7 @@ public class HeLiEnvelopePartModule : PartModule
         //GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        GUILayout.Label("Buoyancy - Weight: " + (totalBuoyancy - (vessel.GetTotalMass() * FlightGlobals.getGeeForceAtPosition(vessel.findWorldCenterOfMass()).magnitude)).ToString("0.00"));
+		GUILayout.Label("Buoyancy - Weight: " + (totalBuoyancy - (vessel.GetTotalMass() * FlightGlobals.getGeeForceAtPosition(vessel.CoM).magnitude)).ToString("0.00"));
         GUILayout.EndHorizontal();
 
         //GUILayout.BeginHorizontal();
