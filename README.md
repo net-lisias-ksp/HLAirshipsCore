@@ -29,10 +29,11 @@ From there, just unzip the "HeliumLifterAirships" folder into your GameData dire
 * 2016 Sep XX:
 	* Fixes to compile and run in KSP 1.2.
 	* Added part tags.
+	* Added editor info.
 
 ##Roadmap
 
-I'm studying KAC and Landertron to figure out how to make blizzy's toolbar optional and to excise the "lead envelope" stuff.  The partmodule info should also say how many tons it can lift at Kerbin's sea level (and maybe other altitudes and planets?)
+I'm studying KAC and Landertron to figure out how to make blizzy's toolbar optional and to excise the "lead envelope" stuff.  It would also be nice to get a non-magic-number for atmospheric density (i.e. for a generic homeworld, as opposed to Earth and Kerbin specifically), but since those are the primary homeworlds, that takes a back burner.
 
 When I've learned how to make parts with animations, I'll create a set of envelopes that more closely resemble NASA's Venus exploration concepts, such as HAVOC and VISE, but that won't be part of this mod.
 
