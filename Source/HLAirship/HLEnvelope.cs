@@ -334,7 +334,7 @@ public class HeLiEnvelopePartModule : PartModule
 	public override string GetInfo()
 	{
 		double maxCap = envelopeVolume * envelopeVolumeScale * 1.225 / 1000; // Augh, magic numbers...but surface conditions on Earth and Kerbin *should* be the same, right?
-		return String.Format("At sea level (1.225 kg/m^3, 9.8 m/s^2), this envelope can lift {0:g2} tons.", maxCap);
+		return String.Format("At sea level (1.225 kg/m^3), this envelope can lift {0:g2} metric tons.", maxCap);
 	}
 
     public override void OnAwake()
