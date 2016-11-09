@@ -901,7 +901,7 @@ public class LLEnvelopePartModule : PartModule
         }
 
         // New method is to add force based on render bounds.
-		this.part.Rigidbody.AddForceAtPosition(buoyantForce, part.GetComponent<Rigidbody>().worldCenterOfMass, ForceMode.Force);
+		this.part.AddForceAtPosition(buoyantForce, part.GetComponent<Rigidbody>().worldCenterOfMass);
 
     }
 
