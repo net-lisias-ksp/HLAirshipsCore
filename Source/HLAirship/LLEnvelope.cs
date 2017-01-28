@@ -344,13 +344,13 @@ public class LLEnvelopePartModule : PartModule
         /// The model may not be built by this point. 
 
         button = ToolbarManager.Instance.add("LLAirships", "HeliumLifterGUI");
-		button.TexturePath = "HeliumLifterAirships/Icons/HLOffIcon";
-        button.ToolTip = "Helium Lifter Airships";
+		button.TexturePath = "LibreLabsAirships/Icons/HLOffIcon";
+        button.ToolTip = "Libre Labs Airships";
         //button.OnClick += (e) => guiToggle_Event();// guiToggle_Event() guiToggle()
         button.OnClick += (e) =>
         {
             guiToggle_Event();
-			button.TexturePath = guiOn ? "HeliumLifterAirships/Icons/HLOnIcon" : "HeliumLifterAirships/Icons/HLOffIcon";
+			button.TexturePath = guiOn ? "LibreLabsAirships/Icons/HLOnIcon" : "LibreLabsAirships/Icons/HLOffIcon";
         };
 
         // Set starting animation state
@@ -635,7 +635,7 @@ public class LLEnvelopePartModule : PartModule
             // If this is the lead envelope...
             if (leadEnvelope == envelope.part)
             {
-                Debug.Log("LLA: Adding GUI!");
+                // Debug.Log("LLA: Adding GUI!");
                 envelope.isLeadEnvelope = true;
 
                 // Make sure all envelopes have the same logic
@@ -1317,7 +1317,7 @@ public class LLEnvelopePartModule : PartModule
 
     //More GUI stuff
     private void drawGUI() {
-      Debug.Log("LLA: entering drawGUI()");
+     // Debug.Log("LLA: entering drawGUI()");
 		if((this.vessel != FlightGlobals.ActiveVessel) || (part != leadEnvelope) || !guiOn) {return;}
       airshipWindowID = (int)part.flightID;
 		windowWidth = 300;
@@ -1326,8 +1326,8 @@ public class LLEnvelopePartModule : PartModule
 		{
 			windowPos = new Rect(Screen.width - windowWidth, Screen.height * 0.25f, 10, 10);
 		}
-      windowPos = GUILayout.Window(airshipWindowID, windowPos, WindowGUI, "HooliganLabs", GUILayout.MinWidth(200));
-      Debug.Log("LLA: leaving drawGUI()");
+      windowPos = GUILayout.Window(airshipWindowID, windowPos, WindowGUI, "LibreLabs", GUILayout.MinWidth(200));
+     // Debug.Log("LLA: leaving drawGUI()");
     }
 
 }
