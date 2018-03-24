@@ -500,9 +500,11 @@ public class LLEnvelopePartModule : PartModule
 
         // Make it render a red to yellow triangle, 1 meter wide and 2 meters long
         line.material = new Material(Shader.Find("Particles/Additive"));
-        line.SetColors(color, color);
-        line.SetWidth(0.5f, 0);
-        line.SetVertexCount(2);
+		line.startColor = color;
+		line.endColor = color;
+		line.startWidth = 0.5f;
+		line.endWidth = 0;
+		line.positionCount = 2;
         line.SetPosition(0, Vector3.zero);
         line.SetPosition(1, Vector3.zero);
     }

@@ -29,6 +29,8 @@ Ordinarily, I'd direct you someplace to get a zip file to unzip into GameData, b
 	* Added editor info.
 * 2016 Oct XX:
 	* Renaming to bring in line with my other Libre resurrections.
+* 2018 Mar XX:
+	* Updated line rendering for KSP 1.4.1.
 
 ##Roadmap
 
@@ -50,7 +52,7 @@ Finally, thanks are owed to JewelShisen for giving me a reason to perform my own
 
 ##License
 
-LibreLabs Airships is copyright 2016 Kerbas-ad-astra.
+LibreLabs Airships is copyright 2016-2018 Kerbas-ad-astra.
 
 Part configuration files, source and DLLs are copyright 2016 Kerbas_ad_astra and released under the GNU GPL v3 (or any later version).  If you make and redistribute a fork (unless it's intended to be merged with the master or if I'm handing over central control to someone else), you must give it a different name and use a different GameData folder in addition to the other anti-user-confusion provisions of the GPL (see sections 5a and 7).
 
