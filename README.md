@@ -1,24 +1,24 @@
-#LibreLabs Airships
+# LibreLabs Airships
 
 *A Free-as-in-Freedom airship mod for KSP 1.1+*
 
-##Features
+## Features
 
 LibreLabs Airships includes envelope parts and a buoyancy controller for setting float/sink rate.  It will also attempt to balance an airship, but it works best if you do most of the balancing yourself in the editor.
 
-##Dependencies
+## Dependencies
 
 At present, LLA depends on blizzy's toolbar mod.
 
-##Recommended addons
+## Recommended addons
 
-##Download and install
+## Download and install
 
 Ordinarily, I'd direct you someplace to get a zip file to unzip into GameData, but HooliganLabs is still in active development.  If you really care enough to use LLA over HLA, grab the source from [**GitHub**](https://github.com/Kerbas-ad-astra/LibreLabsAirships) and compile it with your favorite C# development tools, then plop the DLL and files in a "LibreLabsAirships" folder in GameData.
 
-##Known and anticipated issues
+## Known and anticipated issues
 
-##Version history and changelog
+## Version history and changelog
 
 * 2016 May XX:
 	* Fixes to compile and run in KSP 1.1.2.
@@ -32,7 +32,7 @@ Ordinarily, I'd direct you someplace to get a zip file to unzip into GameData, b
 * 2018 Mar XX:
 	* Updated line rendering for KSP 1.4.1.
 
-##Roadmap
+## Roadmap
 
 Keep LLA up-to-date with KSP updates.  Make a snazzy logo.
 
@@ -42,7 +42,7 @@ A fully-compiled release will happen when JewelShisen gets hit by a bus, and not
 
 When I've learned how to make parts with animations, I'll create a set of envelopes that more closely resemble NASA's Venus exploration concepts, such as HAVOC and VISE, but that won't be part of this mod.
 
-##Credits
+## Credits
 
 LibreLabs Airships is based on HooliganLabs Airships, release 3.0.1b, copyright 2014 HooliganLabs, JewelShisen, and Khatharr.
 
@@ -50,7 +50,7 @@ Many thanks to TriggerAu for Kerbal Alarm Clock (which I used as a guide to make
 
 Finally, thanks are owed to JewelShisen for giving me a reason to perform my own resurrection of HL Airships.
 
-##License
+## License
 
 LibreLabs Airships is copyright 2016-2018 Kerbas-ad-astra.
 
