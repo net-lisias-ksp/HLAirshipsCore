@@ -52,6 +52,7 @@
     <Compile Include="MonoBehaviourExtended.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.cs" />
+    <Compile Include="Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
