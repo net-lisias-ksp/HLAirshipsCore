@@ -33,3 +33,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion(HLAirships.Version.Number)]
 [assembly: AssemblyFileVersion(HLAirships.Version.Number)]
+
+[assembly: KSPAssemblyDependency("ClickThroughBlocker", 1, 0)]﻿

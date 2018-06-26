@@ -1,11 +1,12 @@
-﻿using KSPPluginFramework;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using KSP;
-using System.ComponentModel;
 using KSP.UI;
 using KSP.UI.Screens;
+using KSPPluginFramework;
+using ClickThroughFix;
 
 namespace HLAirships
 {
@@ -246,7 +247,7 @@ namespace HLAirships
 
 		private void drawGUI()
 		{
-			windowPos = GUILayout.Window(airshipWindowID, windowPos, WindowGUI, "HLAirships Build Aid", GUILayout.MinWidth(200));
+			windowPos = ClickThruBlocker.GUILayoutWindow﻿﻿(airshipWindowID, windowPos, WindowGUI, "HLAirships Build Aid", GUILayout.MinWidth(200));
 		}
 
 		protected void initGUI()
