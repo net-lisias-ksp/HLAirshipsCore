@@ -91,31 +91,19 @@ namespace HLAirships
 		private void OnShowUI()
 		{
 			LogFormatted_DebugOnly("OnShowGUI Fired");
+			ControlWindowVisible = true;
 		}
 		private void OnHideUI()
 		{
 			LogFormatted_DebugOnly("OnHideGUI Fired");
+			ControlWindowVisible = false;
 		}
 
 		internal override void OnGUIEvery()
 		{
-			if (ControlWindowVisible)
-			{
-				if(!activeGUI)
-				{
-					initGUI();
-					activeGUI = true;
-				}
-
-				drawGUI();
-			}
-			else
-			{
-				if (activeGUI)
-				{
-					activeGUI = false;
-				}
-			}
+			if (!ControlWindowVisible) return;
+			if (!activeGUI) initGUI();
+			drawGUI();
 		}
 		/// <summary>
 		/// Sets up the App Button - no longer called by the event as that only happens on StartMenu->SpaceCenter now
@@ -260,6 +248,7 @@ namespace HLAirships
 			{
 				windowPos = new Rect(Screen.width - windowWidth, Screen.height * 0.25f, 10, 10);
 			}
+			activeGUI = true;
 		}
 
 		// GUI
