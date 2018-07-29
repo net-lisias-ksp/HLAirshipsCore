@@ -20,5 +20,10 @@
 	+ Added Build Aid for SPH and VAB. Builds dynamically for all planets with an atmosphere (including the SUN for some reason...) 
 * 2016-0503: 5.1 (jewelshisen) for KSP 1.1.2
 	+ Removed some parts that were not supposed to be in here. 
+* 2016-0502: 1.1.2 (dunclaw) for KSP 1.1.2 (no binary)
+	+ Updated the plugin to work with KSP 1.1.2
+	+ Removed explicit dependency on Toolbar
+	+ Refactored UI code
+	+ Removed several bits of dead code
 * 2014-1016: 3.0.0 (Hooligan Labs)
 	+ Licensed under MIT
