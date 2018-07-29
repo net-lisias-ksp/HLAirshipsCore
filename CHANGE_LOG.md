@@ -10,6 +10,11 @@
 	+ No changelog provided
 * 2016-1014: 6.0 (jewelshisen) for KSP 1.2
 	+ No changelog provided
+* 2016-1014: 5.6.1 (smce) for KSP 1.2
+	+ 5.6.1 HotFix
+		- Fix hatch collider issues on 5mtr gondola
+		- Add missing internals for both Airship pods
+		- Add Spaces folder for easy reference
 * 2016-1014: 5.6 (dunclaw) for KSP 1.2
 	+ Update to work with KSP 1.2
 * 2016-0813: 5.5 (jewelshisen) for KSP 1.1.3
