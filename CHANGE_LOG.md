@@ -10,6 +10,8 @@
 	+ No changelog provided
 * 2016-1014: 6.0 (jewelshisen) for KSP 1.2
 	+ No changelog provided
+* 2016-1014: 5.6 (dunclaw) for KSP 1.2
+	+ Update to work with KSP 1.2
 * 2016-0813: 5.5 (jewelshisen) for KSP 1.1.3
 	+ Fix for autopitch crash bug
 * 2016-0701: 5.4 (jewelshisen) for KSP 1.1.3
