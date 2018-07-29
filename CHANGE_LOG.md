@@ -18,6 +18,8 @@
 	+ Removed parts that should not be there.
 * 2016-0513: 5.2 (jewelshisen) for KSP 1.1.2
 	+ Added Build Aid for SPH and VAB. Builds dynamically for all planets with an atmosphere (including the SUN for some reason...) 
+* 2016-0502: 1.1.2.1 (dunclaw) for KSP 1.1.2
+	+ Added Support for the AppLauncher Bar 
 * 2016-0503: 5.1 (jewelshisen) for KSP 1.1.2
 	+ Removed some parts that were not supposed to be in here. 
 * 2016-0502: 1.1.2 (dunclaw) for KSP 1.1.2 (no binary)
