@@ -1,5 +1,7 @@
 # HLAirships :: Change Log
 
+* 2016-0515: 5.2 (jewelshisen) for KSP 1.1.2
+	+ Removed parts that should not be there.
 * 2016-0513: 5.2 (jewelshisen) for KSP 1.1.2
 	+ Added Build Aid for SPH and VAB. Builds dynamically for all planets with an atmosphere (including the SUN for some reason...) 
 * 2016-0503: 5.1 (jewelshisen) for KSP 1.1.2
