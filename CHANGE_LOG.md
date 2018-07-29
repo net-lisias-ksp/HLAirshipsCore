@@ -16,6 +16,8 @@
 	+ 15m Parts have now been added 
 * 2016-0515: 5.2 (jewelshisen) for KSP 1.1.2
 	+ Removed parts that should not be there.
+* 2016-0514: 5.2 (dunclaw) for KSP 1.1.2
+	+ Adds support for a build aid window in the editor
 * 2016-0513: 5.2 (jewelshisen) for KSP 1.1.2
 	+ Added Build Aid for SPH and VAB. Builds dynamically for all planets with an atmosphere (including the SUN for some reason...) 
 * 2016-0502: 1.1.2.1 (dunclaw) for KSP 1.1.2
