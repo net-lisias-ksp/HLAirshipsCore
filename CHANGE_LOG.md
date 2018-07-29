@@ -1,5 +1,7 @@
 # HLAirships :: Change Log
 
+* 2016-0523: 5.3 (jewelshisen) for KSP 1.1.2
+	+ 15m Parts have now been added 
 * 2016-0515: 5.2 (jewelshisen) for KSP 1.1.2
 	+ Removed parts that should not be there.
 * 2016-0513: 5.2 (jewelshisen) for KSP 1.1.2
