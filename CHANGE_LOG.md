@@ -1,5 +1,7 @@
 # HLAirships :: Change Log
 
+* 2017-0529: 6.3.1 (jewelshisen) for KSP 1.3.0
+	+ Updated a few parts to correct node alignments
 * 2017-0527: 6.3 (jewelshisen) for KSP 1.3.0
 	+ No changelog provided
 * 2016-1113: 6.2 (jewelshisen) for KSP 1.2.1
