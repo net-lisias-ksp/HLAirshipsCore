@@ -1,5 +1,9 @@
 # HLAirships :: Change Log
 
+* 2018-0801: 5.6.1.2 (lisias) for KSP 1.4.1
+	+ Recompile for KSP 1.4
+	+ Added ClickThroughBlocker support
+	+ Respecting <F2> and hiding the U.I. as expected.
 * 2017-0529: 6.3.1 (jewelshisen) for KSP 1.3.0
 	+ Updated a few parts to correct node alignments
 * 2017-0527: 6.3 (jewelshisen) for KSP 1.3.0
