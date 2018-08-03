@@ -3,9 +3,9 @@
 source ./CONFIG.inc
 
 check() {
-	if [ ! -d "./GameData/$TARGETDIR/Plugins" ] ; then
-		rm -f "./GameData/$TARGETDIR/Plugins"
-		mkdir "./GameData/$TARGETDIR/Plugins"
+	if [ ! -d "./GameData/$TARGETBINDIR/" ] ; then
+		rm -f "./GameData/$TARGETBINDIR/"
+		mkdir -p "./GameData/$TARGETBINDIR/"
 	fi
 }
 
@@ -13,14 +13,14 @@ deploy() {
 	local DLL=$1
 
 	if [ -f "./bin/Release/$DLL.dll" ] ; then
-		cp "./bin/Release/$DLL.dll" "./GameData/$TARGETDIR/Plugins"
-		if [ -f "${KSP_DEV}/GameData/$TARGETDIR/" ] ; then
-			cp "./bin/Release/$DLL.dll" "${KSP_DEV/}GameData/$TARGETDIR/Plugins"
+		cp "./bin/Release/$DLL.dll" "./GameData/$TARGETBINDIR/"
+		if [ -d "${KSP_DEV}/GameData/$TARGETBINDIR/" ] ; then
+			cp "./bin/Release/$DLL.dll" "${KSP_DEV/}GameData/$TARGETBINDIR/"
 		fi
 	fi
 	if [ -f "./bin/Debug/$DLL.dll" ] ; then
-		if [ -d "${KSP_DEV}/GameData/$TARGETDIR/" ] ; then
-			cp "./bin/Debug/$DLL.dll" "${KSP_DEV}GameData/$TARGETDIR/Plugins"
+		if [ -d "${KSP_DEV}/GameData/$TARGETBINDIR/" ] ; then
+			cp "./bin/Debug/$DLL.dll" "${KSP_DEV}GameData/$TARGETBINDIR/"
 		fi
 	fi
 }
