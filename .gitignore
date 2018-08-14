@@ -7,4 +7,4 @@ GameData/*/README.md
 GameData/*/CHANGE_LOG.md
 GameData/*/*.version
 GameData/*/Plugins/*.dll
-*/Version.cs
+*/Properties/Version.cs

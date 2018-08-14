@@ -27,7 +27,7 @@
 	int i2 = 0;
 	string s;
 
-	string versionfile =  this.Host.ResolvePath("../HLAirships.version");
+	string versionfile =  this.Host.ResolvePath("../../HLAirships.version");
 	if (!File.Exists(versionfile))
 	{
 		Write("File: " + versionfile + " missing\n");		
