@@ -254,13 +254,6 @@ namespace HLAirships
 		// GUI
 		private void WindowGUI(int windowID)
 		{
-			float targetBoyantForceFractionCompressorTemp;
-			targetBoyantForceFractionCompressorTemp = TargetBuoyantVessel;
-
-			float targetVerticalVelocityTemp;
-			targetVerticalVelocityTemp = TargetVerticalVelocity;
-
-
 			#region General GUI
 			// General GUI window information
 			GUIStyle mySty = new GUIStyle(GUI.skin.button);
