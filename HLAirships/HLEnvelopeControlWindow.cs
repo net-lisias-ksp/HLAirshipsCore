@@ -254,6 +254,8 @@ namespace HLAirships
 		// GUI
 		private void WindowGUI(int windowID)
 		{
+			if (null == this.CurrentVessel) return;
+
 			#region General GUI
 			// General GUI window information
 			GUIStyle mySty = new GUIStyle(GUI.skin.button);
