@@ -282,11 +282,10 @@ namespace HLAirships
 
 			// Slider control.  Also is set by the other controls.
 			GUILayout.BeginHorizontal();
-			float temp = TargetBuoyantVessel;
-			TargetBuoyantVessel = GUILayout.HorizontalSlider(TargetBuoyantVessel, 0f, 1f);
-			if (temp != TargetBuoyantVessel)
 			{
-				ToggleAltitudeControl = false;
+				float temp = TargetBuoyantVessel;
+				TargetBuoyantVessel = GUILayout.HorizontalSlider(TargetBuoyantVessel, 0f, 1f);
+				ToggleAltitudeControl = temp == TargetBuoyantVessel;
 			}
 			GUILayout.EndHorizontal();
 
@@ -296,9 +295,11 @@ namespace HLAirships
 			#region Toggle Altitude
 			// Altitude control.  Should be deactivated when pressing any other unrelated control.
 			GUILayout.BeginHorizontal();
-			string toggleAltitudeControlString = "Altitude Control Off";
-			if (ToggleAltitudeControl) toggleAltitudeControlString = "Altitude Control On";
-			ToggleAltitudeControl = GUILayout.Toggle(ToggleAltitudeControl, toggleAltitudeControlString);
+			{
+				string toggleAltitudeControlString = "Altitude Control Off";
+				if (ToggleAltitudeControl) toggleAltitudeControlString = "Altitude Control On";
+				ToggleAltitudeControl = GUILayout.Toggle(ToggleAltitudeControl, toggleAltitudeControlString);
+			}
 			GUILayout.EndHorizontal();
 			#endregion
 
@@ -427,27 +428,27 @@ namespace HLAirships
 			//GUILayout.Label("Rear B: " + (targetBuoyancyN).ToString("0.00"));
 			//GUILayout.EndHorizontal();
 
-			//int x = 0;
-			//foreach (HLEnvelopePart envelope in Envelopes)
-			//{
-			//    GUILayout.BeginHorizontal();
-			//    GUILayout.Label("Env" + x + " Location: " + (envelope.eDistanceFromCoM).ToString("0.00"));
-			//    GUILayout.EndHorizontal();
-			//    GUILayout.BeginHorizontal();
-			//    GUILayout.Label("Env" + x + " Buoyancy: " + (envelope.buoyantForce.magnitude).ToString("0.00"));
-			//    GUILayout.EndHorizontal();
-			//    GUILayout.BeginHorizontal();
-			//    GUILayout.Label("Env" + x + " Specific Volume: " + (envelope.specificVolumeFractionEnvelope).ToString("0.00"));
-			//    GUILayout.EndHorizontal();
-			//    GUILayout.BeginHorizontal();
-			//    GUILayout.Label("Env" + x + " targetPitchBuoyancy: " + (envelope.targetPitchBuoyancy).ToString("0.00"));
-			//    GUILayout.EndHorizontal();
-			//    GUILayout.BeginHorizontal();
-			//    GUILayout.Label("Env" + x + " targetBoyantForceFractionCompressor: " + (envelope.targetBoyantForceFractionCompressor).ToString("0.00"));
-			//    GUILayout.EndHorizontal();
+			int x = 0;
+			foreach (HLEnvelopePartModule envelope in Envelopes)
+			{
+			    GUILayout.BeginHorizontal();
+			    GUILayout.Label("Env" + x + " Location: " + (envelope.eDistanceFromCoM).ToString("0.00"));
+			    GUILayout.EndHorizontal();
+			    GUILayout.BeginHorizontal();
+			    GUILayout.Label("Env" + x + " Buoyancy: " + (envelope.buoyantForce.magnitude).ToString("0.00"));
+			    GUILayout.EndHorizontal();
+			    GUILayout.BeginHorizontal();
+			    GUILayout.Label("Env" + x + " Specific Volume: " + (envelope.specificVolumeFractionEnvelope).ToString("0.00"));
+			    GUILayout.EndHorizontal();
+			    GUILayout.BeginHorizontal();
+			    GUILayout.Label("Env" + x + " targetPitchBuoyancy: " + (envelope.targetPitchBuoyancy).ToString("0.00"));
+			    GUILayout.EndHorizontal();
+			    //GUILayout.BeginHorizontal();
+			    //GUILayout.Label("Env" + x + " targetBoyantForceFractionCompressor: " + (envelope.targetBoyantForceFractionCompressor).ToString("0.00"));
+			    //GUILayout.EndHorizontal();
 
-			//    x += 1;
-			//}
+			    x += 1;
+			}
 
 			#endregion
 

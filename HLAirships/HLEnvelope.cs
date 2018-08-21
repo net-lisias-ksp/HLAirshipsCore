@@ -939,7 +939,15 @@ namespace HLAirships
 			return Vector3.Dot((position - mainBody) - (CoM - mainBody), direction);
 		}
 
-
+		public float eDistanceFromCoM {
+			get {
+				return DistanceFromCoM(this.part.attPos, this.vessel.CoM, this.vessel.mainBody.position, this.vessel.GetFwdVector());
+			}
+			set {
+				throw new NotSupportedException("eDistanceFromCoM");
+			}
+		}
+				
 	}
 
 
