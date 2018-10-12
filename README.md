@@ -6,13 +6,26 @@ Mod for KSP that adds lighter than air parts - unofficial fork by Lisias
 ## In a Hurry
 
 * [Latest Release](https://github.com/net-lisias-kspu/HLAirships/releases)
-* [Source](https://github.com/net-lisias-kspu/HLAirships)
-* [Binaries](https://github.com/net-lisias-kspu/HLAirships/tree/Archive)
+	+ [Binaries](https://github.com/net-lisias-kspu/HLAirships/tree/* [Source](https://github.com/net-lisias-kspu/HLAirships)
+Archive)
 * [Change Log](./CHANGE_LOG.md)
 
 
 ## Description
 
+WiP
+
+
+## Installation
+
+### Dependencies
+None at the moment. :)
+
+### Licensing
+
+https://forum.kerbalspaceprogram.com/index.php?/topic/49443-airships-in-13-hooliganlabs-mods/&do=findComment&comment=3335548
+
+Last edit on https://forum.kerbalspaceprogram.com/index.php?/topic/49443-airships-in-13-hooliganlabs-mods/& is 2017-0517 .
 
 ## UPSTREAM
 
