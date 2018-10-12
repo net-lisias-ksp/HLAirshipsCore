@@ -8,6 +8,7 @@ Mod for KSP that adds lighter than air parts - unofficial fork by Lisias
 * [Latest Release](https://github.com/net-lisias-kspu/HLAirships/releases)
 	+ [Binaries](https://github.com/net-lisias-kspu/HLAirships/tree/* [Source](https://github.com/net-lisias-kspu/HLAirships)
 Archive)
+* [Source](https://github.com/net-lisias-kspu/HLAirships/)
 * [Change Log](./CHANGE_LOG.md)
 
 
