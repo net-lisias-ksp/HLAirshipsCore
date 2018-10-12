@@ -287,7 +287,10 @@ namespace HLAirships
 			{
 				float temp = TargetBuoyantVessel;
 				TargetBuoyantVessel = GUILayout.HorizontalSlider(TargetBuoyantVessel, 0f, 1f);
-				ToggleAltitudeControl = temp == TargetBuoyantVessel;
+				if (temp != TargetBuoyantVessel)
+				{
+					ToggleAltitudeControl = false;
+				}
 			}
 			GUILayout.EndHorizontal();
 
