@@ -433,6 +433,7 @@ namespace HLAirships
 			//GUILayout.Label("Rear B: " + (targetBuoyancyN).ToString("0.00"));
 			//GUILayout.EndHorizontal();
 
+		#if DEBUG
 			int x = 0;
 			foreach (HLEnvelopePartModule envelope in Envelopes)
 			{
@@ -454,8 +455,8 @@ namespace HLAirships
 
 			    x += 1;
 			}
-
-			#endregion
+		#endif
+		#endregion
 
 			GUI.DragWindow(new Rect(0, 0, 500, 20));
 		}
