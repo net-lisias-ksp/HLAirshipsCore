@@ -1,9 +1,4 @@
 {
-	"GITHUB":{
-		"USERNAME":"net-lisias-kspu",
-		"REPOSITORY":"HLAirships",
-		"ALLOW_PRE_RELEASE":false
-		},
 	"NAME"		: "Hooligan Labs Airships Unofficial",
 	"URL"		: "https://raw.githubusercontent.com/net-lisias-kspu/HLAirships/master/TakeCommand.version",
 	"DOWNLOAD"	: "https://github.com/net.lisias.kspu/HLAirships/releases",
