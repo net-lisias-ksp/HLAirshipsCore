@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+
 using UnityEngine;
+
 using KSP;
 using KSP.UI;
 using KSP.UI.Screens;
+
 using KSPPluginFramework;
 using ClickThroughFix;
+using ToolbarControl_NS;
 
 namespace HLAirships
 {
@@ -44,6 +48,7 @@ namespace HLAirships
 		internal override void Awake()
 		{
 			Instance = this;
+
 			GameEvents.onGUIApplicationLauncherReady.Add(OnGUIAppLauncherReady);
 			GameEvents.onGUIApplicationLauncherDestroyed.Add(DestroyAppLauncherButton);
 			GameEvents.onGameSceneLoadRequested.Add(OnGameSceneLoadRequestedForAppLauncher);
@@ -126,10 +131,7 @@ namespace HLAirships
 			MonoBehaviourExtended.LogFormatted_DebugOnly("AppLauncherReady");
 			if (ApplicationLauncher.Ready)
 			{
-				if (btnAppLauncher == null)
-				{
-					btnAppLauncher = InitAppLauncherButton();
-				}
+				if (btnAppLauncher == null) this.InitAppLauncherButton();
 			}
 			else { LogFormatted("App Launcher-Not Actually Ready"); }
 		}
@@ -139,8 +141,8 @@ namespace HLAirships
 			LogFormatted_DebugOnly("GameSceneLoadRequest");
 			DestroyAppLauncherButton();
 		}
-		internal ApplicationLauncherButton btnAppLauncher = null;
-
+		
+		internal ToolbarControl btnAppLauncher = null;
 		internal ApplicationLauncherButton InitAppLauncherButton()
 		{
 			ApplicationLauncherButton retButton = null;
@@ -149,12 +151,17 @@ namespace HLAirships
 			//LogFormatted("AppLauncher: Creating Button-BEFORE", lstButtons.Length);
 			try
 			{
-				retButton = ApplicationLauncher.Instance.AddModApplication(
+				this.﻿btnAppLauncher = gameObject.AddComponent<ToolbarControl>();
+				this.btnAppLauncher.AddToAllToolbars(
 					onAppLaunchToggleOn, onAppLaunchToggleOff,
-					onAppLaunchHoverOn, onAppLaunchHoverOff,
-					null, null,
 					ApplicationLauncher.AppScenes.SPH | ApplicationLauncher.AppScenes.VAB,
-					(Texture)AirshipResources.iconAirshipControlWindow);
+					Constants.MODID, Constants.MODID+"Button",
+					Constants.MODID+"/Icons/AirshipIconOn",
+					Constants.MODID+"/Icons/AirshipIcon",
+					Constants.MODID+"/Icons/HLOnIcon",
+					Constants.MODID+"/Icons/HLOffIcon",
+					Constants.MODNAME
+				);
 			}
 			catch (Exception ex)
 			{
@@ -173,10 +180,9 @@ namespace HLAirships
 			//LogFormatted("AppLauncher: Destroying Button-BEFORE NULL CHECK");
 			if (btnAppLauncher != null)
 			{
-				ApplicationLauncherButton[] lstButtons = FindObjectsOfType<ApplicationLauncherButton>();
-				LogFormatted("AppLauncher: Destroying Button-Button Count:{0}", lstButtons.Length);
-				ApplicationLauncher.Instance.RemoveModApplication(btnAppLauncher);
-				btnAppLauncher = null;
+				this.btnAppLauncher.OnDestroy();
+				Destroy(this.btnAppLauncher);
+				this.btnAppLauncher = null;
 			}
 			//LogFormatted("AppLauncher: Destroying Button-AFTER NULL CHECK");
 		}
@@ -192,9 +198,8 @@ namespace HLAirships
 				AppLauncherToBeSetTrueAttemptDate = DateTime.Now;
 				return;
 			}
-			ApplicationLauncherButton ButtonToToggle = btnAppLauncher;
 
-			if (ButtonToToggle == null)
+			if (this.btnAppLauncher == null)
 			{
 				LogFormatted_DebugOnly("Button Is Null");
 				AppLauncherToBeSetTrueAttemptDate = DateTime.Now;
@@ -216,16 +221,6 @@ namespace HLAirships
 
 			EditorWindowVisible = false;
 			MonoBehaviourExtended.LogFormatted_DebugOnly("{0}", EditorWindowVisible);
-		}
-		void onAppLaunchHoverOn()
-		{
-			MonoBehaviourExtended.LogFormatted_DebugOnly("HovOn");
-			//MouseOverAppLauncherBtn = true;
-		}
-		void onAppLaunchHoverOff()
-		{
-			MonoBehaviourExtended.LogFormatted_DebugOnly("HovOff");
-			//MouseOverAppLauncherBtn = false; 
 		}
 
 		//Destroy Event - when the DLL is loaded

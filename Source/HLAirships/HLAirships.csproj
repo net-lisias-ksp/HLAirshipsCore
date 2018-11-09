@@ -45,9 +45,11 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\LIB\managed\1.4.1\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="ToolbarControl">
+      <HintPath>..\..\..\..\..\..\LIB\plugins\ToolbarControl.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AirshipResources.cs" />
     <Compile Include="AnchorModule.cs" />
     <Compile Include="HLBuildAidWindow.cs" />
     <Compile Include="HLEnvelope.cs" />
