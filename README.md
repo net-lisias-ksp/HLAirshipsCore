@@ -14,13 +14,21 @@ Archive)
 
 ## Description
 
-WiP
+Tired of hugging the grass every time you run out of gas? Your problems are solved: Hooligan Lab Airships is here to help for you to keep floating!
 
 
 ## Installation
 
+To install, place the GameData folder inside your Kerbal Space Program folder.
+
+**REMOVE ANY OLD VERSIONS OF THE PRODUCT BEFORE INSTALLING**.
+
 ### Dependencies
-None at the moment. :)
+
+* Hard Dependencies
+	+ [KSP API Extensions/L](https://github.com/net-lisias-ksp/KSPAPIExtensions) 2.1 or later
+	+ [Click Through Blocker](https://forum.kerbalspaceprogram.com/index.php?/topic/170747-141-click-through-blocker/)
+	+ [Toolbar Control](https://github.com/net-lisias-kspu/ToolbarControl)
 
 ### Licensing
 
@@ -31,7 +39,7 @@ Currently, the licensing terms of this mod is messed up:
 * [2016-0509](https://forum.kerbalspaceprogram.com/index.php?/topic/49443-airships-in-13-hooliganlabs-mods/&do=findComment&comment=2571512), it was claimed that the license was changed to All Rights Reserved.
 * [2018-0326](https://forum.kerbalspaceprogram.com/index.php?/topic/49443-airships-in-13-hooliganlabs-mods/&do=findComment&comment=3335548), the original author states again the MIT License on his works.
 
-However, the official Wiki states that all HooliganLabs mods are MIT. No word from dunclaw, who implemeted some code and add some parts to the upstream.
+However, the official Wiki states that all HooliganLabs mods are MIT. No word yet from dunclaw, who implemented some code and added some parts to the upstream.
 
 Given the current mess in the licensing, the only right I can grant to you is the right to fork this repo, as demanded by [GitHub TOS](https://help.github.com/articles/github-terms-of-service/).
  
@@ -40,6 +48,7 @@ I state clearly and firmly that any code of mine is licensed to the original aut
 I grant to anyone rights to download and use **my** changes on the product.
 
 I'm working hard to solve this mess in the near future. 
+
 
 ## UPSTREAM
 
