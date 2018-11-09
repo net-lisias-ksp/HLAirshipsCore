@@ -147,8 +147,6 @@ namespace HLAirships
 		{
 			ApplicationLauncherButton retButton = null;
 
-			ApplicationLauncherButton[] lstButtons = FindObjectsOfType<ApplicationLauncherButton>();
-			//LogFormatted("AppLauncher: Creating Button-BEFORE", lstButtons.Length);
 			try
 			{
 				this.﻿btnAppLauncher = gameObject.AddComponent<ToolbarControl>();
@@ -168,8 +166,6 @@ namespace HLAirships
 				MonoBehaviourExtended.LogFormatted("AppLauncher: Failed to set up App Launcher Button\r\n{0}", ex.Message);
 				retButton = null;
 			}
-			lstButtons = FindObjectsOfType<ApplicationLauncherButton>();
-			//LogFormatted("AppLauncher: Creating Button-AFTER", lstButtons.Length);
 
 			return retButton;
 		}
