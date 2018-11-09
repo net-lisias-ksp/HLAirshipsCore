@@ -84,12 +84,12 @@ namespace HLAirships
 
 		private void OnShowUI()
 		{
-			LogFormatted_DebugOnly("OnShowGUI Fired");
+			Log.dbg("OnShowGUI Fired");
 			ControlWindowVisible = true;
 		}
 		private void OnHideUI()
 		{
-			LogFormatted_DebugOnly("OnHideGUI Fired");
+			Log.dbg("OnHideGUI Fired");
 			ControlWindowVisible = false;
 		}
 
@@ -104,17 +104,17 @@ namespace HLAirships
 		/// </summary>
 		void OnGUIAppLauncherReady()
 		{
-			MonoBehaviourExtended.LogFormatted_DebugOnly("AppLauncherReady");
+			Log.dbg("AppLauncherReady");
 			if (ApplicationLauncher.Ready)
 			{
 				if (this.btnAppLauncher == null) InitAppLauncherButton();
 			}
-			else { LogFormatted("App Launcher-Not Actually Ready"); }
+			else { Log.error("App Launcher-Not Actually Ready"); }
 		}
 
 		void OnGameSceneLoadRequestedForAppLauncher(GameScenes SceneToLoad)
 		{
-			LogFormatted_DebugOnly("GameSceneLoadRequest");
+			Log.dbg("GameSceneLoadRequest");
 			DestroyAppLauncherButton();
 		}
 
@@ -137,7 +137,7 @@ namespace HLAirships
 			}
 			catch (Exception ex)
 			{
-				MonoBehaviourExtended.LogFormatted("AppLauncher: Failed to set up App Launcher Button\r\n{0}", ex.Message);
+				Log.error("AppLauncher: Failed to set up App Launcher Button\r\n{0}", ex.Message);
 				this.btnAppLauncher = null;
 			}
 		}
@@ -145,38 +145,38 @@ namespace HLAirships
 
 		internal void DestroyAppLauncherButton()
 		{
-			//LogFormatted("AppLauncher: Destroying Button-BEFORE NULL CHECK");
+			Log.detail("AppLauncher: Destroying Button-BEFORE NULL CHECK");
 			if (this.btnAppLauncher != null)
 			{
 				this.btnAppLauncher.OnDestroy();
 				Destroy(this.btnAppLauncher);
 				this.btnAppLauncher = null;
 			}
-			//LogFormatted("AppLauncher: Destroying Button-AFTER NULL CHECK");
+			Log.detail("AppLauncher: Destroying Button-AFTER NULL CHECK");
 		}
 
 		void onAppLaunchToggleOn()
 		{
 			if (CurrentVessel != null)
 			{
-				MonoBehaviourExtended.LogFormatted_DebugOnly("TOn");
+				Log.dbg("TOn");
 
 				ControlWindowVisible = true;
-				MonoBehaviourExtended.LogFormatted_DebugOnly("{0}", ControlWindowVisible);
+				Log.dbg("{0}", ControlWindowVisible);
 			}
 		}
 		void onAppLaunchToggleOff()
 		{
-			MonoBehaviourExtended.LogFormatted_DebugOnly("TOff");
+			Log.dbg("TOff");
 
 			ControlWindowVisible = false;
-			MonoBehaviourExtended.LogFormatted_DebugOnly("{0}", ControlWindowVisible);
+			Log.dbg("{0}", ControlWindowVisible);
 		}
 
 		//Destroy Event - when the DLL is loaded
 		internal override void OnDestroy()
 		{
-			LogFormatted("Destroying the KerbalAlarmClock-{0}", MonoName);
+			Log.info("Destroying the KerbalAlarmClock-{0}", MonoName);
 
 			//Hook the App Launcher
 			GameEvents.onGUIApplicationLauncherReady.Remove(OnGUIAppLauncherReady);

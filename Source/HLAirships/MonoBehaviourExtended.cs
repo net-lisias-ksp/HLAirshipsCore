@@ -86,7 +86,7 @@ namespace KSPPluginFramework
             get { return _RepeatSecs; }
             private set
             {
-                LogFormatted_DebugOnly("Setting RepeatSecs to {0}", value);
+                Log.dbg("Setting RepeatSecs to {0}", value);
                 _RepeatSecs = value;
                 //If its running then restart it
                 if (RepeatingWorkerRunning)
@@ -149,7 +149,7 @@ namespace KSPPluginFramework
         /// <returns>The RunningState of the RepeatinWorker Function</returns>
         internal Boolean StartRepeatingWorker(Int32 TimesPerSec)
         {
-            LogFormatted_DebugOnly("Starting the repeating function");
+            Log.dbg("Starting the repeating function");
             //Stop it if its running
             StopRepeatingWorker();
             //Set the new value
@@ -166,13 +166,13 @@ namespace KSPPluginFramework
         {
             try
             {
-                LogFormatted_DebugOnly("Invoking the repeating function");
+                Log.dbg("Invoking the repeating function");
                 this.InvokeRepeating("RepeatingWorkerWrapper", _RepeatInitialWait, RepeatingWorkerRate);
                 _RepeatRunning = true;
             }
             catch (Exception)
             {
-                LogFormatted("Unable to invoke the repeating function");
+                Log.error("Unable to invoke the repeating function");
                 //throw;
             }
             return _RepeatRunning;
@@ -186,13 +186,13 @@ namespace KSPPluginFramework
         {
             try
             {
-                LogFormatted_DebugOnly("Cancelling the repeating function");
+                Log.dbg("Cancelling the repeating function");
                 this.CancelInvoke("RepeatingWorkerWrapper");
                 _RepeatRunning = false;
             }
             catch (Exception)
             {
-                LogFormatted("Unable to cancel the repeating function");
+                Log.error("Unable to cancel the repeating function");
                 //throw;
             }
             return _RepeatRunning;
@@ -208,7 +208,7 @@ namespace KSPPluginFramework
         /// </summary>
         internal virtual void RepeatingWorker()
         {
-            //LogFormatted_DebugOnly("WorkerBase");
+            //Log.dbg("WorkerBase");
 
         }
 
@@ -266,7 +266,7 @@ namespace KSPPluginFramework
         /// </summary>
         internal virtual void Awake()
         {
-            LogFormatted_DebugOnly("New MBExtended Awakened");
+            Log.dbg("New MBExtended Awakened");
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace KSPPluginFramework
         /// </summary>
         internal virtual void Start()
         {
-            LogFormatted_DebugOnly("New MBExtended Started");
+            Log.dbg("New MBExtended Started");
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace KSPPluginFramework
         /// </summary>
         internal virtual void OnDestroy()
         {
-            LogFormatted_DebugOnly("Destroying MBExtended");
+            Log.dbg("Destroying MBExtended");
         }
 
         #endregion
@@ -383,7 +383,7 @@ namespace KSPPluginFramework
         /// </summary>
         internal virtual void OnGUIOnceOnly()
         {
-            LogFormatted_DebugOnly("Running OnGUI OnceOnly Code");
+            Log.dbg("Running OnGUI OnceOnly Code");
 
         }
         #endregion
@@ -400,34 +400,7 @@ namespace KSPPluginFramework
         /// </summary>
         internal String _ClassName
         { get { return this.GetType().Name; } }
-        #endregion
+		#endregion
 
-        #region Logging
-        /// <summary>
-        /// Some Structured logging to the debug file - ONLY RUNS WHEN DLL COMPILED IN DEBUG MODE
-        /// </summary>
-        /// <param name="Message">Text to be printed - can be formatted as per String.format</param>
-        /// <param name="strParams">Objects to feed into a String.format</param>
-        [System.Diagnostics.Conditional("DEBUG")]
-        internal static void LogFormatted_DebugOnly(String Message, params object[] strParams)
-        {
-            LogFormatted("DEBUG: " + Message, strParams);
-        }
-
-        /// <summary>
-        /// Some Structured logging to the debug file
-        /// </summary>
-        /// <param name="Message">Text to be printed - can be formatted as per String.format</param>
-        /// <param name="strParams">Objects to feed into a String.format</param>
-        internal static void LogFormatted(String Message, params object[] strParams)
-        {
-            Message = String.Format(Message, strParams);                  // This fills the params into the message
-            String strMessageLine = String.Format("{0},{2},{1}",
-                DateTime.Now, Message,
-                _AssemblyName);                                           // This adds our standardised wrapper to each line
-            UnityEngine.Debug.Log(strMessageLine);                        // And this puts it in the log
-        }
-
-        #endregion
-    }
+	}
 }
