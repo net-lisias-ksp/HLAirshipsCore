@@ -5,6 +5,7 @@ using UnityEngine;
 
 using KSP.UI.Screens;
 
+using KSPe.GameDB;
 using ClickThroughFix;
 using ToolbarControl_NS;
 
@@ -128,10 +129,10 @@ namespace HLAirships
 					onAppLaunchToggleOn, onAppLaunchToggleOff,
 					ApplicationLauncher.AppScenes.FLIGHT,
 					Constants.MODID, Constants.MODID+"Button",
-					Constants.MODID+"/Icons/AirshipIconOn",
-					Constants.MODID+"/Icons/AirshipIcon",
-					Constants.MODID+"/Icons/HLOnIcon",
-					Constants.MODID+"/Icons/HLOffIcon",
+					Asset<HLEnvelopeControlWindow>.Solve("Icons/AirshipIconOn"),
+					Asset<HLEnvelopeControlWindow>.Solve("Icons/AirshipIcon"),
+					Asset<HLEnvelopeControlWindow>.Solve("Icons/HLOnIcon"),
+					Asset<HLEnvelopeControlWindow>.Solve("Icons/HLOffIcon"),
 					Constants.MODNAME
 				);
 			}

@@ -8,9 +8,12 @@ using KSP;
 using KSP.UI;
 using KSP.UI.Screens;
 
-using KSPPluginFramework;
+
+using KSPe.GameDB;
 using ClickThroughFix;
 using ToolbarControl_NS;
+
+using KSPPluginFramework;
 
 namespace HLAirships
 {
@@ -154,10 +157,10 @@ namespace HLAirships
 					onAppLaunchToggleOn, onAppLaunchToggleOff,
 					ApplicationLauncher.AppScenes.SPH | ApplicationLauncher.AppScenes.VAB,
 					Constants.MODID, Constants.MODID+"Button",
-					Constants.MODID+"/Icons/AirshipIconOn",
-					Constants.MODID+"/Icons/AirshipIcon",
-					Constants.MODID+"/Icons/HLOnIcon",
-					Constants.MODID+"/Icons/HLOffIcon",
+					Asset<HLBuildAidWindow>.Solve("Icons/AirshipIconOn"),
+					Asset<HLBuildAidWindow>.Solve("Icons/AirshipIcon"),
+					Asset<HLBuildAidWindow>.Solve("Icons/HLOnIcon"),
+					Asset<HLBuildAidWindow>.Solve("Icons/HLOffIcon"),
 					Constants.MODNAME
 				);
 			}
