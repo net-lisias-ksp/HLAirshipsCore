@@ -1,6 +1,6 @@
 {
-	"NAME"		: "Hooligan Labs Airships Unofficial",
-	"URL"		: "https://raw.githubusercontent.com/net-lisias-kspu/HLAirships/master/TakeCommand.version",
+	"NAME"		: "Hooligan Labs Airships /L Unofficial",
+	"URL"		: "https://raw.githubusercontent.com/net-lisias-kspu/HLAirships/master/HLAirships.version",
 	"DOWNLOAD"	: "https://github.com/net.lisias.kspu/HLAirships/releases",
 	"CHANGE_LOG"	: "https://raw.githubusercontent.com/net-lisias-kspu/HLAirships/CHANGE_LOG.md",
 	"CHANGE_LOG_URL": "https://raw.githubusercontent.com/net-lisias-kspu/HLAirships/CHANGES.md",
@@ -8,12 +8,7 @@
 		"MAJOR":5,
 		"MINOR":6,
 		"PATCH":1,
-		"BUILD":2
-		},
-	"KSP_VERSION":{
-		"MAJOR":1,
-		"MINOR":4,
-		"PATCH":1
+		"BUILD":3
 		},
 	"KSP_VERSION_MIN":{
 		"MAJOR":1,
@@ -22,7 +17,7 @@
 		},
 	"KSP_VERSION_MAX":{
 		"MAJOR":1,
-		"MINOR":4,
+		"MINOR":5,
 		"PATCH":99
 		}
 }
