@@ -58,6 +58,7 @@ namespace HLAirships
 		private Rect windowPos;
 		private int airshipWindowID;
 		private bool activeGUI;
+		private bool visibleGUI = true;
 		private float windowWidth;
 		private bool resetGUIsize = false;
 		private bool willReset1 = false;
@@ -86,17 +87,17 @@ namespace HLAirships
 		private void OnShowUI()
 		{
 			Log.dbg("OnShowGUI Fired");
-			ControlWindowVisible = true;
+			visibleGUI = true;
 		}
 		private void OnHideUI()
 		{
 			Log.dbg("OnHideGUI Fired");
-			ControlWindowVisible = false;
+			visibleGUI = false;
 		}
 
 		internal override void OnGUIEvery()
 		{
-			if (!ControlWindowVisible) return;
+			if (!(visibleGUI && ControlWindowVisible)) return;
 			if (!activeGUI) initGUI();
 			drawGUI();
 		}
