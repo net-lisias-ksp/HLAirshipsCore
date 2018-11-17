@@ -1,5 +1,7 @@
 # HLAirships :: Change Log
 
+* 2018-1115: 5.6.1.4 (Lisias) for KSP 1.4.1+; 1.5
+	+ **Properly** respecting <F2> and hiding the U.I.
 * 2018-1109: 5.6.1.3 (Lisias) for KSP 1.4.1+; 1.5
 	+ Using KSPe Facilities
 		- Logging
