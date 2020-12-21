@@ -1,5 +1,7 @@
 # HLAirships :: Change Log
 
+* 2020-0516: 6.4 (jewelshisen) for KSP 1.9.1
+	+ Updating to KSP >= 1.8 
 * 2018-1115: 5.6.1.4 (Lisias) for KSP 1.4.1+; 1.5
 	+ **Properly** respecting <F2> and hiding the U.I.
 * 2018-1109: 5.6.1.3 (Lisias) for KSP 1.4.1+; 1.5
