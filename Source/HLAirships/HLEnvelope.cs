@@ -325,6 +325,9 @@ namespace HLAirships
 			/// Per-frame update 
 			/// Called ONLY when Part is ACTIVE! 
 
+			if (!HighLogic.LoadedSceneIsEditor && !HighLogic.LoadedSceneIsFlight)
+				return;
+
 			// Sets one envelope to run the control logic
 			determineLeadEnvelope();
 
@@ -484,6 +487,9 @@ namespace HLAirships
 			/// Per-physx-frame update 
 			/// Called ONLY when Part is ACTIVE!
 			/// 
+
+			if (!HighLogic.LoadedSceneIsEditor && !HighLogic.LoadedSceneIsFlight)
+				return;
 
 			if (leadEnvelope == this.part) leadEnvelopeUpdate();
 
