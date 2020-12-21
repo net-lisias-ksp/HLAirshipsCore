@@ -5,7 +5,6 @@ using UnityEngine;
 
 using KSP.UI.Screens;
 
-using KSPe.GameDB;
 using ToolbarControl_NS;
 
 using KSPPluginFramework;
@@ -127,14 +126,13 @@ namespace HLAirships
 			try
 			{
 				this.﻿btnAppLauncher = gameObject.AddComponent<ToolbarControl>();
-				this.btnAppLauncher.AddToAllToolbars(
+				this.btnAppLauncher.AddToAllToolbars<HLEnvelopeControlWindow>(
 					onAppLaunchToggleOn, onAppLaunchToggleOff,
 					ApplicationLauncher.AppScenes.FLIGHT,
-					Constants.MODID, Constants.MODID+"Button",
-					Asset<HLEnvelopeControlWindow>.Solve("Icons/AirshipIconOn"),
-					Asset<HLEnvelopeControlWindow>.Solve("Icons/AirshipIcon"),
-					Asset<HLEnvelopeControlWindow>.Solve("Icons/HLOnIcon"),
-					Asset<HLEnvelopeControlWindow>.Solve("Icons/HLOffIcon"),
+					"Icons/AirshipIconOn",
+					"Icons/AirshipIcon",
+					"Icons/HLOnIcon",
+					"Icons/HLOffIcon",
 					Constants.MODNAME
 				);
 			}

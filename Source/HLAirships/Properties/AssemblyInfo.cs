@@ -36,4 +36,4 @@ using System.Runtime.InteropServices;
 
 [assembly: KSPAssemblyDependency("KSPe", 2, 2)]﻿
 [assembly: KSPAssemblyDependency("KSPe.UI", 2, 2)]﻿
-[assembly: KSPAssemblyDependency("ToolbarController", 1, 0)]﻿
+[assembly: KSPAssemblyDependency("ToolbarController", 1, 1)]﻿
