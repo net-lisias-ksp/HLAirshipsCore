@@ -34,6 +34,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion(HLAirships.Version.Number)]
 [assembly: AssemblyFileVersion(HLAirships.Version.Number)]
 
-[assembly: KSPAssemblyDependency("KSPe", 2, 0)]﻿
-[assembly: KSPAssemblyDependency("ClickThroughBlocker", 1, 0)]﻿
+[assembly: KSPAssemblyDependency("KSPe", 2, 2)]﻿
+[assembly: KSPAssemblyDependency("KSPe.UI", 2, 2)]﻿
 [assembly: KSPAssemblyDependency("ToolbarController", 1, 0)]﻿

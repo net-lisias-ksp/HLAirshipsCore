@@ -6,10 +6,11 @@ using UnityEngine;
 using KSP.UI.Screens;
 
 using KSPe.GameDB;
-using ClickThroughFix;
 using ToolbarControl_NS;
 
 using KSPPluginFramework;
+
+using GUILayout = KSPe.UI.GUILayout;
 
 namespace HLAirships
 {
@@ -194,7 +195,7 @@ namespace HLAirships
 
 		private void drawGUI()
 		{
-			windowPos = ClickThruBlocker.GUILayoutWindow﻿﻿(airshipWindowID, windowPos, WindowGUI, "HLAirships", GUILayout.MinWidth(200));
+			windowPos = GUILayout.Window﻿﻿(airshipWindowID, windowPos, WindowGUI, "HLAirships", GUILayout.MinWidth(200));
 		}
 
 		protected void initGUI()
