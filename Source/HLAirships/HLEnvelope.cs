@@ -122,11 +122,11 @@ namespace HLAirships
 		private LineRenderer linePosition = null;
 		private LineRenderer lineCorrectProjected = null;
 		private LineRenderer linePositionProjected = null;
-		private GameObject objGravity = new GameObject();
-		private GameObject objUp = new GameObject();
-		private GameObject objPosition = new GameObject();
-		private GameObject objUpProjected = new GameObject();
-		private GameObject objPositionProjected = new GameObject();
+		private GameObject objGravity = null;
+		private GameObject objUp = null;
+		private GameObject objPosition = null;
+		private GameObject objUpProjected = null;
+		private GameObject objPositionProjected = null;
 
 		// Animation
 		private Animation m_Animation;
@@ -285,6 +285,12 @@ namespace HLAirships
 			/// Constructor style setup. 
 			/// Called in the Part\'s Awake method.  
 			/// The model may not be built by this point. 
+
+			this.objGravity = new GameObject();
+			this.objUp = new GameObject();
+			this.objPosition = new GameObject();
+			this.objUpProjected = new GameObject();
+			this.objPositionProjected = new GameObject();
 
 			// Set starting animation state
 			Debug.Log("Set Envelope Animation");
