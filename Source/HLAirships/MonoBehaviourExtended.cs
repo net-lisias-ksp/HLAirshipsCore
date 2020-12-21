@@ -13,6 +13,8 @@ using System.Text;
 using KSP;
 using UnityEngine;
 
+using Log = HLAirships.Log;
+
 namespace KSPPluginFramework
 {
     /// <summary>
@@ -172,7 +174,7 @@ namespace KSPPluginFramework
             }
             catch (Exception)
             {
-                Log.error("Unable to invoke the repeating function");
+                Log.err("Unable to invoke the repeating function");
                 //throw;
             }
             return _RepeatRunning;
@@ -192,7 +194,7 @@ namespace KSPPluginFramework
             }
             catch (Exception)
             {
-                Log.error("Unable to cancel the repeating function");
+                Log.err("Unable to cancel the repeating function");
                 //throw;
             }
             return _RepeatRunning;

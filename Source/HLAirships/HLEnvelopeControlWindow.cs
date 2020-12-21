@@ -111,7 +111,7 @@ namespace HLAirships
 			{
 				if (this.btnAppLauncher == null) InitAppLauncherButton();
 			}
-			else { Log.error("App Launcher-Not Actually Ready"); }
+			else { Log.err("App Launcher-Not Actually Ready"); }
 		}
 
 		void OnGameSceneLoadRequestedForAppLauncher(GameScenes SceneToLoad)
@@ -139,7 +139,7 @@ namespace HLAirships
 			}
 			catch (Exception ex)
 			{
-				Log.error("AppLauncher: Failed to set up App Launcher Button\r\n{0}", ex.Message);
+				Log.err("AppLauncher: Failed to set up App Launcher Button\r\n{0}", ex.Message);
 				this.btnAppLauncher = null;
 			}
 		}
