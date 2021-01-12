@@ -1,5 +1,9 @@
 # HLAirships :: Change Log
 
+* 2021-0112: 1.0 (jewelshisen) for KSP >= 1.11
+	+ Hooligan Labs Test Part Pack
+	+ WARNING WARNING WARNING! This mod is ONLY the test parts for the Hooligan Labs Airships mod.
+	+ Released under the MIT. See Legal Mambo Jambo on the main branch
 * 2020-1221: 6.4.0.1 (Lisias) for KSP >= 1.4
 	+ Making the thing work fine on KSP >= 1.8 the proper way
 	+ Using some convenience methods from ToolbarControl /LU
