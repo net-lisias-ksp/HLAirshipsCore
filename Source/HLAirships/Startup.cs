@@ -27,8 +27,7 @@ namespace HLAirships
 	{
 		private void Start()
 		{
-			Log.init();
-			Log.log("Version {0} running on KSP {1}", Version.Text, KSPe.Util.KSP.Version.Current.ToString());
+			Log.force("Version {0}", Version.Text);
 
 			try
 			{
