@@ -4,13 +4,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HLAirships /L Unofficial")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Hooligan Labs Airships /L Unofficial")]
+[assembly: AssemblyDescription("HL Airships adds several airship parts to the game, allowing you to build and design absurd flying contraptions that would make Willy Wonka proud.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HLAirships")]
-[assembly: AssemblyCopyright("© 2013-2014 HooliganLabs, 2016-2017 dunclaw, 2018 LisiasT")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany(HLAirships.LegalMamboJambo.Company)]
+[assembly: AssemblyProduct(HLAirships.LegalMamboJambo.Product)]
+[assembly: AssemblyCopyright(HLAirships.LegalMamboJambo.Copyight)]
+[assembly: AssemblyTrademark(HLAirships.LegalMamboJambo.Trademark)]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
