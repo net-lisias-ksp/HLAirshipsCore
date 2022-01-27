@@ -66,14 +66,15 @@ namespace HLAirships
 		{
 			Instance = this;
 
-			GameEvents.onGUIApplicationLauncherReady.Add(OnGUIAppLauncherReady);
-			GameEvents.onGUIApplicationLauncherDestroyed.Add(DestroyAppLauncherButton);
-			GameEvents.onGameSceneLoadRequested.Add(OnGameSceneLoadRequestedForAppLauncher);
-
 			GameEvents.onShowUI.Add(OnShowUI);
 			GameEvents.onHideUI.Add(OnHideUI);
 			InitVariables();
+
+			ToolbarController.Instance.Register();
+			ToolbarController.Instance.OnTrue += onAppLaunchToggleOn; 
+			ToolbarController.Instance.OnFalse += onAppLaunchToggleOff; 
 		}
+
 		private void InitVariables()
 		{
 			airshipWindowID = UnityEngine.Random.Range(1000, 2000000) + _AssemblyName.GetHashCode();
@@ -140,65 +141,6 @@ namespace HLAirships
 				}
 			}
 		}
-		/// <summary>
-		/// Sets up the App Button - no longer called by the event as that only happens on StartMenu->SpaceCenter now
-		/// </summary>
-		void OnGUIAppLauncherReady()
-		{
-			Log.dbg("AppLauncherReady");
-			if (ApplicationLauncher.Ready)
-			{
-				if (btnAppLauncher == null) this.InitAppLauncherButton();
-			}
-			else { Log.info("App Launcher-Not Actually Ready"); }
-		}
-
-		void OnGameSceneLoadRequestedForAppLauncher(GameScenes SceneToLoad)
-		{
-			Log.dbg("GameSceneLoadRequest");
-			DestroyAppLauncherButton();
-		}
-		
-		internal ToolbarControl btnAppLauncher = null;
-		internal ApplicationLauncherButton InitAppLauncherButton()
-		{
-			ApplicationLauncherButton retButton = null;
-
-			try
-			{
-				this.﻿btnAppLauncher = gameObject.AddComponent<ToolbarControl>();
-				this.btnAppLauncher.AddToAllToolbars<HLBuildAidWindow>(
-					onAppLaunchToggleOn, onAppLaunchToggleOff,
-					ApplicationLauncher.AppScenes.SPH | ApplicationLauncher.AppScenes.VAB,
-					"Icons/AirshipIconOn",
-					"Icons/AirshipIcon",
-					"Icons/HLOnIcon",
-					"Icons/HLOffIcon",
-					Constants.MODNAME
-				);
-			}
-			catch (Exception ex)
-			{
-				Log.info("AppLauncher: Failed to set up App Launcher Button\r\n{0}", ex.Message);
-				retButton = null;
-			}
-
-			return retButton;
-		}
-
-
-		internal void DestroyAppLauncherButton()
-		{
-			Log.dbg("AppLauncher: Destroying Button-BEFORE NULL CHECK");
-			if (btnAppLauncher != null)
-			{
-				this.btnAppLauncher.OnDestroy();
-				Destroy(this.btnAppLauncher);
-				this.btnAppLauncher = null;
-			}
-			Log.dbg("AppLauncher: Destroying Button-AFTER NULL CHECK");
-		}
-
 
 		internal Boolean AppLauncherToBeSetTrue = false;
 		internal DateTime AppLauncherToBeSetTrueAttemptDate;
@@ -210,14 +152,6 @@ namespace HLAirships
 				AppLauncherToBeSetTrueAttemptDate = DateTime.Now;
 				return;
 			}
-
-			if (this.btnAppLauncher == null)
-			{
-				Log.dbg("Button Is Null");
-				AppLauncherToBeSetTrueAttemptDate = DateTime.Now;
-				return;
-			}
-
 		}
 
 		void onAppLaunchToggleOn()
@@ -241,15 +175,10 @@ namespace HLAirships
 			Log.info("Destroying the KerbalAlarmClock-{0}", MonoName);
 
 			//Hook the App Launcher
-			GameEvents.onGUIApplicationLauncherReady.Remove(OnGUIAppLauncherReady);
-			GameEvents.onGUIApplicationLauncherDestroyed.Remove(DestroyAppLauncherButton);
-			GameEvents.onGameSceneLoadRequested.Remove(OnGameSceneLoadRequestedForAppLauncher);
+			ToolbarController.Instance.Unregister();
 
 			GameEvents.onShowUI.Remove(OnShowUI);
 			GameEvents.onHideUI.Remove(OnHideUI);
-
-
-			DestroyAppLauncherButton();
 		}
 
 		private void drawGUI()

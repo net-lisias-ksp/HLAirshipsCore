@@ -29,21 +29,7 @@ namespace HLAirships
     {
         private static readonly Logger LOG = Logger.CreateForType<HLAirships.Startup>();
 
-		internal static void init()
-		{
-#if DEBUG
-            Log.debuglevel = 5;
-#else
-            Log.debuglevel = 3;
-#endif
-		}
-
-		public static int debuglevel {
-            get => (int)LOG.level;
-            set => LOG.level = (KSPe.Util.Log.Level)(value % 6);
-        }
-
-        public static void log(string format, params object[] @parms)
+        public static void force(string format, params object[] @parms)
         {
             LOG.force(format, parms);
         }
