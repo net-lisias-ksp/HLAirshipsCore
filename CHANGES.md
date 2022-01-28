@@ -1,6 +1,9 @@
 # HLAirships :: Changes
 
-* 2020-1221: 6.4.0.1 (Lisias) for KSP >= 1.4
-	+ Making the thing work fine on KSP >= 1.8 the proper way
-	+ Using some convenience methods from ToolbarControl /LU
-	+ Bumping version to catch up with upstream 
+* 2022-0127: 7.0.0.0 (Lisias) for 1.4 <= KSP <= 1.11.2
+	+ Cleaning up the distribution from ARR artefacts
+		- Only parts and assets derived from the last known MIT release, `HooliganLabsAirships-3.0.0`, are available from now.
+	+ Small code optimisation and updating support for KSPe.
+	+ Support for KSP 1.12.x is WiP at this moment.
+	+ This is a **PRE RELEASE**, not to be widely distributed.
+		- Pending formal agreement from the upstream. 
