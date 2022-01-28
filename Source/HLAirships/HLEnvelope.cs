@@ -304,6 +304,9 @@ namespace HLAirships
 			/// Called in the Part\'s Awake method.  
 			/// The model may not be built by this point. 
 
+			this.enabled = HighLogic.LoadedSceneIsEditor && HighLogic.LoadedSceneIsFlight;
+			if (!this.enabled) return;
+
 			this.objGravity = new GameObject();
 			this.objUp = new GameObject();
 			this.objPosition = new GameObject();
@@ -342,9 +345,6 @@ namespace HLAirships
 		{
 			/// Per-frame update 
 			/// Called ONLY when Part is ACTIVE! 
-
-			if (!HighLogic.LoadedSceneIsEditor && !HighLogic.LoadedSceneIsFlight)
-				return;
 
 			// Sets one envelope to run the control logic
 			determineLeadEnvelope();
@@ -458,6 +458,8 @@ namespace HLAirships
 			/// Called during the Part startup. 
 			/// StartState gives flag values of initial state
 			Debug.Log("HL Airship Plugin Start");
+			if (!this.enabled) return;
+
 			specificVolumeFractionEnvelope = Mathf.Clamp01(specificVolumeFractionEnvelope);
 
 			Debug.Log("Check for animation");
