@@ -54,7 +54,22 @@ namespace HLAirships
 		// The maximum speed at which the vessel can be made stationary
 
 		[KSPField(isPersistant = true, guiActive = false)]
-		public float limitBuoyantForce = 0f, minAtmPressure = -0.01f, dragDeployed = 0f, dragUndeployed = 0f, makeStationarySpeedMax = 1f, makeStationarySpeedClamp = 0.0f;
+		public float limitBuoyantForce = 0f;
+
+		[KSPField(isPersistant = true, guiActive = false)]
+		public float minAtmPressure = -0.01f;
+
+		[KSPField(isPersistant = true, guiActive = false)]
+		public float dragDeployed = 0f;
+
+		[KSPField(isPersistant = true, guiActive = false)]
+		public float dragUndeployed = 0f;
+
+		[KSPField(isPersistant = true, guiActive = false)]
+		public float makeStationarySpeedMax = 1f;
+
+		[KSPField(isPersistant = true, guiActive = false)]
+		public float makeStationarySpeedClamp = 0.0f;
 
 		// Compress and expand rate per second
 		[KSPField(isPersistant = true, guiActive = false)]
@@ -302,7 +317,9 @@ namespace HLAirships
 		{
 			/// Constructor style setup. 
 			/// Called in the Part\'s Awake method.  
-			/// The model may not be built by this point. 
+			/// The model may not be built by this point.
+
+			base.OnAwake();
 
 			this.enabled = HighLogic.LoadedSceneIsEditor && HighLogic.LoadedSceneIsFlight;
 			if (!this.enabled) return;
@@ -343,6 +360,8 @@ namespace HLAirships
 
 		public override void OnUpdate()
 		{
+			base.OnUpdate();
+
 			/// Per-frame update 
 			/// Called ONLY when Part is ACTIVE! 
 
@@ -454,6 +473,8 @@ namespace HLAirships
 
 		public override void OnStart(StartState state)
 		{
+			base.OnStart(state);
+
 			// OnFlightStart seems to have been removed
 			/// Called during the Part startup. 
 			/// StartState gives flag values of initial state
@@ -504,6 +525,8 @@ namespace HLAirships
 
 		public override void OnFixedUpdate()
 		{
+			base.OnFixedUpdate();
+
 			/// Per-physx-frame update 
 			/// Called ONLY when Part is ACTIVE!
 			/// 
@@ -979,7 +1002,7 @@ namespace HLAirships
 				throw new NotSupportedException("eDistanceFromCoM");
 			}
 		}
-				
+
 	}
 
 

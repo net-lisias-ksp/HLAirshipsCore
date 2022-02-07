@@ -53,6 +53,8 @@ namespace HLAirships
 
 		public override void OnStart(StartState state)
 		{
+			base.OnStart(state);
+
 			if (state != StartState.Editor)
 			{
 				InitBaseState();
@@ -103,6 +105,8 @@ namespace HLAirships
 
 		public override void OnFixedUpdate()
 		{
+			base.OnFixedUpdate();
+
 			// if we were initialized as inactive and are now active
 			if (inactivePart && vessel.isActiveVessel)
 			{

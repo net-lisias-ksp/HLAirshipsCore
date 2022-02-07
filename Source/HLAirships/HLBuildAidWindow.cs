@@ -64,6 +64,7 @@ namespace HLAirships
 
 		internal override void Awake()
 		{
+			base.Awake();
 			Instance = this;
 
 			GameEvents.onShowUI.Add(OnShowUI);
@@ -123,6 +124,7 @@ namespace HLAirships
 
 		internal override void OnGUIEvery()
 		{
+			base.OnGUIEvery();
 			if (EditorWindowVisible)
 			{
 				if (!activeGUI)
@@ -179,6 +181,8 @@ namespace HLAirships
 
 			GameEvents.onShowUI.Remove(OnShowUI);
 			GameEvents.onHideUI.Remove(OnHideUI);
+
+			base.OnDestroy();
 		}
 
 		private void drawGUI()
