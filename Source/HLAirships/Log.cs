@@ -54,6 +54,11 @@ namespace HLAirships
             LOG.error(format, parms);
         }
 
+        public static void err(System.Exception ex, string format, params object[] parms)
+        {
+            LOG.error(ex, format, parms);
+        }
+
         public static void ex(MonoBehaviour offended, System.Exception e)
         {
             LOG.error(offended, e);

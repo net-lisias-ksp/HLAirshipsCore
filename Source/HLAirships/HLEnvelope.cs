@@ -514,18 +514,26 @@ namespace HLAirships
 			lineGravity = objGravity.AddComponent<LineRenderer>();
 
 			Log.trace("Parameterize Lines");
-			try { makeLines(linePosition, Color.red); makeLines(linePositionProjected, Color.green); makeLines(lineCorrect, Color.blue); makeLines(lineCorrectProjected, Color.magenta); makeLines(lineGravity, Color.white); }
-			catch (Exception ex) { print("makeLines Exception!"); print(ex.Message); }
+			try
+			{
+				makeLines(linePosition, Color.red);
+				makeLines(linePositionProjected, Color.green);
+				makeLines(lineCorrect, Color.blue);
+				makeLines(lineCorrectProjected, Color.magenta);
+				makeLines(lineGravity, Color.white); }
+			catch (Exception ex)
+			{
+				Log.err(ex, "MakeLines Exception on {0}!", this.part.partName);
+			}
 		}
 
 		public void makeLines(LineRenderer line, Color color)
 		{
-			line.transform.parent = null; // ...child to our part...
-			line.useWorldSpace = true; // ...and moving along with it (rather 
-									   // than staying in fixed world coordinates)
-									   // line.transform.localPosition = Vector3.zero;
-									   // line.transform.localEulerAngles = Vector3.zero;
-
+			line.transform.parent = null;	// ...child to our part...
+			line.useWorldSpace = true;		// ...and moving along with it (rather 
+											// than staying in fixed world coordinates)
+											// line.transform.localPosition = Vector3.zero;
+											// line.transform.localEulerAngles = Vector3.zero;
 			// Make it render a red to yellow triangle, 1 meter wide and 2 meters long
 			line.material = new Material(Shader.Find("Particles/Additive"));
 			line.SetColors(color, color);
