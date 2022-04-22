@@ -527,6 +527,18 @@ namespace HLAirships
 			}
 		}
 
+		private static Material __material = null;
+		private Material MakeMaterial()
+		{
+			if (null == __material)
+			{
+				Shader s = Shader.Find("Particles/Additive");
+				s = s ?? Shader.Find("Legacy Shaders/Particles/Additive");
+				s = s ?? Shader.Find("Standard");
+				__material = new Material(s);
+			}
+			return __material;
+		}
 		public void makeLines(LineRenderer line, Color color)
 		{
 			line.transform.parent = null;	// ...child to our part...
@@ -535,7 +547,7 @@ namespace HLAirships
 											// line.transform.localPosition = Vector3.zero;
 											// line.transform.localEulerAngles = Vector3.zero;
 			// Make it render a red to yellow triangle, 1 meter wide and 2 meters long
-			line.material = new Material(Shader.Find("Particles/Additive"));
+			line.material = this.MakeMaterial();
 			line.SetColors(color, color);
 			line.SetWidth(0.5f, 0);
 			line.SetVertexCount(2);
