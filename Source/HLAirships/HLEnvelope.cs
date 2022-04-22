@@ -331,7 +331,7 @@ namespace HLAirships
 			this.objPositionProjected = new GameObject();
 
 			// Set starting animation state
-			Debug.Log("Set Envelope Animation");
+			Log.trace("Set Envelope Animation");
 			if (animationState == 0 || targetBuoyantVessel == 0)
 			{
 				// If it does not have animation start it "opened"
@@ -414,7 +414,7 @@ namespace HLAirships
 					if (animationDeploy)
 					{
 						this.AniState = AnimationState.PlayForwards;
-						// Debug.Log("Play Forwards");
+						Log.dbg("Play Forwards");
 					}
 					break;
 
@@ -427,7 +427,7 @@ namespace HLAirships
 					if (!animationDeploy)
 					{
 						this.AniState = AnimationState.PlayBackwards;
-						// Debug.Log("Play Backwards");
+						Log.dbg("Play Backwards");
 					}
 					break;
 
@@ -436,14 +436,14 @@ namespace HLAirships
 					/*
 					if (!this.m_Animation.IsPlaying(this.animationName))
 					{
-						//Debug.Log("At End");
+						Log.dbg("At End");
 						this.AniState = AnimationState.AtEnd;
 					}
 					 */
 					if (!animationDeploy)
 					{
 						this.AniState = AnimationState.PlayBackwards;
-						//Debug.Log("Play Backwards");
+						Log.dbg("Play Backwards");
 					}
 					// Should stop animation near end
 					if (this.m_Animation[this.animationName].time >= this.m_Animation[this.animationName].length * 0.99) this.m_Animation[this.animationName].speed = 0;
@@ -454,20 +454,20 @@ namespace HLAirships
 					/*
 					if (!this.m_Animation.IsPlaying(this.animationName))
 					{
-						//Debug.Log("At Beginning");
+						Log.dbg("At Beginning");
 						this.AniState = AnimationState.AtBeginning;
 					}
 					 */
 					if (animationDeploy)
 					{
 						this.AniState = AnimationState.PlayForwards;
-						//Debug.Log("Play Forwards");
+						Log.dbg("Play Forwards");
 					}
 					// Should stop animation near beginning
 					if (this.m_Animation[this.animationName].time <= this.m_Animation[this.animationName].length * 0.01) this.m_Animation[this.animationName].speed = 0;
 					break;
 			}
-			// Debug.Log("Animation Time = " + this.m_Animation[this.animationName].time.ToString() + ", Animation State = " + animationState);
+			Log.dbg("Animation Time = {0}, Animation State = {1}", this.m_Animation[this.animationName].time, this.AniState);
 			this.m_Animation.Play(this.animationName);
 		}
 
@@ -478,30 +478,30 @@ namespace HLAirships
 			// OnFlightStart seems to have been removed
 			/// Called during the Part startup. 
 			/// StartState gives flag values of initial state
-			Debug.Log("HL Airship Plugin Start");
+			Log.trace("HL Airship Plugin Start");
 			if (!this.enabled) return;
 
 			specificVolumeFractionEnvelope = Mathf.Clamp01(specificVolumeFractionEnvelope);
 
-			Debug.Log("Check for animation");
+			Log.trace("Check for animation");
 			if (this.GetComponentInChildren<Animation>() != null) m_Animation = this.GetComponentInChildren<Animation>();
 
-			Debug.Log("Set maximum drag");
+			Log.trace("Set maximum drag");
 			dragUndeployed = part.maximum_drag;
 
 			// activeVessel = FlightGlobals.ActiveVessel.GetInstanceID();
-			Debug.Log("Set lead envelope");
+			Log.trace("Set lead envelope");
 			if (this.part == leadEnvelope) { targetBuoyantVessel = Mathf.Clamp01(targetBuoyantVessel); }
 
 			// Debug lines
-			Debug.Log("Create Lines");
+			Log.trace("Create Lines");
 			lineCorrect = objUp.AddComponent<LineRenderer>();
 			linePosition = objPosition.AddComponent<LineRenderer>();
 			linePositionProjected = objPositionProjected.AddComponent<LineRenderer>();
 			lineCorrectProjected = objUpProjected.AddComponent<LineRenderer>();
 			lineGravity = objGravity.AddComponent<LineRenderer>();
 
-			Debug.Log("Parameterize Lines");
+			Log.trace("Parameterize Lines");
 			try { makeLines(linePosition, Color.red); makeLines(linePositionProjected, Color.green); makeLines(lineCorrect, Color.blue); makeLines(lineCorrectProjected, Color.magenta); makeLines(lineGravity, Color.white); }
 			catch (Exception ex) { print("makeLines Exception!"); print(ex.Message); }
 		}
@@ -670,7 +670,7 @@ namespace HLAirships
 					// Skip if not an envelope
 					if (part.Modules.OfType<HLEnvelopePartModule>().FirstOrDefault() == null)
 					{
-						// Debug.Log("Did not find an envelope on " + part.name);
+						Log.dbg("Did not find an envelope on {0}", part.name);
 						continue;
 					}
 					envelope = part.Modules.OfType<HLEnvelopePartModule>().FirstOrDefault();
@@ -688,10 +688,8 @@ namespace HLAirships
 				// If this is the lead envelope...
 				if (leadEnvelope == envelope.part)
 				{
-					// Debug.Log("Adding GUI!");
+					Log.dbg("Adding GUI!");
 					envelope.isLeadEnvelope = true;
-
-
 				}// If not, then check to see if this envelope should be promoted to lead envelope
 				else if (!vessel.parts.Contains(leadEnvelope))
 				{
@@ -735,8 +733,6 @@ namespace HLAirships
 			foreach (HLEnvelopePartModule envelope in Envelopes)
 			{
 				envelope.targetBuoyantVessel = this.targetBuoyantVessel;
-
-
 
 				float adjustBy = envelope.targetPitchBuoyancy;
 

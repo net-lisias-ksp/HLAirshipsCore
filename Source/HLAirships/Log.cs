@@ -59,6 +59,11 @@ namespace HLAirships
             LOG.error(offended, e);
         }
 
+        public static void trace(string format, params object[] @parms)
+        {
+            LOG.dbg(format, parms);
+        }
+
         [Conditional("DEBUG")]
         public static void dbg(string format, params object[] @parms)
         {
