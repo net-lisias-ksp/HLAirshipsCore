@@ -71,7 +71,7 @@ namespace HLAirships
 			GameEvents.onHideUI.Add(OnHideUI);
 			InitVariables();
 
-			ToolbarController.Instance.Register();
+			ToolbarController.Instance.Register_Editor();
 			ToolbarController.Instance.OnTrue += onAppLaunchToggleOn; 
 			ToolbarController.Instance.OnFalse += onAppLaunchToggleOff; 
 		}

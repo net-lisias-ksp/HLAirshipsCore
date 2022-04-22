@@ -64,7 +64,34 @@ namespace HLAirships
 		private static UnityEngine.Texture2D toolbar = null;
 		private static UnityEngine.Texture2D toolbarSupressed = null;
 
-		internal void Register()
+		internal void Register_Editor()
+		{
+			launcher			= launcher			?? (launcher = Asset.Texture2D.LoadFromFile(ICON_DIR, "AirshipIconOn"));
+			launcherSupressed	= launcherSupressed	?? (launcherSupressed= Asset.Texture2D.LoadFromFile(ICON_DIR, "AirshipIcon"));
+			toolbar				= toolbar			?? (toolbar = Asset.Texture2D.LoadFromFile(ICON_DIR, "HLOnIcon"));
+			toolbarSupressed	= toolbarSupressed	?? (toolbarSupressed = Asset.Texture2D.LoadFromFile(ICON_DIR, "HLOffIcon"));
+			this.button = Toolbar.Button.Create(this
+					, ApplicationLauncher.AppScenes.SPH | ApplicationLauncher.AppScenes.VAB
+					, launcherSupressed
+					, toolbarSupressed
+					, Version.FriendlyName
+				);
+
+			windowState = this.button.State.Controller.Create<WindowState>(
+				new Dictionary<Toolbar.State.Status, Toolbar.State.Data> {
+							{ (WindowState)false, Toolbar.State.Data.Create(launcherSupressed, toolbarSupressed) }
+							,{ (WindowState)true, Toolbar.State.Data.Create(launcher, toolbar) }
+				}
+			);
+
+			this.button.Mouse.Add(Toolbar.Button.MouseEvents.Kind.Left, this.Button_OnLeftClick);
+			this.button.Mouse.Add(Toolbar.Button.MouseEvents.Kind.Right, this.Button_OnRightClick);
+			this.controller.Add(this.button);
+			ToolbarController.Instance.ButtonsActive(true, true);
+			this.IsRegistered = true;
+		}
+
+		internal void Register_Flight()
 		{
 			launcher			= launcher			?? (launcher = Asset.Texture2D.LoadFromFile(ICON_DIR, "AirshipIconOn"));
 			launcherSupressed	= launcherSupressed	?? (launcherSupressed= Asset.Texture2D.LoadFromFile(ICON_DIR, "AirshipIcon"));
@@ -94,12 +121,6 @@ namespace HLAirships
 		internal void ButtonsActive(bool enableBlizzy, bool enableStock)
 		{
 			this.controller.ButtonsActive(enableBlizzy, enableStock);
-		}
-
-		internal void UpdateButton()
-		{
-			if (!this.IsRegistered) return;
-			Log.dbg("TollbarSupport.Update!!");
 		}
 
 		internal void Unregister()
