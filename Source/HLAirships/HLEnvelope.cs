@@ -33,12 +33,11 @@ namespace HLAirships
 
 	public enum AnimationState : int
 	{
-
 		AtBeginning = -2,
 		AtEnd = 2,
 		PlayForwards = 1,
-		PlayBackwards = -1
-
+		PlayBackwards = -1,
+		UNK = 0
 	}
 
 
@@ -123,7 +122,7 @@ namespace HLAirships
 		// public string activationKey;
 
 		[KSPField(isPersistant = false)]
-		public float animationState = 0;
+		public float animationState = (float)AnimationState.UNK;
 		#endregion
 
 		#region Other Variables
@@ -332,17 +331,14 @@ namespace HLAirships
 
 			// Set starting animation state
 			Log.trace("Set Envelope Animation");
-			if (animationState == 0 || targetBuoyantVessel == 0)
+			if (this.AniState == AnimationState.UNK || targetBuoyantVessel == 0)
 			{
 				// If it does not have animation start it "opened"
-				if (!envelopeHasAnimation)
-					animationState = 2;
-				else
-					animationState = -2;
+				this.AniState = this.envelopeHasAnimation ? AnimationState.AtBeginning : AnimationState.AtEnd;
 			}
 			else
 				// Start opened if it is buoyant
-				animationState = 2;
+				this.AniState = AnimationState.AtEnd;
 
 		}
 
