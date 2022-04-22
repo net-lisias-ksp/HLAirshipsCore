@@ -84,20 +84,31 @@ namespace HLAirships
 		public float envelopeVolumeScale = 1f;
 
 		// Target buoyant force (effectively specific volume) fraction of maximum possible, set by GUI
-		[KSPField(isPersistant = true, guiActive = true, guiName = "Vessel %", guiFormat = "F2")]
+		[KSPField(isPersistant = true, guiActive = false, guiName = "Vessel Normal", guiFormat = "F2")]
 		public float targetBuoyantVessel = 0.0f;
+		// Target buoyant force (effectively specific volume) fraction of maximum possible, set by GUI
+		[KSPField(isPersistant = false, guiActive = true, guiName = "Vessel %", guiFormat = "F2")]
+		private float targetBuoyantVesselPercent = 0;
+
 		// Is this the lead envelope?
 		// Fraction of lifting gas specific volume the envelope
-		[KSPField(isPersistant = true, guiActive = true, guiName = "Envelope %", guiFormat = "F3")]
+		[KSPField(isPersistant = true, guiActive = false, guiName = "Envelope Normal")]
 		public float specificVolumeFractionEnvelope = 0.50f;
+		[KSPField(isPersistant = false, guiActive = true, guiName = "Envelope %", guiFormat = "F2")]
+		private float specificVolumeFractionEnvelopePercent = 0;
+
 		[KSPField(isPersistant = true, guiActive = false, guiName = "Altitude Control")]
 		private bool toggleAltitudeControl = false;
 		[KSPField(isPersistant = true, guiActive = false, guiName = "Target Vertical Velocity", guiFormat = "F3")]
 		public float targetVerticalVelocity = 0f;
 		[KSPField(isPersistant = true, guiActive = false, guiName = "Automatic Pitch Control")]
 		public bool toggleAutoPitch = false;
-		[KSPField(isPersistant = true, guiActive = true, guiName = "Pitch %", guiFormat = "F3")]
+
+		[KSPField(isPersistant = true, guiActive = false, guiName = "Pitch Normal")]
 		public float targetPitchBuoyancy = 0;
+		[KSPField(isPersistant = false, guiActive = true, guiName = "Pitch %", guiFormat = "F2")]
+		private float targetPitchBuoyancPercent = 0;
+
 		[KSPField(isPersistant = true, guiActive = false, guiName = "Deploy Animation")]
 		public bool animationDeploy = false;
 
@@ -357,6 +368,11 @@ namespace HLAirships
 		public override void OnUpdate()
 		{
 			base.OnUpdate();
+
+			// Update % PAW
+			this.targetBuoyantVesselPercent = this.targetBuoyantVessel * 100f;
+			this.targetPitchBuoyancPercent = this.targetPitchBuoyancPercent * 100f;
+			this.specificVolumeFractionEnvelopePercent = this.specificVolumeFractionEnvelope * 100f;
 
 			/// Per-frame update 
 			/// Called ONLY when Part is ACTIVE! 
