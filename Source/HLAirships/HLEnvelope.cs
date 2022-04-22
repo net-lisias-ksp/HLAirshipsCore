@@ -331,7 +331,7 @@ namespace HLAirships
 
 			base.OnAwake();
 
-			this.enabled = HighLogic.LoadedSceneIsEditor && HighLogic.LoadedSceneIsFlight;
+			this.enabled = HighLogic.LoadedSceneIsEditor || HighLogic.LoadedSceneIsFlight;
 			if (!this.enabled) return;
 
 			this.objGravity = new GameObject();
@@ -537,15 +537,14 @@ namespace HLAirships
 
 		public override void OnFixedUpdate()
 		{
+			// By some reason (had I understood this wrong?), OnFixedUpdate was being called even when this.enabled was false!
+			if (!this.enabled) return;
+
 			base.OnFixedUpdate();
 
 			/// Per-physx-frame update 
 			/// Called ONLY when Part is ACTIVE!
 			/// 
-
-			if (!HighLogic.LoadedSceneIsEditor && !HighLogic.LoadedSceneIsFlight)
-				return;
-
 			if (leadEnvelope == this.part) leadEnvelopeUpdate();
 
 			// Update buoyancy properties
