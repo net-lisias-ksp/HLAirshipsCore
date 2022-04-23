@@ -1,11 +1,11 @@
-# HLAirships Unofficial
+# Hooligan Labs Airships Core /L
 
-Mod for KSP that adds lighter than air parts - unofficial fork by Lisias
+HL Airships Core adds a minimal set of airship parts to the game, allowing you to build and design absurd flying contraptions that would make Willy Wonka proud.
 
 
 ## In a Hurry
 
 * [Binaries](./Archive)
-	+ [Latest Release](https://github.com/net-lisias-kspu/HLAirships/releases)
-* [Source](https://github.com/net-lisias-kspu/HLAirships/)
+	+ [Latest Release](https://github.com/net-lisias-ksp/HLAirshipsCore/releases)
+* [Source](https://github.com/net-lisias-kspu/HLAirshipsCore/)
 * [Change Log](./CHANGE_LOG.md)
