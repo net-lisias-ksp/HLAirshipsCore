@@ -16,8 +16,6 @@ echo $FILE
 clean
 cd GameData
 
-zip -r $FILE ./999_KSP-Recall/* -x ".*"
-zip -r $FILE ./ModuleManagerWatchDog/* -x ".*"
-zip -r $FILE ./666_ModuleManagerWatchDog.dll
+zip -r $FILE ./$TARGETDIR -x ".*"
 zip -d $FILE __MACOSX "**/.DS_Store"
 cd $pwd
