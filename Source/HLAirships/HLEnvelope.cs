@@ -1,7 +1,7 @@
 ﻿/*
 	This file is part of Hooligan Labs Airships /L Unleashed
 		© 2018-2022 Lisias T : http://lisias.net <support@lisias.net>
-		© 2013-2018 Jewel Shisen
+		© 2013-2021 Jewel Shisen
 		© 2012-2013 Hooligan Labs
 
 	Hooligan Labs Airships /L Unleashed is double licensed as follows:
@@ -12,7 +12,7 @@
 
 	Hooligan Labs Airships /L Unleashed is distributed in the hope that it will be
 	useful, but WITHOUT ANY WARRANTY; without even the implied
-	warranty of	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 	You should have received a copy of the SKL Standard License 1.0
 	along with Hooligan Labs Airships /L Unleashed.

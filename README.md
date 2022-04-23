@@ -1,17 +1,23 @@
-# HLAirships Unofficial
+# Hooligan Labs Airships Core /L
 
-HL Airships adds several airship parts to the game, allowing you to build and design absurd flying contraptions that would make Willy Wonka proud.
+HL Airships Core adds a minimal set of airship parts to the game, allowing you to build and design absurd flying contraptions that would make Willy Wonka proud.
 
-[Unleashed](https://ksp.lisias.net/add-ons-unleashed/) fork by Lisias.
+Core is meant to be used together [HLAirships](https://github.com/dunclaw/HLAirships) for the full experience.
+
+Hooligan Labs Airships Core /L is HLAirshipsCore under Lisias' management!
+
 
 
 ## In a Hurry
 
-* [Latest Release](https://github.com/net-lisias-kspu/HLAirships/releases)
-	+ [Binaries](https://github.com/net-lisias-kspu/HLAirships/tree/)
-* [Archive](https://github.com/net-lisias-kspu/HLAirships/tree/Archive)
-* [Source](https://github.com/net-lisias-kspu/HLAirships/)
-* [Change Log](./CHANGE_LOG.md)
+* [Latest Release](https://github.com/net-lisias-ksp/HLAirshipsCore/releases)
+	+ [Binaries](https://github.com/net-lisias-ksp/HLAirshipsCore/tree/)
+* [Source](https://github.com/net-lisias-ksp/HLAirshipsCore)
+* Documentation
+	+ [Project's README](https://github.com/net-lisias-ksp/HLAirshipsCore/blob/master/README.md)
+	+ [Install Instructions](https://github.com/net-lisias-ksp/HLAirshipsCore/blob/master/INSTALL.md)
+	+ [Change Log](./CHANGE_LOG.md)
+	+ [TODO](./TODO.md) list
 
 
 ## Description
@@ -21,25 +27,21 @@ Tired of hugging the grass every time you run out of gas? Your problems are solv
 
 ## Installation
 
-To install, place the GameData folder inside your Kerbal Space Program folder.
+Detailed installation instructions are now on its own file (see the [In a Hurry](#in-a-hurry) section) and on the distribution file.
 
-**REMOVE ANY OLD VERSIONS OF THE PRODUCT BEFORE INSTALLING**.
+### License
 
-### Dependencies
-
-* Hard Dependencies
-	+ [KSP API Extensions/L](https://github.com/net-lisias-ksp/KSPAPIExtensions) 2.1 or later
-
-### Licensing
-
-Hooligan Labs Airships /L Unleashed is double licensed as follows:
+Hooligan Labs Airships Core is double licensed as follows:
 	* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
+		+ For parts, code and assets authored by LisiasY 
 	* ARR (Pending agreement with the upstream for MIT)
-
-And you are allowed to choose the License that better suit your needs.
+		+ For everything else 
 
 > The Hooligan Labs logo is copyright 2013, but may continue to be used in KSP because KSP is awesome.
 [Source](https://forum.kerbalspaceprogram.com/index.php?/topic/22008-021-hooligan-labs-airship-submarines-and-more/).
+
+See [NOTICE](./NOTICE) for further copyright and trademarks notices.
+
 
 ## UPSTREAM
 
@@ -57,4 +59,6 @@ And you are allowed to choose the License that better suit your needs.
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/49443-airships-in-13-hooliganlabs-mods/&)
 	+ [SpaceDock](https://spacedock.info/mod/638/Hooligan%20Labs%20Airships)
 * [dunclaw](https://forum.kerbalspaceprogram.com/index.php?/profile/151301-dunclaw/) UPSTREAM
+	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/49443-airships-in-110-hooliganlabs-mods/) 
+	+ [SpaceDock](https://spacedock.info/mod/638/Hooligan%20Labs%20Airships) 
 	+ [GitHub](https://github.com/dunclaw/HLAirships)

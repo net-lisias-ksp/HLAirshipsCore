@@ -1,4 +1,4 @@
-# HLAirships :: Change Log
+# HLAirships Core :: Change Log
 
 * 2022-0127: 7.0.0.0 (Lisias) for 1.4 <= KSP <= 1.11.2 PRERELEASE
 	+ Cleaning up the distribution from ARR artefacts

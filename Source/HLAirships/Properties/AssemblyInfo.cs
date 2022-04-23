@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany(HLAirships.LegalMamboJambo.Company)]
 [assembly: AssemblyProduct(HLAirships.LegalMamboJambo.Product)]
-[assembly: AssemblyCopyright(HLAirships.LegalMamboJambo.Copyight)]
+[assembly: AssemblyCopyright(HLAirships.LegalMamboJambo.Copyright)]
 [assembly: AssemblyTrademark(HLAirships.LegalMamboJambo.Trademark)]
 [assembly: AssemblyCulture("")]
 

@@ -1,7 +1,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source ${SCRIPT_DIR}/../CONFIG.inc
 
-PACKAGE=HLAirships
+PACKAGE=HLAirshipsCore
 TARGETDIR="${PACKAGE}/"
 TARGETBINDIR="$TARGETDIR/"
 PROJECTSDIR="$PACKAGE/"
