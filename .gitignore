@@ -10,6 +10,7 @@ GameData/**/*.version
 Source/**/Properties/Version.cs
 Source/**/Properties/Configuration.cs
 Source/*/*.user
+Source/**/*.blend1
 bin
 obj
 packages
