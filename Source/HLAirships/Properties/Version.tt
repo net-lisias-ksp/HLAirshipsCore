@@ -83,8 +83,8 @@ namespace HLAirships
 		public const int patch = <#= patch #>;
 		public const int build = <#= build #>;
 		public const string Number = "<#= major #>.<#= minor #>.<#= patch #>.<#= build #>";
-		public const string Text = Number + "Core /L";
-		public const string Namespace = "HLAirships";
+		public const string Text = Number + " Core /L";
+		public const string Namespace = "HLAirshipsCore";
 		public const string FriendlyName = "Hooligan Labs Airships";
 	}
 }
