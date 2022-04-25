@@ -30,6 +30,21 @@ namespace HLAirshipsCore
 			string airships = IO.Hierarchy.GAMEDATA.Solve("HLAirships");
 			if (Directory.Exists(airships))
 			{
+				// Prevents a PARTs hell if older HLAirships is installed.
+				// Also prevents stomping on HLAirships' toes if it decides to publish updated versions of these parts.
+				string aero = Path.Combine(airships, "Parts", "Aero");
+				if (Directory.Exists(Path.Combine(aero, "AirshipCap")))						list.Add("HLAirships-AirshipCap-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope")))				list.Add("HLAirships-HLAirshipEnvelope-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_Cirrus")))		list.Add("HLAirships-AirshipEnvelopeCirrus-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_Cirrus_Real")))	list.Add("HLAirships-AirshipEnvelopeCirrusReal-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_Dodec")))		list.Add("HLAirships-AirshipEnvelopeDodec-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_Hecto")))		list.Add("HLAirships-AirshipEnvelopeHecto-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_LudoBlimp")))	list.Add("HLAirships-Blimp-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_Octo")))		list.Add("HLAirships-AirshipEnvelopeOcto-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_Ray")))			list.Add("HLAirships-AirshipEnvelopeRay-Installed");
+				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_Una")))			list.Add("HLAirships-AirshipEnvelopeUna-Installed");
+				if (Directory.Exists(Path.Combine(aero, "OMG Airship")))					list.Add("HLAirships-DeathStarBattery-Installed");
+				if (Directory.Exists(Path.Combine(aero, "Probe Envelope")))					list.Add("HLAirships-PLift-Installed");
 			}
 			else
 				// If HLAirships is not installed, fool everybody else into believing original HLAirhips is installed so eventual
