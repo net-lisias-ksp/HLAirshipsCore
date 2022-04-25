@@ -2,13 +2,12 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source ${SCRIPT_DIR}/../CONFIG.inc
 
 PACKAGE=HLAirshipsCore
-TARGETDIR="${PACKAGE}/"
-TARGETBINDIR="$TARGETDIR/"
-PROJECTSDIR="$PACKAGE/"
+TARGETDIR="${PACKAGE}/Plugins"
+TARGETBINDIR="$TARGETDIR"
+PROJECTSDIR="$PACKAGE"
 
-DLLS="$PACKAGE"
+DLLS="HLAirships HLA.WatchDog"
 PD_DLLS=""
-#declare -A PD_SUB_RULES=( ["KSPe.UI.12"]="./12x/KSPe.UI" ["KSPe.UI.14"]="./14x/KSPe.UI" ["KSPe.UI.18"]="./18x/KSPe.UI" )
 declare -A PD_SUB_RULES=( )
 PD_SUB_DLLS=`{ for K in "${!PD_SUB_RULES[@]}"; do echo $(basename ${PD_SUB_RULES[$K]}); done } | sort -u | tr '\n' ' '`
 PD_SUB_DIRS=`{ for K in "${!PD_SUB_RULES[@]}"; do echo $(dirname ${PD_SUB_RULES[$K]}); done } | sort -u | tr '\n' ' '`

@@ -67,7 +67,6 @@
     <Compile Include="Log.cs" />
     <Compile Include="Properties\LegalMamboJambo.cs" />
     <Compile Include="ToolbarSupport.cs" />
-    <Compile Include="ModuleManagerSupport.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -28,16 +28,6 @@ namespace HLAirships
 		private void Start()
 		{
 			Log.force("Version {0}", Version.Text);
-
-			try
-			{
-				KSPe.Util.Installation.Check<Startup>(typeof(Version).Namespace, Version.Namespace, null);
-			}
-			catch (KSPe.Util.InstallmentException e)
-			{
-				Log.err(e.ToShortMessage());
-				KSPe.Common.Dialogs.ShowStopperAlertBox.Show(e);
-			}
 		}
 	}
 }
