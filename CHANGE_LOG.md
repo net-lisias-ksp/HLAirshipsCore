@@ -1,5 +1,17 @@
 # HLAirships Core :: Change Log
 
+* 2022-0426: 7.0.0.2 (Lisias) for KSP >= 1.3.1 PRERELEASE
+	+ Revamping parts:
+		- `HL_AirshipEnvelop`
+		- `HL_AirshipEnvelop_Octp`
+		- `HL_AirshipEnvelop_Hecto`
+		- `HL_AirshipEnvelop_LudoBlimp`
+		- `OMG_Airhips (DeathStarBattery)`
+		- No more need for World Stabiliser and the parts are fully functional on KSP 1.12.3
+	+ Added `HLAirships Watch Dog` to prevent installations mishaps and some other problems plaguing KSP.
+	+ New Sample Craft (Panorama Blimp)
+	+ This is a **PRE RELEASE**, with controlled distribution.
+		- Pending formal agreement from the upstream for relicensing. 
 * 2022-0422: 7.0.0.1 (Lisias) for KSP >= 1.3.1 PRERELEASE
 	+ Enhanced TweakScale Support
 	+ Part fixing

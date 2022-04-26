@@ -2,8 +2,8 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source ${SCRIPT_DIR}/../CONFIG.inc
 
 PACKAGE=HLAirshipsCore
-TARGETDIR="${PACKAGE}/Plugins"
-TARGETBINDIR="$TARGETDIR"
+TARGETDIR="${PACKAGE}"
+TARGETBINDIR="$TARGETDIR/Plugins"
 PROJECTSDIR="$PACKAGE"
 
 DLLS="HLAirships HLA.WatchDog"
