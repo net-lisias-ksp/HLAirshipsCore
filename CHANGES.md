@@ -1,5 +1,10 @@
 # HLAirships Core :: Changes
 
+* 2022-0502: 7.0.0.3 (Lisias) for KSP >= 1.3.1 PRERELEASE
+	+ Fixing the classic HL_Envelopers to allow reusing crafts made on legacy
+	+ New Icon
+	+ Reworks issues:
+		- https://github.com/net-lisias-ksp/HLAirshipsCore/issues/2
 * 2022-0426: 7.0.0.2 (Lisias) for KSP >= 1.3.1 PRERELEASE
 	+ Revamping parts:
 		- `HL_AirshipEnvelop`
