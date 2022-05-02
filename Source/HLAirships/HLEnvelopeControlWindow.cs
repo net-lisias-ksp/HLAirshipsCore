@@ -54,7 +54,7 @@ namespace HLAirships
 	public class HLEnvelopeControlWindow : MonoBehaviourExtended
 	{
 
-		public bool ControlWindowVisible { get; set; }
+		public bool ControlWindowVisible { get => ToolbarController.Instance.state; set => ToolbarController.Instance.state = value; }
 		public virtual String MonoName { get; set; }
 		public static HLEnvelopeControlWindow Instance { get; set; }
 		public float TargetBuoyantVessel { get; set; }

@@ -53,7 +53,7 @@ namespace HLAirships
 		private Toolbar.State.Control windowState;
 		private Toolbar.Button button = null;
 
-		private bool state = false;
+		internal bool state = false;
 		internal bool IsRegistered { get; private set; }
 		internal event Callback OnTrue = delegate { };
 		internal event Callback OnFalse = delegate { };
@@ -116,6 +116,7 @@ namespace HLAirships
 			this.controller.Add(this.button);
 			ToolbarController.Instance.ButtonsActive(true, true);
 			this.IsRegistered = true;
+			this.button.Status = (WindowState)this.state;
 		}
 
 		internal void ButtonsActive(bool enableBlizzy, bool enableStock)
