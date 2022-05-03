@@ -45,6 +45,7 @@ namespace HLAirshipsCore
 				if (Directory.Exists(Path.Combine(aero, "HL_AirshipEnvelope_Una")))			list.Add("HLAirships-AirshipEnvelopeUna-Installed");
 				if (Directory.Exists(Path.Combine(aero, "OMG Airship")))					list.Add("HLAirships-DeathStarBattery-Installed");
 				if (Directory.Exists(Path.Combine(aero, "Probe Envelope")))					list.Add("HLAirships-PLift-Installed");
+				list.Add("HLAirships-Installed");
 			}
 			else
 				// If HLAirships is not installed, fool everybody else into believing original HLAirhips is installed so eventual
