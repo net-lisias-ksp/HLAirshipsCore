@@ -1,10 +1,14 @@
 # HLAirships Core :: Changes
 
-* 2022-0502: 7.0.0.3 (Lisias) for KSP >= 1.3.1 PRERELEASE
+* 2022-0503: 7.0.0.4 (Lisias) for KSP >= 1.3.1 PRERELEASE
 	+ Fixing the classic HL_Envelopers to allow reusing crafts made on legacy
 	+ New Icon
-	+ Reworks issues:
-		- https://github.com/net-lisias-ksp/HLAirshipsCore/issues/2
+	+ **Finally** fixing the GUI lingering between Scenes or Map
+	+ Works issues:
+		- [#7](https://github.com/net-lisias-ksp/HLAirshipsCore/issues/7) Implement MODCAT & CUSTOM_PARTLIST_CATEGORY
+		- [#2](https://github.com/net-lisias-ksp/HLAirshipsCore/issues/2) Some Parts needs World Stabiliser on [1.4.0 <= KSP <= 1.11.2], and blow up on KSP 1.12.x
+* 2022-0502: 7.0.0.3 (Lisias) for KSP >= 1.3.1 PRERELEASE
+	+ Let's pretend this never happened! :P
 * 2022-0426: 7.0.0.2 (Lisias) for KSP >= 1.3.1 PRERELEASE
 	+ Revamping parts:
 		- `HL_AirshipEnvelop`
