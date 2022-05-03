@@ -54,7 +54,7 @@ namespace HLAirships
 	public class HLEnvelopeControlWindow : MonoBehaviourExtended
 	{
 
-		public bool ControlWindowVisible { get => ToolbarController.Instance.state; set => ToolbarController.Instance.state = value; }
+		public bool ControlWindowVisible => ToolbarController.Instance.state;
 		public virtual String MonoName { get; set; }
 		public static HLEnvelopeControlWindow Instance { get; set; }
 		public float TargetBuoyantVessel { get; set; }
@@ -94,8 +94,6 @@ namespace HLAirships
 			InitVariables();
 
 			ToolbarController.Instance.Register_Flight();
-			ToolbarController.Instance.OnTrue += onAppLaunchToggleOn; 
-			ToolbarController.Instance.OnFalse += onAppLaunchToggleOff; 
 		}
 
 		private void InitVariables()
@@ -123,28 +121,10 @@ namespace HLAirships
 			drawGUI();
 		}
 
-		void onAppLaunchToggleOn()
-		{
-			if (CurrentVessel != null)
-			{
-				Log.dbg("TOn");
-
-				ControlWindowVisible = true;
-				Log.dbg("{0}", ControlWindowVisible);
-			}
-		}
-		void onAppLaunchToggleOff()
-		{
-			Log.dbg("TOff");
-
-			ControlWindowVisible = false;
-			Log.dbg("{0}", ControlWindowVisible);
-		}
-
 		//Destroy Event - when the DLL is loaded
 		internal override void OnDestroy()
 		{
-			Log.info("Destroying the KerbalAlarmClock-{0}", MonoName);
+			Log.info("Destroying the HLEnvelopeControlWindow-{0}", MonoName);
 
 			ToolbarController.Instance.Unregister();
 			GameEvents.onShowUI.Remove(OnShowUI);

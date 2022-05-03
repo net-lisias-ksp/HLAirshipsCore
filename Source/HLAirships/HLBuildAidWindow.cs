@@ -42,8 +42,7 @@ namespace HLAirships
 
 	public class HLBuildAidWindow : MonoBehaviourExtended
 	{
-
-		public bool EditorWindowVisible { get; set; }
+		public bool EditorWindowVisible => ToolbarController.Instance.state;
 		public virtual String MonoName { get; set; }
 		public static HLBuildAidWindow Instance { get; set; }
 		public float TotalEnvelopeVolume { get; set; }
@@ -73,8 +72,6 @@ namespace HLAirships
 			InitVariables();
 
 			ToolbarController.Instance.Register_Editor();
-			ToolbarController.Instance.OnTrue += onAppLaunchToggleOn; 
-			ToolbarController.Instance.OnFalse += onAppLaunchToggleOff; 
 		}
 
 		private void InitVariables()
@@ -155,21 +152,6 @@ namespace HLAirships
 				AppLauncherToBeSetTrueAttemptDate = DateTime.Now;
 				return;
 			}
-		}
-
-		void onAppLaunchToggleOn()
-		{
-			Log.dbg("TOn");
-
-			EditorWindowVisible = true;
-			Log.dbg("{0}", EditorWindowVisible);
-		}
-		void onAppLaunchToggleOff()
-		{
-			Log.dbg("TOff");
-
-			EditorWindowVisible = false;
-			Log.dbg("{0}", EditorWindowVisible);
 		}
 
 		//Destroy Event - when the DLL is loaded
