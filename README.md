@@ -7,7 +7,6 @@ Core is meant to be used together [HLAirships](https://forum.kerbalspaceprogram.
 Hooligan Labs Airships Core /L is HLAirshipsCore under Lisias' management!
 
 
-
 ## In a Hurry
 
 * [Latest Release](https://github.com/net-lisias-ksp/HLAirshipsCore/releases)
