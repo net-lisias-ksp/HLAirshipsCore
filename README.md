@@ -2,7 +2,7 @@
 
 HL Airships Core adds a minimal set of airship parts to the game, allowing you to build and design absurd flying contraptions that would make Willy Wonka proud.
 
-Core is meant to be used together [HLAirships](https://github.com/dunclaw/HLAirships) for the full experience.
+Core is meant to be used together [HLAirships](https://forum.kerbalspaceprogram.com/index.php?/topic/49443-airships-in-110-hooliganlabs-mods/) for the full experience.
 
 Hooligan Labs Airships Core /L is HLAirshipsCore under Lisias' management!
 
@@ -31,13 +31,20 @@ Detailed installation instructions are now on its own file (see the [In a Hurry]
 
 ### License
 
-Hooligan Labs Airships Core is double licensed as follows:
-	* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
-		+ For parts, code and assets authored by LisiasY 
-	* ARR (Pending agreement with the upstream for MIT)
-		+ For everything else 
+Hooligan Labs Airships Core is licensed as follows:
 
-> The Hooligan Labs logo is copyright 2013, but may continue to be used in KSP because KSP is awesome.
+* MIT (Expat) 
+	+ You are free to:
+		- Use : unpack and use the material in any computer or device
+		- Redistribute : redistribute the original package in any medium
+		- Adapt : Reuse, modify or incorporate source code into your works (and redistribute it!)
+	+ Under the following terms:
+		- You retain any copyright notices
+		- You credit the author and republish the copyright notices on your works where the code is used.
+
+> [HooliganLabsCore is MIT](https://forum.kerbalspaceprogram.com/index.php?/topic/49443-airships-in-110-hooliganlabs-mods/&do=findComment&comment=4129069).
+>
+>  The Hooligan Labs logo is copyright 2013, but may continue to be used in KSP because KSP is awesome.
 [Source](https://forum.kerbalspaceprogram.com/index.php?/topic/22008-021-hooligan-labs-airship-submarines-and-more/).
 
 See [NOTICE](./NOTICE) for further copyright and trademarks notices.
