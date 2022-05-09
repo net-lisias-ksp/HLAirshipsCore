@@ -4,19 +4,14 @@
 		© 2013-2021 Jewel Shisen
 		© 2012-2013 Hooligan Labs
 
-	Hooligan Labs Airships /L Unleashed is double licensed as follows:
-		* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
-		* ARR (Pending agreement with the upstream for MIT)
+	Hooligan Labs Airships Core is licensed as follows:
+		* MIT (Expat) : https://opensource.org/licenses/MIT
 
 	And you are allowed to choose the License that better suit your needs.
 
-	Hooligan Labs Airships /L Unleashed is distributed in the hope that it will be
+	Hooligan Labs Airships Core is distributed in the hope that it will be
 	useful, but WITHOUT ANY WARRANTY; without even the implied
 	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-	You should have received a copy of the SKL Standard License 1.0
-	along with Hooligan Labs Airships /L Unleashed.
-	If not, see <https://ksp.lisias.net/SKL-1_0.txt>.
 */
 // Every Envelope is controlled by the Compressor.  These envelopes provide lift.
 
