@@ -1,5 +1,8 @@
 # HLAirships Core :: Change Log
 
+* 2022-0509: 7.0.1.0 (Lisias) for KSP >= 1.3.1
+	+ HLAirshipsCore goes gold!
+	+ Officially licensed under the MIT (Expat) *#HURRAY**
 * 2022-0503: 7.0.0.4 (Lisias) for KSP >= 1.3.1 PRERELEASE
 	+ Fixing the classic HL_Envelopers to allow reusing crafts made on legacy
 	+ New Icon
