@@ -263,7 +263,7 @@ namespace HLAirships
 		[KSPEvent(active = true, guiActive = true, guiName = "Toggle GUI")]
 		public void guiToggle_Event()
 		{
-			ToolbarController.Instance.ToggleState();
+			UI.ToolbarController.Instance.ToggleState();
 		}
 
 		#endregion

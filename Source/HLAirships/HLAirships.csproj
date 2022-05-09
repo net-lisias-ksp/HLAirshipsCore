@@ -44,12 +44,8 @@
       <HintPath>..\..\..\..\..\..\LIB\managed\1.3.1\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="KSPe">
-      <HintPath>..\..\..\..\..\..\LIB\plugins\KSPe.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="KSPe.UI">
-      <HintPath>..\..\..\..\..\..\LIB\plugins\KSPe.UI.dll</HintPath>
+    <Reference Include="KSPe.Light.HLAirshipsCore">
+      <HintPath>..\..\..\..\..\..\LIB\plugins\KSPe.Light.HLAirshipsCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -66,7 +62,12 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\LegalMamboJambo.cs" />
-    <Compile Include="ToolbarSupport.cs" />
+    <Compile Include="UI\ToolbarSupport.cs" />
+    <Compile Include="UI\Icons.cs" />
+    <Compile Include="UI\Icons.Stock.cs" />
+    <Compile Include="UI\ToolbarSupport.Stock.cs" />
+    <Compile Include="UI\Icons.KSpe.cs" />
+    <Compile Include="UI\ToolbarSupport.KSPe.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -27,8 +27,10 @@ using KSP.UI.Screens;
 
 using KSPPluginFramework;
 
+#if KSPe
 using GUI = KSPe.UI.GUI;
 using GUILayout = KSPe.UI.GUILayout;
+#endif
 
 namespace HLAirships
 {
@@ -54,7 +56,7 @@ namespace HLAirships
 	public class HLEnvelopeControlWindow : MonoBehaviourExtended
 	{
 
-		public bool ControlWindowVisible => ToolbarController.Instance.state;
+		public bool ControlWindowVisible => UI.ToolbarController.Instance.state;
 		public virtual String MonoName { get; set; }
 		public static HLEnvelopeControlWindow Instance { get; set; }
 		public float TargetBuoyantVessel { get; set; }
@@ -93,7 +95,7 @@ namespace HLAirships
 			GameEvents.onHideUI.Add(OnHideUI);
 			InitVariables();
 
-			ToolbarController.Instance.Register_Flight();
+			UI.ToolbarController.Instance.Register_Flight();
 		}
 
 		private void InitVariables()
@@ -126,7 +128,7 @@ namespace HLAirships
 		{
 			Log.info("Destroying the HLEnvelopeControlWindow-{0}", MonoName);
 
-			ToolbarController.Instance.Unregister();
+			UI.ToolbarController.Instance.Unregister();
 			GameEvents.onShowUI.Remove(OnShowUI);
 			GameEvents.onHideUI.Remove(OnHideUI);
 			base.OnDestroy();

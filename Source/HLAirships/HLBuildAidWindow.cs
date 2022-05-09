@@ -27,8 +27,10 @@ using KSP.UI.Screens;
 
 using KSPPluginFramework;
 
+#if KSPe
 using GUI = KSPe.UI.GUI;
 using GUILayout = KSPe.UI.GUILayout;
+#endif
 
 namespace HLAirships
 {
@@ -42,7 +44,7 @@ namespace HLAirships
 
 	public class HLBuildAidWindow : MonoBehaviourExtended
 	{
-		public bool EditorWindowVisible => ToolbarController.Instance.state;
+		public bool EditorWindowVisible => UI.ToolbarController.Instance.state;
 		public virtual String MonoName { get; set; }
 		public static HLBuildAidWindow Instance { get; set; }
 		public float TotalEnvelopeVolume { get; set; }
@@ -71,7 +73,7 @@ namespace HLAirships
 			GameEvents.onHideUI.Add(OnHideUI);
 			InitVariables();
 
-			ToolbarController.Instance.Register_Editor();
+			UI.ToolbarController.Instance.Register_Editor();
 		}
 
 		private void InitVariables()
@@ -160,7 +162,7 @@ namespace HLAirships
 			Log.info("Destroying the KerbalAlarmClock-{0}", MonoName);
 
 			//Hook the App Launcher
-			ToolbarController.Instance.Unregister();
+			UI.ToolbarController.Instance.Unregister();
 
 			GameEvents.onShowUI.Remove(OnShowUI);
 			GameEvents.onHideUI.Remove(OnHideUI);

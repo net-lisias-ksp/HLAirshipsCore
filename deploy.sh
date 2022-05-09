@@ -17,6 +17,7 @@ check() {
 			done
 		fi
 		rm -f ${d}/GameData/${TARGETBINDIR}/KSPe.Light.*
+		cp "${LIB}/KSPe.Light.HLAirshipsCore.dll" "./GameData/$TARGETBINDIR/"
 	done
 
 	if [[ -d "./bin/Release" && -d "./bin/Debug" ]] ; then
@@ -44,6 +45,7 @@ deploy() {
 			cp "./bin/Debug/${DLL}" "${KSP_DEV}/GameData/${TARGETBINDIR}/"
 		fi
 	fi
+	cp "./GameData/$TARGETBINDIR/"KSPe.Light.* "${KSP_DEV}/GameData/${TARGETBINDIR}/"
 }
 
 deploy_lib() {
