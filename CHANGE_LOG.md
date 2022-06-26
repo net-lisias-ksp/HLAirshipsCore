@@ -1,5 +1,8 @@
 # HLAirships Core :: Change Log
 
+* 2022-0626: 7.0.1.1 (Lisias) for KSP >= 1.3.1
+	+ Added checks for deprecated TweakScale support
+	+ Better coping with the current legacy parts from the older HLAirships releases.
 * 2022-0509: 7.0.1.0 (Lisias) for KSP >= 1.3.1
 	+ HLAirshipsCore goes gold!
 	+ Officially licensed under the MIT (Expat) *#HURRAY**
