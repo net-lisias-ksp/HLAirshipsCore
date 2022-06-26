@@ -16,8 +16,13 @@ check() {
 				mkdir -p "${d}/GameData/${TARGETBINDIR}/PluginData/${dd}/"
 			done
 		fi
-		rm -f ${d}/GameData/${TARGETBINDIR}/KSPe.Light.*
-		cp "${LIB}/KSPe.Light.HLAirshipsCore.dll" "./GameData/$TARGETBINDIR/"
+	done
+
+	for dll in $EXT_DLLS ; do
+		if [ ! -f "${LIB}/$dll.dll" ] ; then
+			echo "$dll not found!!! Aborting."
+			exit -1
+		fi
 	done
 
 	if [[ -d "./bin/Release" && -d "./bin/Debug" ]] ; then
@@ -103,6 +108,17 @@ deploy_gamedata() {
 	fi
 }
 
+deploy_ext() {
+	local DLL=$1.dll
+
+	if [ -f "$LIB/$DLL" ] ; then
+		cp -R "$LIB/$DLL" "./GameData/$TARGETBINDIR/"
+		if [ -d "${KSP_DEV}/GameData/" ] ; then
+			cp -R "$LIB/$DLL" "${KSP_DEV/}GameData/$TARGETBINDIR/"
+		fi
+	fi
+}
+
 VERSIONFILE=${PACKAGE}.version
 
 check
@@ -131,6 +147,10 @@ done
 
 for dll in $GD_DLLS ; do
     deploy_gamedata $GD_PRIORITY $dll
+done
+
+for dll in $EXT_DLLS ; do
+    deploy_ext $dll
 done
 
 echo "${VERSION} Deployed into ${KSP_DEV}"

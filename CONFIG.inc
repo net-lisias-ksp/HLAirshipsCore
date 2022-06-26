@@ -14,6 +14,7 @@ PD_SUB_DIRS=`{ for K in "${!PD_SUB_RULES[@]}"; do echo $(dirname ${PD_SUB_RULES[
 GD_DLLS=""
 GD_PRIORITY=""
 LIB_DLLS="${DLLS}"
+EXT_DLLS="KSPe.Light.HLAirshipsCore"
 
 PROJECT_BRANCH=`git branch | grep \* | cut -d ' ' -f2`
 if [ "$PROJECT_BRANCH" == "master" ] ; then
