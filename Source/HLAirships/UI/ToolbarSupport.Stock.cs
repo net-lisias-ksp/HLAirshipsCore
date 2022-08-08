@@ -7,11 +7,10 @@
 	Hooligan Labs Airships Core is licensed as follows:
 		* MIT (Expat) : https://opensource.org/licenses/MIT
 
-	And you are allowed to choose the License that better suit your needs.
-
 	Hooligan Labs Airships Core is distributed in the hope that it will be
 	useful, but WITHOUT ANY WARRANTY; without even the implied
 	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
 */
 #if !KSPe
 using UnityEngine;

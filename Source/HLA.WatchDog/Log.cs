@@ -10,7 +10,7 @@
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 	You should have received a copy of the SKL Standard License 1.0
-	along with HLAirshipsCore Watch Dog. If not, see
+	along with Module Manager Watch Dog. If not, see
 	<https://ksp.lisias.net/SKL-1_0.txt>.
 
 */
