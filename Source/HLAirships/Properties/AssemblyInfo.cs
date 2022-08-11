@@ -35,5 +35,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion(HLAirships.Version.Number)]
 
 [assembly: KSPAssembly("HLAirShips", HLAirships.Version.major, HLAirships.Version.minor)]﻿
+#if KSPe
 [assembly: KSPAssemblyDependency("KSPe", 2, 4)]﻿
 [assembly: KSPAssemblyDependency("KSPe.UI", 2, 4)]﻿
+#else
+[assembly: KSPAssemblyDependency("KSPe.Light.HLAirshipsCore", 2, 4)]﻿
+#endif
