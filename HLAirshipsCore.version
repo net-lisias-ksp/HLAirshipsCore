@@ -1,6 +1,6 @@
 {
 	"NAME"		: "Hooligan Labs Airships Core",
-	"URL"		: "https://raw.githubusercontent.com/net-lisias-ksp/HLAirshipsCore/master/HLAirships.version",
+	"URL"		: "https://raw.githubusercontent.com/net-lisias-ksp/HLAirshipsCore/master/HLAirshipsCore.version",
 	"DOWNLOAD"	: "https://github.com/net-lisias-ksp/HLAirshipsCore/releases",
 	"CHANGE_LOG"	: "https://raw.githubusercontent.com/net-lisias-ksp/HLAirshipsCore/master/CHANGE_LOG.md",
 	"CHANGE_LOG_URL": "https://raw.githubusercontent.com/net-lisias-ksp/HLAirshipsCore/master/CHANGES.md",
