@@ -26,5 +26,9 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyFileVersion(HLAirshipsCore.Version.Number)]
 
 [assembly: KSPAssembly("HLA.WatchDog", HLAirshipsCore.Version.major, HLAirshipsCore.Version.minor)]﻿
+#if KSPe
 [assembly: KSPAssemblyDependency("KSPe", 2, 4)]﻿
 [assembly: KSPAssemblyDependency("KSPe.UI", 2, 4)]﻿
+#else
+[assembly: KSPAssemblyDependency("KSPe.Light.HLAirshipsCore", 2, 4)]﻿
+#endif

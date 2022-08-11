@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{88FDE3F0-4654-42C3-A5A2-882D1F734726}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <BaseIntermediateOutputPath>..\..\obj</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\obj\HLAirships</BaseIntermediateOutputPath>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HLAirships</RootNamespace>
     <AssemblyName>HLAirships</AssemblyName>
