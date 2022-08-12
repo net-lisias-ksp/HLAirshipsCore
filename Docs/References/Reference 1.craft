@@ -1,0 +1,1123 @@
+ship = Reference 1
+version = 1.4.3
+description = Reference HL Envelopers from 6.4
+type = SPH
+size = 35.832222,14.6484489,52.4264297
+persistentId = 1690121763
+rot = 0,0,0,1
+missionFlag = Squad/Flags/default
+vesselType = Debris
+PART
+{
+	part = HL.AirshipEnvelopeHecto_4294712018
+	partName = Part
+	persistentId = 2029616507
+	pos = 0,10,0
+	attPos = 0,0,0
+	attPos0 = 0,10,0
+	rot = 0.707106829,0,0,0.707106829
+	attRot = 0,0,0,1
+	attRot0 = 0.707106769,0,0,0.707106769
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = HL.AirshipEnvelopeHecto_4294708740
+	link = AirshipCap_4294686374
+	attN = top,AirshipCap_4294686374_0|11.629|0
+	attN = bottom,HL.AirshipEnvelopeHecto_4294708740_0|-11.629|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = HLEnvelopePartModule
+		isEnabled = True
+		limitBuoyantForce = 0
+		minAtmPressure = -0.00999999978
+		dragDeployed = 0
+		dragUndeployed = 0.200000003
+		makeStationarySpeedMax = 10
+		makeStationarySpeedClamp = 0.0500000007
+		compressRate = 0.0299999993
+		expandRate = 0.0299999993
+		targetBuoyantVessel = 0
+		specificVolumeFractionEnvelope = 0
+		toggleAltitudeControl = False
+		targetVerticalVelocity = 0
+		toggleAutoPitch = False
+		targetPitchBuoyancy = 0
+		animationDeploy = False
+		isLeadEnvelope = False
+		lineOffsetMultiplier = 2
+		envelopeHasAnimation = False
+		animationName = Default Take
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			guiToggle_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyPP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyNN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyM_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyZ_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyC_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 22.5
+		defaultScale = 22.5
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 15000
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = HL.AirshipEnvelopeHecto_4294708740
+	partName = Part
+	persistentId = 1021442686
+	pos = 0,10,-23.2580147
+	attPos = 0,0,0
+	attPos0 = 0,-23.2580013,1.90734863E-06
+	rot = 0.707106829,0,0,0.707106829
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = HL.AirshipEnvelope.Octo_4294700378
+	attN = top,HL.AirshipEnvelopeHecto_4294712018_0|11.629|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = HLEnvelopePartModule
+		isEnabled = True
+		limitBuoyantForce = 0
+		minAtmPressure = -0.00999999978
+		dragDeployed = 0
+		dragUndeployed = 0.200000003
+		makeStationarySpeedMax = 10
+		makeStationarySpeedClamp = 0.0500000007
+		compressRate = 0.0299999993
+		expandRate = 0.0299999993
+		targetBuoyantVessel = 0
+		specificVolumeFractionEnvelope = 0
+		toggleAltitudeControl = False
+		targetVerticalVelocity = 0
+		toggleAutoPitch = False
+		targetPitchBuoyancy = 0
+		animationDeploy = False
+		isLeadEnvelope = False
+		lineOffsetMultiplier = 2
+		envelopeHasAnimation = False
+		animationName = Default Take
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			guiToggle_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyPP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyNN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyM_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyZ_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyC_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 22.5
+		defaultScale = 22.5
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 15000
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = AirshipCap_4294686374
+	partName = Part
+	persistentId = 3498037024
+	pos = 0,9.99999905,11.6290216
+	attPos = 0,0,0
+	attPos0 = 0,11.6290016,0
+	rot = 0.707106829,0,0,0.707106829
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 10199.6816
+	modMass = 20.3993664
+	modSize = 0,0,0
+	attN = bottom,HL.AirshipEnvelopeHecto_4294712018_0|0|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 22.5
+		defaultScale = 4.80000019
+		defaultTransformScale = (1.25, 1.25, 1.25)
+		DryCost = 10299.6816
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = HL.AirshipEnvelope.Octo_4294700378
+	partName = Part
+	persistentId = 1908673728
+	pos = -15.4797955,9.99999809,-16.1943665
+	attPos = 0,0,0
+	attPos0 = -15.4797955,7.06364536,1.90734784E-06
+	rot = 0.707106888,0,-4.21468513E-08,0.707106769
+	attRot = 0,0,0,1
+	attRot0 = 5.96046448E-08,-2.98023224E-08,-2.98023224E-08,1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = HL.AirshipEnvelope.Octo_4294697758
+	link = AirshipCap_4294688918
+	link = HL.AirshipEnvelope_4294694414
+	srfN = srfAttach,HL.AirshipEnvelopeHecto_4294708740
+	attN = top,AirshipCap_4294688918_0|5.0125|0
+	attN = bottom,HL.AirshipEnvelope.Octo_4294697758_0|-5.0125|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = HLEnvelopePartModule
+		isEnabled = True
+		limitBuoyantForce = 0
+		minAtmPressure = -0.00999999978
+		dragDeployed = 0
+		dragUndeployed = 0.200000003
+		makeStationarySpeedMax = 10
+		makeStationarySpeedClamp = 0.0500000007
+		compressRate = 0.0399999991
+		expandRate = 0.0399999991
+		targetBuoyantVessel = 0
+		specificVolumeFractionEnvelope = 0
+		toggleAltitudeControl = False
+		targetVerticalVelocity = 0
+		toggleAutoPitch = False
+		targetPitchBuoyancy = 0
+		animationDeploy = False
+		isLeadEnvelope = False
+		lineOffsetMultiplier = 2
+		envelopeHasAnimation = False
+		animationName = Default Take
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			guiToggle_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyPP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyNN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyM_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyZ_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyC_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 9.5
+		defaultScale = 9.5
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 1200
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = HL.AirshipEnvelope.Octo_4294697758
+	partName = Part
+	persistentId = 1588398830
+	pos = -15.4797955,9.99999619,-26.2194023
+	attPos = 0,0,0
+	attPos0 = 5.97536996E-07,-10.0250053,3.10242194E-06
+	rot = 0.707106769,2.51214874E-15,-2.51214874E-15,0.707106888
+	attRot = 0,0,0,1
+	attRot0 = -5.96046448E-08,2.98023224E-08,2.98023224E-08,1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = top,HL.AirshipEnvelope.Octo_4294700378_0|5.0125|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = HLEnvelopePartModule
+		isEnabled = True
+		limitBuoyantForce = 0
+		minAtmPressure = -0.00999999978
+		dragDeployed = 0
+		dragUndeployed = 0.200000003
+		makeStationarySpeedMax = 10
+		makeStationarySpeedClamp = 0.0500000007
+		compressRate = 0.0399999991
+		expandRate = 0.0399999991
+		targetBuoyantVessel = 0
+		specificVolumeFractionEnvelope = 0
+		toggleAltitudeControl = False
+		targetVerticalVelocity = 0
+		toggleAutoPitch = False
+		targetPitchBuoyancy = 0
+		animationDeploy = False
+		isLeadEnvelope = False
+		lineOffsetMultiplier = 2
+		envelopeHasAnimation = False
+		animationName = Default Take
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			guiToggle_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyPP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyNN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyM_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyZ_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyC_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 9.5
+		defaultScale = 9.5
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 1200
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = AirshipCap_4294688918
+	partName = Part
+	persistentId = 3751551712
+	pos = -15.4797955,9.99999714,-11.1818581
+	attPos = 0,0,0
+	attPos0 = -2.98768128E-07,5.01249838,3.56137718E-07
+	rot = 0.707106769,2.51214874E-15,-2.51214874E-15,0.707106888
+	attRot = 0,0,0,1
+	attRot0 = -5.96046448E-08,2.98023224E-08,2.98023224E-08,1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 675.259399
+	modMass = 1.35051894
+	modSize = 0,0,0
+	attN = bottom,HL.AirshipEnvelope.Octo_4294700378_0|0|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 9.5
+		defaultScale = 4.80000019
+		defaultTransformScale = (1.25, 1.25, 1.25)
+		DryCost = 775.259399
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = HL.AirshipEnvelope_4294694414
+	partName = Part
+	persistentId = 4018471213
+	pos = -22.5021439,9.99999714,-13.4693499
+	attPos = 0,0,0
+	attPos0 = -7.0223484,2.72500753,7.22546076E-07
+	rot = -0.707106888,-6.32202699E-08,-4.21468371E-08,-0.707106769
+	attRot = 0,0,0,1
+	attRot0 = -2.98023188E-08,-1.04308114E-07,-1.49011505E-08,-1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = HL.AirshipEnvelope_4294694194
+	link = AirshipCap_4294675648
+	srfN = srfAttach,HL.AirshipEnvelope.Octo_4294700378
+	attN = top,AirshipCap_4294675648_0|2.50625|0
+	attN = bottom,HL.AirshipEnvelope_4294694194_0|-2.50625|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = HLEnvelopePartModule
+		isEnabled = True
+		limitBuoyantForce = 0
+		minAtmPressure = -0.00999999978
+		dragDeployed = 0
+		dragUndeployed = 0.200000003
+		makeStationarySpeedMax = 10
+		makeStationarySpeedClamp = 0.0500000007
+		compressRate = 0.0500000007
+		expandRate = 0.0500000007
+		targetBuoyantVessel = 0
+		specificVolumeFractionEnvelope = 0
+		toggleAltitudeControl = False
+		targetVerticalVelocity = 0
+		toggleAutoPitch = False
+		targetPitchBuoyancy = 0
+		animationDeploy = False
+		isLeadEnvelope = False
+		lineOffsetMultiplier = 2
+		envelopeHasAnimation = False
+		animationName = Default Take
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			guiToggle_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyPP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyNN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyM_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyZ_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyC_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 4.80000019
+		defaultScale = 4.80000019
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 150
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = HL.AirshipEnvelope_4294694194
+	partName = Part
+	persistentId = 123647718
+	pos = -22.5021439,9.99999809,-18.4818687
+	attPos = 0,0,0
+	attPos0 = -7.36415302E-07,-5.01250362,5.46276226E-07
+	rot = 0.707106829,1.82429574E-07,-7.70624453E-08,0.707106829
+	attRot = 0,0.707106769,0,0.707106769
+	attRot0 = 8.42937098E-08,0,1.68587391E-07,-1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = top,HL.AirshipEnvelope_4294694414_0|2.50625|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = HLEnvelopePartModule
+		isEnabled = True
+		limitBuoyantForce = 0
+		minAtmPressure = -0.00999999978
+		dragDeployed = 0
+		dragUndeployed = 0.200000003
+		makeStationarySpeedMax = 10
+		makeStationarySpeedClamp = 0.0500000007
+		compressRate = 0.0500000007
+		expandRate = 0.0500000007
+		targetBuoyantVessel = 0
+		specificVolumeFractionEnvelope = 0
+		toggleAltitudeControl = False
+		targetVerticalVelocity = 0
+		toggleAutoPitch = False
+		targetPitchBuoyancy = 0
+		animationDeploy = False
+		isLeadEnvelope = False
+		lineOffsetMultiplier = 2
+		envelopeHasAnimation = False
+		animationName = Default Take
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			guiToggle_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyPP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyNN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyM_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyZ_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyC_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 4.80000019
+		defaultScale = 4.80000019
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 150
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = AirshipCap_4294675648
+	partName = Part
+	persistentId = 2720692389
+	pos = -22.5021439,9.99999619,-10.9630899
+	attPos = 0,0,0
+	attPos0 = -4.02144821E-07,2.50624943,2.06752972E-07
+	rot = -0.707106769,-8.47032947E-22,5.02429705E-15,-0.707106888
+	attRot = 0,0,0,-0.999999881
+	attRot0 = -1.49011598E-07,-7.45057918E-08,1.49011585E-08,1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = bottom,HL.AirshipEnvelope_4294694414_0|0|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		active = True
+		available = True
+		currentScale = 4.80000019
+		defaultScale = 4.80000019
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 100
+		OriginalCrewCapacity = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
