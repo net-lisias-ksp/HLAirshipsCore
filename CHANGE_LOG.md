@@ -1,6 +1,6 @@
 # HLAirships Core :: Change Log
 
-* 2022-0812: 7.0.1.3 (Lisias) for KSP >= 1.3.1
+* 2022-0822: 7.0.1.4 (Lisias) for KSP >= 1.3.1
 	+ Adds new sample craft
 	+ Mishaps Hunt Fest!
 		- On the `.version` file
@@ -11,6 +11,8 @@
 		- [#9](https://github.com/net-lisias-ksp/HLAirshipsCore/issues/9) Rework the attachment nodes for the HL Envelopes
 		- [#8]([https://github.com/net-lisias-ksp/HLAirshipsCore/issues/8) Fix the attachment nodes for the HL_AirshipEnvelop_Dodec
 		- [#7](https://github.com/net-lisias-ksp/HLAirshipsCore/issues/7) Implement MODCAT & CUSTOM_PARTLIST_CATEGORY
+* 2022-0812: 7.0.1.3 (Lisias) for KSP >= 1.3.1
+	+ ***WITHDRAWN*** - let's pretend this never happened. :)
 * 2022-0810: 7.0.1.0R2 (Lisias) for KSP >= 1.3.1
 	+ Fixes a mishap on the `AssemblyInfo.cs` file.
 		- Thanks to [Reylan](https://forum.kerbalspaceprogram.com/?app=core&module=members&controller=profile&id=222459) and [luna_cat](https://forum.kerbalspaceprogram.com/index.php?/profile/212171-luna_cat/) for the [reports](https://forum.kerbalspaceprogram.com/index.php?/topic/207891-ksp-131-hooligan-labs-airships-core-development-thread-7010-2022-0509/&do=findComment&comment=4162735)! 
