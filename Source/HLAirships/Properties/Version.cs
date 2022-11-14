@@ -10,7 +10,7 @@ namespace HLAirships
 		public const int patch = 1;
 		public const int build = 0;
 		public const string Number = "7.0.1.0";
-		public const string Text = Number + "R2 Core /L";
+		public const string Text = Number + "R3 Core /L";
 		public const string Namespace = "HLAirshipsCore";
 		public const string FriendlyName = "Hooligan Labs Airships";
 	}
