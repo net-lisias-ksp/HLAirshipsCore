@@ -1,5 +1,7 @@
 # HLAirships Core :: Change Log
 
+* 2022-1114: 7.0.1.0R3 (Lisias) for KSP >= 1.3.1
+	+ Updates `KSPe.Light` to the latest version.
 * 2022-0812: 7.0.1.4 (Lisias) for KSP >= 1.3.1
 	+ Adds new sample craft
 	+ Mishaps Hunt Fest!
