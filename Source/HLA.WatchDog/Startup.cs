@@ -70,6 +70,14 @@ namespace HLAirshipsCore
 							UI.ShowStopperAlertBox.Show(string.Format("HLAirships DLL is installed on the wrong directory! {0}", hisplace));
 					}
 				}
+				{
+					// Prevents the old TweakScale patch from screwing up the new ones!
+					string airships = IO.Hierarchy.GAMEDATA.Solve("HLAirships");
+					string oldpatch = IO.Path.Combine(airships, "Parts","TweakScale.cfg");
+					Log.dbg("The old path path is {0}", oldpatch);
+					if (System.IO.File.Exists(oldpatch))
+						UI.ShowStopperAlertBox.Show(string.Format("Deprected TweakScale patch for HLAirships must be removed! {0}", oldpatch));
+				}
 			}
 			catch (KSPe.Util.InstallmentException e)
 			{
