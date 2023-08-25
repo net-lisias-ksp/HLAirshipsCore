@@ -973,7 +973,7 @@ namespace HLAirships
 			// TODO - scale anguglar drag based on volume
 			this.part.angularDrag = envelopeVolume / 10.0f;
 			// New method is to add force based on render bounds.
-			this.part.Rigidbody.AddForceAtPosition(buoyantForce, part.WCoM, ForceMode.Force);
+			this.part.AddForceAtPosition(buoyantForce, part.WCoM, ForceMode.Force);
 			// limit angular velocity to avoid dangerous occilations
 			if (buoyantForce.magnitude > 30)
 			{
