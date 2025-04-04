@@ -1,6 +1,6 @@
 ﻿/*
 	This file is part of Hooligan Labs Airships /L Unleashed
-		© 2018-2022 Lisias T : http://lisias.net <support@lisias.net>
+		© 2018-2025 Lisias T : http://lisias.net <support@lisias.net>
 		© 2013-2021 Jewel Shisen
 		© 2012-2013 Hooligan Labs
 

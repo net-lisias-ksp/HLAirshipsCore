@@ -1,6 +1,6 @@
 ﻿/*
 	This file is part of Hooligan Labs Airships Core
-		© 2018-2022 Lisias T : http://lisias.net <support@lisias.net>
+		© 2018-2025 Lisias T : http://lisias.net <support@lisias.net>
 		© 2013-2021 Jewel Shisen
 		© 2012-2013 Hooligan Labs
 
@@ -18,7 +18,7 @@ namespace HLAirships
 	public static class LegalMamboJambo
 	{
 		public const string Company = "L Aerospace KSP Division";
-		public const string Copyright = "© 2018-2022 LisiasT, © 2013-2020 Jewel Shisen; © 2012-2013 HooliganLabs";
+		public const string Copyright = "© 2018-2025 LisiasT, © 2013-2020 Jewel Shisen; © 2012-2013 HooliganLabs";
 		public const string Product = "HLAirships";
 		public const string Trademark = "Hooligan Labs Airships Core™ by LisiasT; Hooligan Labs Airships™ Jewel Shisen, HooliganLabs" ;
 	}
