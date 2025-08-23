@@ -11,6 +11,7 @@
 	useful, but WITHOUT ANY WARRANTY; without even the implied
 	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+using KSPe.Annotations;
 using UnityEngine;
 
 namespace HLAirships
@@ -18,6 +19,7 @@ namespace HLAirships
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
 	internal class Startup : MonoBehaviour
 	{
+		[UsedImplicitly]
 		private void Start()
 		{
 			Log.force("Version {0}", Version.Text);

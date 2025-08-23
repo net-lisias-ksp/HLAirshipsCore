@@ -565,7 +565,7 @@ namespace HLAirships
 		{
 			// Finds all 
 			try { findEnvelopes(); }
-			catch (Exception ex) { print("findEnvelopes Exception!"); print(ex.Message); }
+			catch (Exception ex) { Log.err("findEnvelopes Exception! {0}", ex.Message); }
 		}
 
 
@@ -576,15 +576,15 @@ namespace HLAirships
 
 			// Finds all parts within the vessel (specifically mass)
 			try { findParts(); }
-			catch (Exception ex) { print("findParts Exception!"); print(ex.Message); }
+			catch (Exception ex) { Log.err("findParts Exception! {0}", ex.Message); }
 
 			// Keeps the airship at a steady altitude
 			try { altitudeControl(); }
-			catch (Exception ex) { print("altitudeControl Exception!"); print(ex.Message); }
+			catch (Exception ex) { Log.err("altitudeControl Exception! {0}", ex.Message); }
 
 			// Tells each envelope what its buoyancy should be
 			try { setBuoyancy(); }
-			catch (Exception ex) { print("setBuoyancy Exception!"); print(ex.Message); }
+			catch (Exception ex) { Log.err("setBuoyancy Exception! {0}", ex.Message); }
 		}
 
 		private void SyncControlUIValues()

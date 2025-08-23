@@ -18,13 +18,13 @@ using UnityEngine;
 
 namespace HLAirshipsCore.UI
 {
-	internal static class ShowStopperAlertBox
+	internal static class ShowStopperDialogBox
 	{
 		private static readonly string AMSG = @"to get instructions about how to Download and Install HLAirships. KSP will close";
 
 		internal static void Show(string msg)
 		{
-			KSPe.Common.Dialogs.ShowStopperAlertBox.Show(
+			KSPe.Common.Dialogs.ShowStopperErrorBox.Show(
 				msg,
 				AMSG,
 				() => { Application.OpenURL("https://github.com/net-lisias-ksp/HLAirshipsCore/discussions/6"); Application.Quit(); }

@@ -50,10 +50,10 @@
       <Link>Properties\LegalMamboJambo.cs</Link>
     </Compile>
     <Compile Include="Log.cs" />
-    <Compile Include="GUI\ShowStopperAlertBox.cs" />
     <Compile Include="Properties\Version.cs">
       <DependentUpon>Version.tt</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ShowStopperDialogBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\" />
