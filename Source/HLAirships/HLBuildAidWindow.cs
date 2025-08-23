@@ -43,6 +43,10 @@ namespace HLAirships
 		public float TotalEnvelopeVolume { get; set; }
 		public float TotalMass { get; set; }
 
+		private const int Window_GUI_Minimum_Width = 200;
+		private const int Default_Number_of_Bodies = 6;
+		private const int Height_Of_Scroll_Entry = 26;
+		private const int Max_Entries_Without_Scrolling = 12;
 
 		private Rect windowPos;
 		private int airshipWindowID;
@@ -81,8 +85,9 @@ namespace HLAirships
 				}
 			}
 			selStringArray = selString.ToArray();
+
 			// default to the non-sun option
-			if(selStringArray.Length > 1)
+			if(currentSelection >= selStringArray.Length)
 			{
 				currentSelection = 1;
 			}
@@ -165,7 +170,7 @@ namespace HLAirships
 
 		private void drawGUI()
 		{
-			windowPos = GUILayout.Window﻿﻿(airshipWindowID, windowPos, WindowGUI, "HLAirships Build Aid", GUILayout.MinWidth(200));
+			windowPos = GUILayout.Window﻿﻿(airshipWindowID, windowPos, WindowGUI, "HLAirships Build Aid", GUILayout.MinWidth(Window_GUI_Minimum_Width));
 		}
 
 		protected void initGUI()
@@ -179,6 +184,7 @@ namespace HLAirships
 		}
 
 		// GUI
+		private Vector2 WindowGUI_Scroll_Rect = new Vector2();
 		private void WindowGUI(int windowID)
 		{
 			// General GUI window information
@@ -188,13 +194,22 @@ namespace HLAirships
 			mySty.onNormal.textColor = mySty.onFocused.textColor = mySty.onHover.textColor = mySty.onActive.textColor = Color.green;
 			mySty.padding = new RectOffset(2, 2, 2, 2);
 
-
 			GUILayout.BeginVertical();
 			GUILayout.Label("Buoyancy on:");
-			currentSelection = GUILayout.SelectionGrid(currentSelection, selStringArray, 1);
 
+			{
+				int default_height = Height_Of_Scroll_Entry*Default_Number_of_Bodies;
+				int max_height = Height_Of_Scroll_Entry*Max_Entries_Without_Scrolling;
+				int intended_heigh = Height_Of_Scroll_Entry*selStringArray.Length;
+
+				int height = Math.Max(default_height, intended_heigh);
+				height = Math.Min(max_height, height);
+
+				this.WindowGUI_Scroll_Rect = GUILayout.BeginScrollView(this.WindowGUI_Scroll_Rect, GUILayout.Width(Window_GUI_Minimum_Width), GUILayout.Height(height));
+					currentSelection = GUILayout.SelectionGrid(currentSelection, selStringArray, 1);
+				GUILayout.EndScrollView();
+			}
 			currentBody = BodyRef[currentSelection];
-
 			GUILayout.Label("Envelope Volume: " + TotalEnvelopeVolume);
 
 			string mass = "?";
