@@ -1,6 +1,6 @@
 ﻿/*
 	This file is part of Hooligan Labs Airships /L Unleashed
-		© 2018-2022 Lisias T : http://lisias.net <support@lisias.net>
+		© 2018-2025 Lisias T : http://lisias.net <support@lisias.net>
 		© 2013-2021 Jewel Shisen
 		© 2012-2013 Hooligan Labs
 
@@ -340,7 +340,20 @@ namespace HLAirships
 			else
 				// Start opened if it is buoyant
 				this.AniState = AnimationState.AtEnd;
+		}
 
+		public override void OnActive()
+		{
+			base.OnActive();
+			GameEvents.onVesselChange.Add(this.OnVesselChange);
+			GameEvents.onVesselGoOffRails.Add(this.OnVesselOffRails);
+		}
+
+		public override void OnInactive()
+		{
+			base.OnInactive();
+			GameEvents.onVesselGoOffRails.Remove(this.OnVesselOffRails);
+			GameEvents.onVesselChange.Add(this.OnVesselChange);
 		}
 
 		public override void OnSave(ConfigNode node)
@@ -366,10 +379,6 @@ namespace HLAirships
 
 			/// Per-frame update 
 			/// Called ONLY when Part is ACTIVE! 
-
-			// Sets one envelope to run the control logic
-			determineLeadEnvelope();
-
 
 			// Try to animate if there is no animation
 			if (envelopeHasAnimation)
@@ -515,6 +524,9 @@ namespace HLAirships
 			{
 				Log.err(ex, "MakeLines Exception on {0}!", this.part.partName);
 			}
+
+			// Sets one envelope to run the control logic
+			determineLeadEnvelope();
 		}
 
 		private static Material __material = null;
@@ -564,7 +576,7 @@ namespace HLAirships
 		private void determineLeadEnvelope()
 		{
 			// Finds all 
-			try { findEnvelopes(); }
+			try { this.findEnvelopes(); }
 			catch (Exception ex) { print("findEnvelopes Exception!"); print(ex.Message); }
 		}
 
@@ -1018,6 +1030,18 @@ namespace HLAirships
 			set {
 				throw new NotSupportedException("eDistanceFromCoM");
 			}
+		}
+
+		private void OnVesselOffRails(Vessel data)
+		{
+			// Sets one envelope to run the control logic
+			this.determineLeadEnvelope();
+		}
+
+		private void OnVesselChange(Vessel data)
+		{
+			// Sets one envelope to run the control logic
+			this.determineLeadEnvelope();
 		}
 
 	}
