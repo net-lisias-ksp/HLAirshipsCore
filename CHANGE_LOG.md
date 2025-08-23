@@ -1,5 +1,12 @@
 # HLAirships Core :: Change Log
 
+* 2024-0823: 7.0.2.0 (Lisias) for KSP >= 1.3.1
+	+ Adds a convenient `ScrollBar` on the `HLAirships Build Aid` Window (Editor), allowing user with Planet Packs to be able to select any Celestial Body - preventing the list overflows the available screen space.
+	+ (Theoretically) adds support for `Principia`. Thanks for Jules Berthold.
+	+ Closes issues:
+		- [#14](https://github.com/net-lisias-ksp/HLAirshipsCore/issues/14) Can you make the Airship Build Aid have a scroll bar? I can't see my 50 or so atmospheric bodies
+	+ Merges Pull Requests:
+		- [#12](https://github.com/net-lisias-ksp/HLAirshipsCore/pull/12) Make mod compatible with Principia
 * 2022-1114: 7.0.1.0R3 (Lisias) for KSP >= 1.3.1
 	+ Updates `KSPe.Light` to the latest version.
 * 2022-0812: 7.0.1.4 (Lisias) for KSP >= 1.3.1
