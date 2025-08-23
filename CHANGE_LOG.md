@@ -1,5 +1,9 @@
 # HLAirships Core :: Change Log
 
+* 2025-0826: 7.0.1.5 (Lisias) for KSP >= 1.3.1
+	+ Adds a convenient ScrollBar into the `Build Aid` Window in Editor
+	+ Closes issues:
+		- [#14](https://github.com/net-lisias-ksp/HLAirshipsCore/issues/14) Can you make the Airship Build Aid have a scroll bar? I can't see my 50 or so atmospheric bodies.
 * 2022-1114: 7.0.1.0R3 (Lisias) for KSP >= 1.3.1
 	+ Updates `KSPe.Light` to the latest version.
 * 2022-0812: 7.0.1.4 (Lisias) for KSP >= 1.3.1
