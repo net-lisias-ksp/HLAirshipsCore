@@ -5,3 +5,5 @@ pwd=$(pwd)
 cd $pwd
 ./pack-curse.sh
 cd $pwd
+./pack-noparts.sh
+cd $pwd
