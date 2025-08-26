@@ -475,6 +475,7 @@ namespace HLAirships
 
 		public override void OnStart(StartState state)
 		{
+			Log.dbg("OnStart {0} {1} {2}", state, this.VesselID, this.PartID);
 			base.OnStart(state);
 
 			// OnFlightStart seems to have been removed
@@ -515,6 +516,15 @@ namespace HLAirships
 			{
 				Log.err(ex, "MakeLines Exception on {0}!", this.part.partName);
 			}
+		}
+
+		public override void OnLoad(ConfigNode node)
+		{
+			Log.dbg("OnStart {0} {1}", this.VesselID, this.PartID);
+			base.OnLoad(node);
+			// We are in Game Loading. Nothing to do for now.
+			if (null == this.part.partInfo) return;
+			// Place Holder
 		}
 
 		private static Material __material = null;
@@ -1020,7 +1030,9 @@ namespace HLAirships
 			}
 		}
 
+
+
+		private string VesselID => string.Format("{0}:{1}", this.part.vessel.name, this.part.vessel.GetInstanceID());
+		private string PartID => string.Format("{0}:{1}", this.part.name, this.part.GetInstanceID());
 	}
-
-
 }
