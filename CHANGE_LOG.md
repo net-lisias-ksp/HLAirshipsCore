@@ -1,5 +1,7 @@
 # HLAirships Core :: Change Log
 
+* 2026-0323: 7.0.1.6 (Lisias) for KSP >= 1.3.1
+	+ Updates `KSPe.Light` to 2.5.5.2, fixing a lame mistake that prevented it from working on KSP < 1.8.0 🤦
 * 2025-0826: 7.0.1.5 (Lisias) for KSP >= 1.3.1
 	+ Adds a convenient ScrollBar into the `Build Aid` Window in Editor
 	+ Closes issues:
