@@ -421,6 +421,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 3.75
@@ -589,6 +590,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 3.75
@@ -757,6 +759,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 3.75
@@ -926,6 +929,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 3.75
@@ -1061,6 +1065,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 3.75
@@ -1179,6 +1184,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 3.75
@@ -1294,6 +1300,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 3.75
@@ -1371,6 +1378,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 0.625
@@ -1697,6 +1705,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free
 		active = True
 		available = True
 		currentScale = 120.000008
@@ -2023,6 +2032,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free
 		active = True
 		available = True
 		currentScale = 120.000008
@@ -2096,6 +2106,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 1.25
@@ -2249,6 +2260,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_blimp
 		active = True
 		available = True
 		currentScale = 22.5
@@ -2483,6 +2495,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_blimp
 		active = True
 		available = True
 		currentScale = 22.5
@@ -2542,8 +2555,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = AirshipCap_4294013738
-	attN = top,AirshipCap_4294013738_0|11.68|0
+	link = AirshipCap100_4294577244
+	attN = top,AirshipCap100_4294577244_0|11.68|0
 	attN = bottom,HL.AirshipEnvelopeHecto_4294013838_0|-11.68|0
 	EVENTS
 	{
@@ -2632,6 +2645,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_blimp
 		active = True
 		available = True
 		currentScale = 22.5
@@ -2668,15 +2682,15 @@ PART
 }
 PART
 {
-	part = AirshipCap_4294013738
+	part = AirshipCap100_4294577244
 	partName = Part
-	persistentId = 24149581
-	pos = 1.05794663E-06,21.8339787,56.7465477
+	persistentId = 3535466592
+	pos = 1.17716286E-06,21.8339176,56.7409554
 	attPos = 0,0,0
-	attPos0 = -1.19208345E-07,11.6800518,1.14440882E-05
-	rot = 0.707106888,7.53644431E-15,5.02429621E-15,0.707106888
+	attPos0 = 5.16453742E-13,11.675045,1.56194146E-05
+	rot = 0.707106888,7.53644431E-15,-5.02429621E-15,0.707106888
 	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
+	attRot0 = -4.2632554E-14,3.38813098E-21,1.0658141E-14,1
 	mir = 1,1,1
 	symMethod = Mirror
 	autostrutMode = Off
@@ -2688,8 +2702,8 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 0
-	modCost = 10199.6816
-	modMass = 20.3993664
+	modCost = 0
+	modMass = 0
 	modSize = 0,0,0
 	attN = bottom,HL.AirshipEnvelopeHecto_4294013788_0|0|0
 	EVENTS
@@ -2703,21 +2717,73 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
+		name = HLEnvelopePartModule
 		isEnabled = True
-		active = True
-		available = True
-		currentScale = 22.5
-		defaultScale = 4.80000019
-		defaultTransformScale = (1.25, 1.25, 1.25)
-		DryCost = 10299.6816
-		OriginalCrewCapacity = 0
+		limitBuoyantForce = 0
+		minAtmPressure = -0.00999999978
+		dragDeployed = 0
+		dragUndeployed = 0.200000003
+		makeStationarySpeedMax = 10
+		makeStationarySpeedClamp = 0.0500000007
+		compressRate = 0.0299999993
+		expandRate = 0.0299999993
+		targetBuoyantVessel = 0
+		specificVolumeFractionEnvelope = 0
+		toggleAltitudeControl = False
+		targetVerticalVelocity = 0
+		toggleAutoPitch = False
+		targetPitchBuoyancy = 0
+		animationDeploy = False
+		isLeadEnvelope = False
+		lineOffsetMultiplier = 2
+		envelopeHasAnimation = False
+		animationName = Default Take
 		stagingEnabled = True
 		EVENTS
 		{
 		}
 		ACTIONS
 		{
+			guiToggle_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyPP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyNN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyM_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyZ_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyC_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -2764,7 +2830,7 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = AirshipCap_4294015402
+	link = AirshipCap100_4294578964
 	link = deltaWing_4294015374
 	link = deltaWing_4294015008
 	link = deltaWing_4294014642
@@ -2772,7 +2838,7 @@ PART
 	link = turboFanSize2_4294014490
 	link = turboFanSize2_4294014348
 	attN = top,HL.AirshipEnvelopeHecto_4294015642_0|11.68|0
-	attN = bottom,AirshipCap_4294015402_0|-11.68|0
+	attN = bottom,AirshipCap100_4294578964_0|-11.68|0
 	EVENTS
 	{
 	}
@@ -2860,6 +2926,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_blimp
 		active = True
 		available = True
 		currentScale = 22.5
@@ -2896,15 +2963,15 @@ PART
 }
 PART
 {
-	part = AirshipCap_4294015402
+	part = AirshipCap100_4294578964
 	partName = Part
-	persistentId = 799716181
-	pos = -1.177179E-06,21.8345108,-36.6957932
+	persistentId = 3687505851
+	pos = -1.02817103E-06,21.8346062,-36.6908417
 	attPos = 0,0,0
-	attPos0 = -1.33668351E-07,-11.6800461,-1.24738899E-05
-	rot = 1.42108547E-14,-0.707106709,0.707107067,-7.0673579E-08
+	attPos0 = 0,-11.6750355,-7.99001282E-06
+	rot = 0,-0.707106888,0.707106888,1.50728886E-14
 	attRot = 0,0,0.99999994,0
-	attRot0 = 4.99737354E-08,3.27825518E-07,1,-4.99737709E-08
+	attRot0 = 1.06581402E-14,2.98023899E-08,1,-1.95941404E-14
 	mir = 1,1,1
 	symMethod = Mirror
 	autostrutMode = Off
@@ -2916,8 +2983,8 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 0
-	modCost = 10199.6816
-	modMass = 20.3993664
+	modCost = 0
+	modMass = 0
 	modSize = 0,0,0
 	attN = bottom,HL.AirshipEnvelopeHecto_4294015592_0|0|0
 	EVENTS
@@ -2931,21 +2998,73 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
+		name = HLEnvelopePartModule
 		isEnabled = True
-		active = True
-		available = True
-		currentScale = 22.5
-		defaultScale = 4.80000019
-		defaultTransformScale = (1.25, 1.25, 1.25)
-		DryCost = 10299.6816
-		OriginalCrewCapacity = 0
+		limitBuoyantForce = 0
+		minAtmPressure = -0.00999999978
+		dragDeployed = 0
+		dragUndeployed = 0.200000003
+		makeStationarySpeedMax = 10
+		makeStationarySpeedClamp = 0.0500000007
+		compressRate = 0.0299999993
+		expandRate = 0.0299999993
+		targetBuoyantVessel = 0
+		specificVolumeFractionEnvelope = 0
+		toggleAltitudeControl = False
+		targetVerticalVelocity = 0
+		toggleAutoPitch = False
+		targetPitchBuoyancy = 0
+		animationDeploy = False
+		isLeadEnvelope = False
+		lineOffsetMultiplier = 2
+		envelopeHasAnimation = False
+		animationName = Default Take
 		stagingEnabled = True
 		EVENTS
 		{
 		}
 		ACTIONS
 		{
+			guiToggle_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyPP_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyNN_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyM_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyZ_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			BuoyancyC_Action
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -3024,6 +3143,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free_square
 		active = True
 		available = True
 		currentScale = 240.000015
@@ -3137,6 +3257,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free_square
 		active = True
 		available = True
 		currentScale = 240.000015
@@ -3441,6 +3562,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free
 		active = True
 		available = True
 		currentScale = 100
@@ -3532,6 +3654,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free_square
 		active = True
 		available = True
 		currentScale = 240.000015
@@ -3645,6 +3768,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free_square
 		active = True
 		available = True
 		currentScale = 240.000015
@@ -3949,6 +4073,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free
 		active = True
 		available = True
 		currentScale = 100
@@ -4039,6 +4164,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free_square
 		active = True
 		available = True
 		currentScale = 240.000015
@@ -4152,6 +4278,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free_square
 		active = True
 		available = True
 		currentScale = 240.000015
@@ -4242,6 +4369,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free_square
 		active = True
 		available = True
 		currentScale = 240.000015
@@ -4355,6 +4483,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free_square
 		active = True
 		available = True
 		currentScale = 240.000015
@@ -4628,6 +4757,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 2.5
@@ -4912,6 +5042,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 2.5
@@ -5071,6 +5202,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free
 		active = True
 		available = True
 		currentScale = 75
@@ -5219,6 +5351,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free
 		active = True
 		available = True
 		currentScale = 75
@@ -5545,6 +5678,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free
 		active = True
 		available = True
 		currentScale = 100
@@ -5871,6 +6005,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = free
 		active = True
 		available = True
 		currentScale = 100
@@ -5947,6 +6082,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 0.625
@@ -6107,6 +6243,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 0.625
@@ -6185,6 +6322,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6272,6 +6410,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6359,6 +6498,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6446,6 +6586,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6533,6 +6674,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6620,6 +6762,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6707,6 +6850,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6794,6 +6938,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6881,6 +7026,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -6968,6 +7114,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7055,6 +7202,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7142,6 +7290,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7229,6 +7378,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7316,6 +7466,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7405,6 +7556,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7492,6 +7644,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7579,6 +7732,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7666,6 +7820,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7753,6 +7908,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7840,6 +7996,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -7927,6 +8084,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8014,6 +8172,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8101,6 +8260,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8188,6 +8348,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8275,6 +8436,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8362,6 +8524,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8449,6 +8612,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8536,6 +8700,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8621,6 +8786,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8695,6 +8861,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8784,6 +8951,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 1.25
@@ -8873,6 +9041,7 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
+		type = stack_square
 		active = True
 		available = True
 		currentScale = 1.25
