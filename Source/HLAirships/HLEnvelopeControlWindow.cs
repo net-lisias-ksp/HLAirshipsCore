@@ -144,6 +144,7 @@ namespace HLAirships
 		}
 
 		// GUI
+		private Vector2 scrollPos;
 		private void WindowGUI(int windowID)
 		{
 			if (null == this.CurrentVessel) return;
@@ -300,6 +301,7 @@ namespace HLAirships
 			#region Debug
 			// Debug info
 
+			scrollPos = GUILayout.BeginScrollView(scrollPos, GUILayout.Width(this.windowWidth), GUILayout.Height(300));
 
 			GUILayout.BeginHorizontal();
 			GUILayout.Label("Buoyancy - Weight: " + (TotalBuoyancy - (CurrentVessel.GetTotalMass() * FlightGlobals.getGeeForceAtPosition(CurrentVessel.GetWorldPos3D()).magnitude)).ToString("0.00"));
@@ -348,6 +350,7 @@ namespace HLAirships
 			    x += 1;
 			}
 		#endif
+			GUILayout.EndScrollView();
 		#endregion
 
 			GUI.DragWindow(new Rect(0, 0, 500, 20));
