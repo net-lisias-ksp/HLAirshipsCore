@@ -898,7 +898,10 @@ namespace HLAirships
 					envelope.linePosition.SetPosition(1, envelope.part.WCoM + lineOffset);
 
 					envelope.linePositionProjected.SetPosition(0, envelope.part.WCoM + lineOffset);
-					envelope.linePositionProjected.SetPosition(1, envelope.part.WCoM + (maxBuoyancy * envelope.targetPitchBuoyancy * 3) + lineOffset);
+					envelope.linePositionProjected.SetPosition(1, envelope.part.WCoM + (maxBuoyancy * envelope.targetPitchBuoyancy) + lineOffset);
+
+					envelope.lineCorrect.SetPosition(0, envelope.part.WCoM + lineOffset);
+					envelope.lineCorrect.SetPosition(1, envelope.part.WCoM + (maxBuoyancy * Math.Abs(percent[i])) + lineOffset);
 
 					envelope.lineCorrectProjected.SetPosition(0, envelope.part.WCoM + lineOffset);
 					envelope.lineCorrectProjected.SetPosition(1, envelope.part.WCoM + torques[i] * 0.1f + lineOffset);
