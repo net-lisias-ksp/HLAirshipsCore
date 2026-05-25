@@ -477,7 +477,7 @@ namespace HLAirships
 
 		public override void OnLoad(ConfigNode node)
 		{
-			Log.dbg("OnStart {0} {1}", this.VesselID, this.PartID);
+			Log.dbg("OnLoad {0} {1}", this.VesselID, this.PartID);
 			base.OnLoad(node);
 			// We are in Game Loading. Nothing to do for now.
 			if (null == this.part.partInfo) return;
