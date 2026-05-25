@@ -890,42 +890,49 @@ namespace HLAirships
 		{
 			this.deactivateVesselAutoDrivers();
 			this.targetPitchBuoyancy += INCREMENT_GROSS;
+			this.updateTargetPitchBuoyancy();
 		}
 
 		public void BuoyancyP()
 		{
 			this.deactivateVesselAutoDrivers();
 			this.targetPitchBuoyancy += INCREMENT_FINE;
+			this.updateTargetPitchBuoyancy();
 		}
 
 		public void BuoyancyN()
 		{
 			this.deactivateVesselAutoDrivers();
 			this.targetPitchBuoyancy -= INCREMENT_FINE;
+			this.updateTargetPitchBuoyancy();
 		}
 
 		public void BuoyancyNN()
 		{
 			this.deactivateVesselAutoDrivers();
 			this.targetPitchBuoyancy -= INCREMENT_GROSS;
+			this.updateTargetPitchBuoyancy();
 		}
 
 		public void BuoyancyM()
 		{
 			this.deactivateVesselAutoDrivers();
 			this.targetPitchBuoyancy = 1f;
+			this.updateTargetPitchBuoyancy();
 		}
 
 		public void BuoyancyZ()
 		{
 			this.deactivateVesselAutoDrivers();
 			this.targetPitchBuoyancy = -1f;
+			this.updateTargetPitchBuoyancy();
 		}
 
 		public void BuoyancyC()
 		{
 			this.deactivateVesselAutoDrivers();
 			this.targetPitchBuoyancy = 0f;
+			this.updateTargetPitchBuoyancy();
 		}
 
 
@@ -1031,6 +1038,11 @@ namespace HLAirships
 			set {
 				throw new NotSupportedException("eDistanceFromCoM");
 			}
+		}
+
+		private void updateTargetPitchBuoyancy()
+		{
+			this.specificVolumeFractionEnvelope = Mathf.Clamp01(this.targetPitchBuoyancy / this.maxBuoyancy.magnitude);
 		}
 
 		private void deactivateVesselAutoDrivers()
