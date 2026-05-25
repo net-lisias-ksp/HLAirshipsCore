@@ -68,6 +68,7 @@
     <Compile Include="UI\ToolbarSupport.Stock.cs" />
     <Compile Include="UI\Icons.KSpe.cs" />
     <Compile Include="UI\ToolbarSupport.KSPe.cs" />
+    <Compile Include="UI\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

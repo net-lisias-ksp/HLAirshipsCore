@@ -37,8 +37,15 @@ namespace HLAirships
 
 	public class HLEnvelopePartModule : PartModule
 	{
+		internal static readonly float[] INTERVALS			= {0,     .1f,  .2f,  .3f,  .4f,  .5f,  .6f,  .7f,  .8f,  .9f,  1,    1.01f};
+		internal static readonly float[] INTERVALS_SLIDE	= {0.01f, .01f, .01f, .01f, .01f, .01f, .01f, .01f, .01f, .01f, .01f, 1.01f};
 		internal const float INCREMENT_GROSS = 0.01f;
 		internal const float INCREMENT_FINE = 0.001f;
+
+		internal static readonly float[] INTERVALS_PERCENT			= {0, 10f, 20f, 30f, 40f, 50f, 60f, 70f, 80f, 90f, 100f, 101f };
+		internal static readonly float[] INTERVALS_SLIDE_PERCENT	= {1f, 1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,   1f,   1f };
+		internal const float INCREMENT_GROSS_PERCENT = 1f;
+		internal const float INCREMENT_FINE_PERCENT = 0.1f;
 
 		// Private variables cannot be changed by the part.cfg file
 		#region KSPFields
@@ -90,7 +97,8 @@ namespace HLAirships
 		// Fraction of lifting gas specific volume the envelope
 		[KSPField(isPersistant = true, guiActive = false, guiName = "Envelope Normal")]
 		public float specificVolumeFractionEnvelope = 0.50f;
-		[KSPField(isPersistant = false, guiActive = true, guiName = "Envelope %", guiFormat = "F2")]
+		[KSPField(isPersistant = false, guiActive = true, guiActiveEditor = false, guiName = "Envelope Buoyancy", guiFormat = "F2", guiUnits = "%")]
+		[UI_ScaleEdit(scene = UI_Scene.Flight)]
 		private float specificVolumeFractionEnvelopePercent = 0;
 
 		[KSPField(isPersistant = true, guiActive = false, guiName = "Altitude Control")]
@@ -311,7 +319,6 @@ namespace HLAirships
 			}
 		}
 
-
 		public override void OnUpdate()
 		{
 			base.OnUpdate();
@@ -453,6 +460,43 @@ namespace HLAirships
 			Log.trace("Set lead envelope");
 			if (this.part == leadEnvelope) { targetBuoyantVessel = Mathf.Clamp01(targetBuoyantVessel); }
 
+			if (HLEnvelopeControlWindow.Instance.NewPawStyle)
+			{ 
+				{
+					BaseField field = this.Fields["specificVolumeFractionEnvelopePercent"];
+					field.guiUnits = "%";
+					field.guiActive = true;
+					field.guiActiveEditor = false;
+
+					UI_ScaleEdit uiControl = (UI_ScaleEdit)field.uiControlFlight;
+					uiControl.intervals = INTERVALS_PERCENT;
+					uiControl.incrementSlide = INTERVALS_SLIDE_PERCENT;
+					uiControl.unit = "%";
+					uiControl.sigFigs = 0;
+					uiControl.onFieldChanged += this.OnSpecificVolumeFractionEnvelopePercentChanged;
+				}
+				UI.Util.SetEventVisibility(this, "BuoyancyPP_Event", false);
+				UI.Util.SetEventVisibility(this, "BuoyancyP_Event", false);
+				UI.Util.SetEventVisibility(this, "BuoyancyN_Event", false);
+				UI.Util.SetEventVisibility(this, "BuoyancyNN_Event", false);
+				UI.Util.SetEventVisibility(this, "BuoyancyM_Event", true);
+				UI.Util.SetEventVisibility(this, "BuoyancyZ_Event", true);
+			}
+			else
+			{
+				{
+					BaseField field = this.Fields["specificVolumeFractionEnvelopePercent"];
+					field.guiActive = false;
+					field.guiActiveEditor = false;
+				}
+				UI.Util.SetEventVisibility(this, "BuoyancyPP_Event", true);
+				UI.Util.SetEventVisibility(this, "BuoyancyP_Event", true);
+				UI.Util.SetEventVisibility(this, "BuoyancyN_Event", true);
+				UI.Util.SetEventVisibility(this, "BuoyancyNN_Event", true);
+				UI.Util.SetEventVisibility(this, "BuoyancyM_Event", true);
+				UI.Util.SetEventVisibility(this, "BuoyancyZ_Event", true);
+			}
+
 			// Debug lines
 			Log.trace("Create Lines");
 			lineCorrect = objUp.AddComponent<LineRenderer>();
@@ -482,6 +526,12 @@ namespace HLAirships
 			// We are in Game Loading. Nothing to do for now.
 			if (null == this.part.partInfo) return;
 			// Place Holder
+		}
+
+		private void OnSpecificVolumeFractionEnvelopePercentChanged(BaseField field, object value)
+		{
+			this.updateEnvelopeBuoyancyPercent();
+			this.deactivateVesselAutoDrivers();
 		}
 
 		private static Material __material = null;
@@ -1038,6 +1088,12 @@ namespace HLAirships
 			set {
 				throw new NotSupportedException("eDistanceFromCoM");
 			}
+		}
+
+		private void updateEnvelopeBuoyancyPercent()
+		{
+			this.specificVolumeFractionEnvelope = Mathf.Clamp01(this.specificVolumeFractionEnvelopePercent / 100);
+			this.targetPitchBuoyancy = this.specificVolumeFractionEnvelope;
 		}
 
 		private void updateTargetPitchBuoyancy()

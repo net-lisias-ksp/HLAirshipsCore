@@ -65,6 +65,7 @@ namespace HLAirships
 		public bool AnchorPresent { get; set; }
 		public bool AnchorOn { get; set; }
 		public bool AutoAnchor { get; set; }
+		public bool NewPawStyle { get; internal set; }
 
 		public List<HLEnvelopePartModule> Envelopes = new List<HLEnvelopePartModule>();
 
@@ -89,6 +90,7 @@ namespace HLAirships
 			InitVariables();
 
 			UI.ToolbarController.Instance.Register_Flight();
+			this.NewPawStyle = true;
 		}
 
 		private void InitVariables()
