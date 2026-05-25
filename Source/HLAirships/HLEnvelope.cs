@@ -183,14 +183,14 @@ namespace HLAirships
 
 		#region KSPEvents
 
-		[KSPEvent(guiActive = true, guiName = "Envelope Buoyancy ++")]
+		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy ++")]
 		public void BuoyancyPP_Event()
 		{
 			foreach (HLEnvelopePartModule envelope in Envelopes)
 			{
 				toggleAutoPitch = false;
 			}
-			targetPitchBuoyancy += 0.01f;
+			targetPitchBuoyancy += INCREMENT_GROSS;
 		}
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy +")]
