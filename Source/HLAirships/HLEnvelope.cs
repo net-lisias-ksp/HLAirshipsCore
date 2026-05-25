@@ -37,6 +37,9 @@ namespace HLAirships
 
 	public class HLEnvelopePartModule : PartModule
 	{
+		internal const float INCREMENT_GROSS = 0.01f;
+		internal const float INCREMENT_FINE = 0.001f;
+
 		// Private variables cannot be changed by the part.cfg file
 		#region KSPFields
 		// These public values can be overwritten in the part.cfg files.
@@ -49,7 +52,7 @@ namespace HLAirships
 		public float limitBuoyantForce = 0f;
 
 		[KSPField(isPersistant = true, guiActive = false)]
-		public float minAtmPressure = -0.01f;
+		public float minAtmPressure = -INCREMENT_GROSS;
 
 		[KSPField(isPersistant = true, guiActive = false)]
 		public float dragDeployed = 0f;
@@ -65,7 +68,7 @@ namespace HLAirships
 
 		// Compress and expand rate per second
 		[KSPField(isPersistant = true, guiActive = false)]
-		public float compressRate = 0.01f, expandRate = 0.01f;
+		public float compressRate = INCREMENT_GROSS, expandRate = INCREMENT_GROSS;
 
 		// The envelope volume. Not calculated from the size of the mesh because realistic values provide too much lift for stable operation, as said by Ludo
 		// However, this has been recalculated based on model measurements done in Blender
@@ -200,7 +203,7 @@ namespace HLAirships
 			{
 				toggleAutoPitch = false;
 			}
-			targetPitchBuoyancy += 0.001f;
+			targetPitchBuoyancy += INCREMENT_FINE;
 		}
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy -")]
@@ -210,7 +213,7 @@ namespace HLAirships
 			{
 				toggleAutoPitch = false;
 			}
-			targetPitchBuoyancy -= 0.001f;
+			targetPitchBuoyancy -= INCREMENT_FINE;
 		}
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy --")]
@@ -220,7 +223,7 @@ namespace HLAirships
 			{
 				toggleAutoPitch = false;
 			}
-			targetPitchBuoyancy -= 0.01f;
+			targetPitchBuoyancy -= INCREMENT_GROSS;
 		}
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy Max")]
