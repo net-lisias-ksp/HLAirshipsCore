@@ -184,153 +184,89 @@ namespace HLAirships
 		}
 		#endregion
 
+
 		#region KSPEvents
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy ++")]
-		public void BuoyancyPP_Event()
-		{
-			foreach (HLEnvelopePartModule envelope in Envelopes)
-			{
-				toggleAutoPitch = false;
-			}
-			targetPitchBuoyancy += INCREMENT_GROSS;
-		}
+		public void BuoyancyPP_Event() =>
+			this.BuoyancyPP();
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy +")]
-		public void BuoyancyP_Event()
-		{
-			foreach (HLEnvelopePartModule envelope in Envelopes)
-			{
-				toggleAutoPitch = false;
-			}
-			targetPitchBuoyancy += INCREMENT_FINE;
-		}
+		public void BuoyancyP_Event() =>
+			this.BuoyancyP();
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy -")]
-		public void BuoyancyN_Event()
-		{
-			foreach (HLEnvelopePartModule envelope in Envelopes)
-			{
-				toggleAutoPitch = false;
-			}
-			targetPitchBuoyancy -= INCREMENT_FINE;
-		}
+		public void BuoyancyN_Event() =>
+			this.BuoyancyN();
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy --")]
-		public void BuoyancyNN_Event()
-		{
-			foreach (HLEnvelopePartModule envelope in Envelopes)
-			{
-				toggleAutoPitch = false;
-			}
-			targetPitchBuoyancy -= INCREMENT_GROSS;
-		}
+		public void BuoyancyNN_Event() =>
+			this.BuoyancyNN();
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy Max")]
-		public void BuoyancyM_Event()
-		{
-			foreach (HLEnvelopePartModule envelope in Envelopes)
-			{
-				toggleAutoPitch = false;
-			}
-			targetPitchBuoyancy = 1f;
-		}
+		public void BuoyancyM_Event() =>
+			this.BuoyancyM();
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Buoyancy Min")]
-		public void BuoyancyZ_Event()
-		{
-			foreach (HLEnvelopePartModule envelope in Envelopes)
-			{
-				toggleAutoPitch = false;
-			}
-			targetPitchBuoyancy = -1f;
-		}
+		public void BuoyancyZ_Event() =>
+			this.BuoyancyZ();
 
 		[KSPEvent(active = true, guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2000, guiName = "Envelope Clear Adjustments")]
-		public void BuoyancyC_Event()
-		{
-			foreach (HLEnvelopePartModule envelope in Envelopes)
-			{
-				toggleAutoPitch = false;
-			}
-			targetPitchBuoyancy = 0f;
-		}
+		public void BuoyancyC_Event() =>
+			this.BuoyancyC();
 
 		[KSPEvent(active = true, guiActive = true, guiName = "Toggle GUI")]
-		public void guiToggle_Event()
-		{
+		public void guiToggle_Event() =>
 			UI.ToolbarController.Instance.ToggleState();
-		}
 
 		#endregion
+
 
 		#region KSPActions
 
 		[KSPAction("GUI Toggle")]
-		public void guiToggle_Action(KSPActionParam param)
-		{
-			guiToggle_Event();
-		}
+		public void guiToggle_Action(KSPActionParam param) => 
+			UI.ToolbarController.Instance.ToggleState();
 
 		[KSPAction("Buoyancy ++")]
-		public void BuoyancyP_Action(KSPActionParam param)
-		{
-			BuoyancyPP_Event();
-		}
+		public void BuoyancyPP_Action(KSPActionParam param) =>
+			this.BuoyancyPP();
 
 		[KSPAction("Buoyancy +")]
-		public void BuoyancyPP_Action(KSPActionParam param)
-		{
-			BuoyancyP_Event();
-		}
+		public void BuoyancyP_Action(KSPActionParam param) =>
+			this.BuoyancyP();
 
 		[KSPAction("Buoyancy -")]
-		public void BuoyancyN_Action(KSPActionParam param)
-		{
-			BuoyancyN_Event();
-		}
+		public void BuoyancyN_Action(KSPActionParam param) =>
+			this.BuoyancyN();
 
 		[KSPAction("Buoyancy --")]
-		public void BuoyancyNN_Action(KSPActionParam param)
-		{
-			BuoyancyNN_Event();
-		}
+		public void BuoyancyNN_Action(KSPActionParam param) =>
+			this.BuoyancyNN();
 
 		[KSPAction("Buoyancy Max")]
-		public void BuoyancyM_Action(KSPActionParam param)
-		{
-			BuoyancyM_Event();
-		}
+		public void BuoyancyM_Action(KSPActionParam param) =>
+			this.BuoyancyM();
 
 		[KSPAction("Buoyancy Zero")]
-		public void BuoyancyZ_Action(KSPActionParam param)
-		{
-			BuoyancyZ_Event();
-		}
+		public void BuoyancyZ_Action(KSPActionParam param) =>
+			this.BuoyancyZ();
 
 		[KSPAction("Clear Adjustments")]
-		public void BuoyancyC_Action(KSPActionParam param)
-		{
-			BuoyancyC_Event();
-		}
+		public void BuoyancyC_Action(KSPActionParam param) =>
+			this.BuoyancyC();
 
 		[KSPAction("Toggle Auto Pitch")]
-		public void AutoPitchToggle_Action(KSPActionParam param)
-		{
-			this.toggleAutoPitch = HLEnvelopeControlWindow.Instance.ToggleAutoPitch = !this.toggleAutoPitch;
-		}
+		public void AutoPitchToggle_Action(KSPActionParam param) =>
+			this.setAutoPitch(!this.toggleAutoPitch);
 
 		[KSPAction("Enable Auto Pitch")]
-		public void AutoPitchEnable_Action(KSPActionParam param)
-		{
-			this.toggleAutoPitch = HLEnvelopeControlWindow.Instance.ToggleAutoPitch = true;
-		}
+		public void AutoPitchEnable_Action(KSPActionParam param) =>
+			this.setAutoPitch(true);
 
 		[KSPAction("Disable Auto Pitch")]
-		public void AutoPitchDisable_Action(KSPActionParam param)
-		{
-			this.toggleAutoPitch = HLEnvelopeControlWindow.Instance.ToggleAutoPitch = false;
-		}
+		public void AutoPitchDisable_Action(KSPActionParam param) =>
+			this.setAutoPitch(false);
 
 		#endregion
 
@@ -950,6 +886,49 @@ namespace HLAirships
 		}
 
 
+		public void BuoyancyPP()
+		{
+			this.deactivateVesselAutoDrivers();
+			this.targetPitchBuoyancy += INCREMENT_GROSS;
+		}
+
+		public void BuoyancyP()
+		{
+			this.deactivateVesselAutoDrivers();
+			this.targetPitchBuoyancy += INCREMENT_FINE;
+		}
+
+		public void BuoyancyN()
+		{
+			this.deactivateVesselAutoDrivers();
+			this.targetPitchBuoyancy -= INCREMENT_FINE;
+		}
+
+		public void BuoyancyNN()
+		{
+			this.deactivateVesselAutoDrivers();
+			this.targetPitchBuoyancy -= INCREMENT_GROSS;
+		}
+
+		public void BuoyancyM()
+		{
+			this.deactivateVesselAutoDrivers();
+			this.targetPitchBuoyancy = 1f;
+		}
+
+		public void BuoyancyZ()
+		{
+			this.deactivateVesselAutoDrivers();
+			this.targetPitchBuoyancy = -1f;
+		}
+
+		public void BuoyancyC()
+		{
+			this.deactivateVesselAutoDrivers();
+			this.targetPitchBuoyancy = 0f;
+		}
+
+
 		// From http://wiki.unity3d.com/index.php?title=3d_Math_functions
 		//Projects a vector onto a plane. The output is not normalized.
 		public static Vector3 ProjectVectorOnPlane(Vector3 planeNormal, Vector3 vector)
@@ -1054,7 +1033,16 @@ namespace HLAirships
 			}
 		}
 
+		private void deactivateVesselAutoDrivers()
+		{ 
+			foreach (HLEnvelopePartModule envelope in this.Envelopes)
+				this.toggleAutoPitch = false;
+			HLEnvelopeControlWindow.Instance.ToggleAutoPitch = false;
+			HLEnvelopeControlWindow.Instance.ToggleAltitudeControl = false;
+		}
 
+		private void setAutoPitch(bool state) =>
+			this.toggleAutoPitch = HLEnvelopeControlWindow.Instance.ToggleAutoPitch = state;
 
 		private string VesselID => string.Format("{0}:{1}", this.part.vessel.name, this.part.vessel.GetInstanceID());
 		private string PartID => string.Format("{0}:{1}", this.part.name, this.part.GetInstanceID());
