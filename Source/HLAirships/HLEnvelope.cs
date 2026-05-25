@@ -311,6 +311,24 @@ namespace HLAirships
 			BuoyancyC_Event();
 		}
 
+		[KSPAction("Toggle Auto Pitch")]
+		public void AutoPitchToggle_Action(KSPActionParam param)
+		{
+			this.toggleAutoPitch = HLEnvelopeControlWindow.Instance.ToggleAutoPitch = !this.toggleAutoPitch;
+		}
+
+		[KSPAction("Enable Auto Pitch")]
+		public void AutoPitchEnable_Action(KSPActionParam param)
+		{
+			this.toggleAutoPitch = HLEnvelopeControlWindow.Instance.ToggleAutoPitch = true;
+		}
+
+		[KSPAction("Disable Auto Pitch")]
+		public void AutoPitchDisable_Action(KSPActionParam param)
+		{
+			this.toggleAutoPitch = HLEnvelopeControlWindow.Instance.ToggleAutoPitch = false;
+		}
+
 		#endregion
 
 		public override void OnAwake()
